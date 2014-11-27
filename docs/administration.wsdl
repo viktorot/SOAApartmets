@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions 
+	name="ApartmentAdministrationService"
+	targetNamespace="http://mk.soa.apartments/v0_1/ApartmentAdministrationService"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://mk.soa.apartments/v0_1/ApartmentAdministrationService" 
+	xmlns:msg="http://mk.soa.apartments/v0_1/administration_messages">
+	
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://mk.soa.apartments/v0_1/types"
+						schemaLocation="types.xsd"></xsd:import>
+			<xsd:import namespace="http://mk.soa.apartments/v0_1/administration_messages"
+						schemaLocation="administration_messages.xsd"></xsd:import>            
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="AddApartmentRequest">
+		<wsdl:part element="msg:AddApartmentRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddApartmentResponse">
+		<wsdl:part element="msg:AddApartmentResponse" name="parameters"/>
+	</wsdl:message> 
+	<wsdl:message name="FindApartmentRequest">
+		<wsdl:part element="msg:FindApartmentRequest" name="parameters"/>
+	</wsdl:message> 
+	<wsdl:message name="FindApartmentResponse">
+		<wsdl:part element="msg:FindApartmentResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateApartmentRequest">
+		<wsdl:part element="msg:UpdateApartmentRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateApartmentResponse">
+		<wsdl:part element="msg:UpdateApartmentResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteApartmentRequest">
+		<wsdl:part element="msg:DeleteApartmentRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteApartmentResponse">
+		<wsdl:part element="msg:DeleteApartmentResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddBookingRequest">
+		<wsdl:part element="msg:AddBookingRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddBookingResponse">
+		<wsdl:part element="msg:AddBookingResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetBookingRequest">
+		<wsdl:part element="msg:GetBookingRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetBookingResponse">
+		<wsdl:part element="msg:GetBookingResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateBookingRequest">
+		<wsdl:part element="msg:UpdateBookingRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateBookingResponse">
+		<wsdl:part element="msg:UpdateBookingResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetPackageArrangementRequest">
+		<wsdl:part element="msg:GetPackageArrangementRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetPackageArrangementResponse">
+		<wsdl:part element="msg:GetPackageArrangementResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddPackageArrangementRequest">
+		<wsdl:part element="msg:AddPackageArrangementRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddPackageArrangementResponse">
+		<wsdl:part element="msg:AddPackageArrangementResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdatePackageArrangementRequest">
+		<wsdl:part element="msg:UpdatePackageArrangementRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdatePackageArrangementResponse">
+		<wsdl:part element="msg:UpdatePackageArrangementResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="DeletePackageArrangementRequest">
+		<wsdl:part element="msg:DeletePackageArrangementRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="DeletePackageArrangementResponse">
+		<wsdl:part element="msg:DeletePackageArrangementResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddDiscountRequest">
+		<wsdl:part element="msg:AddDiscountRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddDiscountResponse">
+		<wsdl:part element="msg:AddDiscountResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDiscountRequest">
+		<wsdl:part element="msg:UpdateDiscountRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDiscountResponse">
+		<wsdl:part element="msg:UpdateDiscountResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDiscountRequest">
+		<wsdl:part element="msg:DeleteDiscountRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDiscountResponse">
+		<wsdl:part element="msg:DeleteDiscountResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateComplexInfoRequest">
+		<wsdl:part element="msg:UpdateComplexInfoRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateComplexInfoResponse">
+		<wsdl:part element="msg:UpdateComplexInfoResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddCustomerRequest">
+		<wsdl:part element="msg:AddCustomerRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AddCustomerResponse">
+		<wsdl:part element="msg:AddCustomerResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="FindCustomerRequest">
+		<wsdl:part element="msg:FindCustomerRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="FindCustomerResponse">
+		<wsdl:part element="msg:FindCustomerResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateCustomerRequest">
+		<wsdl:part element="msg:UpdateCustomerRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateCustomerResponse">
+		<wsdl:part element="msg:UpdateCustomerResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCustomerRequest">
+		<wsdl:part element="msg:DeleteCustomerRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCustomerResponse">
+		<wsdl:part element="msg:DeleteCustomerResponse" name="parameters"/>
+	</wsdl:message>
+	
+	
+	<wsdl:portType name="ApartmentAdministrationService">
+		<wsdl:operation name="AddApartment">
+			<wsdl:input message="tns:AddApartmentRequest"/>
+			<wsdl:output message="tns:AddApartmentResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FindApartment">
+			<wsdl:input message="tns:FindApartmentRequest"/>
+			<wsdl:output message="tns:FindApartmentResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateApartment">
+			<wsdl:input message="tns:UpdateApartmentRequest"/>
+			<wsdl:output message="tns:UpdateApartmentResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteApartment">
+			<wsdl:input message="tns:DeleteApartmentRequest"/>
+			<wsdl:output message="tns:DeleteApartmentResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="AddBooking">
+			<wsdl:input message="tns:AddBookingRequest"/>
+			<wsdl:output message="tns:AddBookingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBooking">
+			<wsdl:input message="tns:GetBookingRequest"/>
+			<wsdl:output message="tns:GetBookingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateBooking">
+			<wsdl:input message="tns:UpdateBookingRequest"/>
+			<wsdl:output message="tns:UpdateBookingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="AddPackageArrangements">
+			<wsdl:input message="tns:AddPackageArrangementRequest"/>
+			<wsdl:output message="tns:AddPackageArrangementResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetPackageArrangements">
+			<wsdl:input message="tns:GetPackageArrangementRequest"/>
+			<wsdl:output message="tns:GetPackageArrangementResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdatePackageArrangements">
+			<wsdl:input message="tns:UpdatePackageArrangementRequest"/>
+			<wsdl:output message="tns:UpdatePackageArrangementResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeletePackageArrangements">
+			<wsdl:input message="tns:DeletePackageArrangementRequest"/>
+			<wsdl:output message="tns:DeletePackageArrangementResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="AddDiscount">
+			<wsdl:input message="tns:AddDiscountRequest"/>
+			<wsdl:output message="tns:AddDiscountResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDiscount">
+			<wsdl:input message="tns:UpdateDiscountRequest"/>
+			<wsdl:output message="tns:UpdateDiscountResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDiscount">
+			<wsdl:input message="tns:DeleteDiscountRequest"/>
+			<wsdl:output message="tns:DeleteDiscountResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateComplexInfo">
+			<wsdl:input message="tns:UpdateComplexInfoRequest"/>
+			<wsdl:output message="tns:UpdateComplexInfoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="AddCustomer">
+			<wsdl:input message="tns:AddCustomerRequest"/>
+			<wsdl:output message="tns:AddCustomerResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FindCustomer">
+			<wsdl:input message="tns:FindCustomerRequest"/>
+			<wsdl:output message="tns:FindCustomerResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateCustomer">
+			<wsdl:input message="tns:UpdateCustomerRequest"/>
+			<wsdl:output message="tns:UpdateCustomerResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCustomer">
+			<wsdl:input message="tns:DeleteCustomerRequest"/>
+			<wsdl:output message="tns:DeleteCustomerResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="ApartmentAdministrationServiceSOAP" type="tns:ApartmentAdministrationService">
+				<soap:binding style="document"
+					transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<wsdl:operation name="AddApartment">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/AddApartment" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="FindApartment">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/FindApartment" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="UpdateApartment">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/UpdateApartment" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="DeleteApartment">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/DeleteApartment" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="AddBooking">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/AddBooking" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetBooking">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/GetBooking" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="UpdateBooking">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/UpdateBooking" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetPackageArrangements">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/GetPackageArrangements" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="AddPackageArrangements">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/AddPackageArrangements" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="UpdatePackageArrangements">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/UpdatePackageArrangements" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="DeletePackageArrangements">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/DeletePackageArrangements" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="AddDiscount">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/AddDiscount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="UpdateDiscount">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/UpdateDiscount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="DeleteDiscount">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/DeleteDiscount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="UpdateComplexInfo">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/UpdateComplexInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="AddCustomer">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/AddCustomer" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="FindCustomer">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/FindCustomer" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="UpdateCustomer">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/UpdateCustomer" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="DeleteCustomer">
+			<soap:operation soapAction="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/DeleteCustomer" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		
+	</wsdl:binding>
+	
+	<wsdl:service name="ApartmentAdministrationService">
+		<wsdl:port binding="tns:ApartmentAdministrationServiceSOAP" name="ApartmentAdministrationServiceSOAP">
+			<soap:address location="http://mk.soa.apartments/v0_1/ApartmentAdministrationService/" />
+		</wsdl:port>
+	</wsdl:service>
+	
+
+</wsdl:definitions>

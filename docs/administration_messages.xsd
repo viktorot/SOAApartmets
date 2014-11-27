@@ -1,0 +1,345 @@
+<xs:schema 
+	targetNamespace="http://mk.soa.apartments/v0_1/administration_messages"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://mk.soa.apartments/v0_1/types">
+
+	<xs:import namespace="http://mk.soa.apartments/v0_1/types"
+		   schemaLocation="types.xsd" />
+
+	<xs:element name="AddApartmentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apartment" type="tns:apartment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="AddApartmentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FindApartmentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apartment_number" type="xs:int" minOccurs="0"/>
+				<xs:element name="number_of_beds" type="xs:int" minOccurs="0"/>				
+				<xs:element name="id" type="xs:int" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FindApartmentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apartment" type="tns:apartment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UpdateApartmentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apartment" type="tns:apartment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="UpdateApartmentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteApartmentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apartment" type="tns:apartment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="DeleteApartmentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="AddBookingRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="user_id" type="xs:int"/>
+				<xs:element name="apartment_id" type="xs:int"/>
+				<xs:element name="date_from" type="xs:int"/>
+				<xs:element name="date_to" type="xs:int"/>
+				<xs:element name="package_arrangment_id" type="xs:int" minOccurs="0"/>
+				<xs:element name="discount_code" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AddBookingResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="booking_status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetBookingRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:int" minOccurs="0"/>
+				<xs:element name="user_id" type="xs:int" minOccurs="0"/>
+				<xs:element name="apartment_id" type="xs:int" minOccurs="0"/>
+				<xs:element name="date_from" type="xs:int" minOccurs="0"/>
+				<xs:element name="date_to" type="xs:int" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetBookingResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="booking" type="tns:booking"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UpdateBookingRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="booking" type="tns:booking"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="UpdateBookingResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="GetPackageArrangementRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="date_from" type="xs:int"/>
+				<xs:element name="date_to" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetPackageArrangementResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="arrangments_result" type="tns:arrangement_package" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	
+	<xs:element name="AddPackageArrangementRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="package_arrangements" type="tns:arrangement_package"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AddPackageArrangementResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UpdatePackageArrangementRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="package_arrangements" type="tns:arrangement_package"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UpdatePackageArrangementResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DeletePackageArrangementRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="package_arrangements" type="tns:arrangement_package"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DeletePackageArrangementResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	
+	<xs:element name="AddDiscountRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="discounts" type="tns:discount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AddDiscountResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+
+	<xs:element name="UpdateDiscountRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="discounts" type="tns:discount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UpdateDiscountResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="DeleteDiscountRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="discounts" type="tns:discount"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DeleteDiscountResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+		
+	<xs:element name="UpdateComplexInfoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="complex" type="tns:complex_info"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UpdateComplexInfoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	
+	
+	
+	<xs:element name="AddCustomerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customer" type="tns:customer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AddCustomerResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UpdateCustomerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customer" type="tns:customer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="UpdateCustomerResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DeleteCustomerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customer" type="tns:customer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DeleteCustomerResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FindCustomerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:integer" minOccurs="0"/>
+				<xs:element name="first_name" type="xs:string" minOccurs="0"/>
+				<xs:element name="last_name" type="xs:string" minOccurs="0"/>
+				<xs:element name="tax_number" type="xs:string" minOccurs="0"/>		
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="FindCustomerResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customer" type="tns:customer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

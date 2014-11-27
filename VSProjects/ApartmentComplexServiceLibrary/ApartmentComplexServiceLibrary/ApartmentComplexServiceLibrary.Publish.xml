@@ -1,0 +1,29 @@
+<publishData>
+  <publishTarget publishUrl="ftp://svizec.informatika.uni-mb.si/services/v0_1">
+    <file relUrl="bin/desktop.ini" publishTime="11/23/2014 18:15:23" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.pdb" publishTime="11/24/2014 20:11:52" />
+    <file relUrl="Web.config" publishTime="11/24/2014 20:11:25" />
+    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentPublicService.svc" publishTime="11/24/2014 20:12:32" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.dll.config" publishTime="11/24/2014 20:11:25" />
+    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentAdministrationService.svc" publishTime="11/24/2014 20:12:32" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.dll" publishTime="11/24/2014 20:11:52" />
+  </publishTarget>
+  <publishTarget publishUrl="ftp://svizec.informatika.uni-mb.si/services">
+    <file relUrl="bin/desktop.ini" publishTime="11/23/2014 18:15:23" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.pdb" publishTime="11/24/2014 20:00:27" />
+    <file relUrl="Web.config" publishTime="11/24/2014 19:40:34" />
+    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentPublicService.svc" publishTime="11/24/2014 20:00:57" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.dll.config" publishTime="11/24/2014 19:40:34" />
+    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentAdministrationService.svc" publishTime="11/24/2014 20:00:57" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.dll" publishTime="11/24/2014 20:00:27" />
+  </publishTarget>
+  <publishTarget publishUrl="ftp://svizec.informatika.uni-mb.si">
+    <file relUrl="bin/desktop.ini" publishTime="11/23/2014 18:15:23" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.pdb" publishTime="11/24/2014 19:42:01" />
+    <file relUrl="Web.config" publishTime="11/24/2014 19:40:34" />
+    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentPublicService.svc" publishTime="11/24/2014 19:54:23" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.dll.config" publishTime="11/24/2014 19:40:34" />
+    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentAdministrationService.svc" publishTime="11/24/2014 19:54:23" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.dll" publishTime="11/24/2014 19:42:01" />
+  </publishTarget>
+</publishData>

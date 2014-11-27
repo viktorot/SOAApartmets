@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions 
+	name="PublicApartmentService"
+	targetNamespace="http://mk.soa.apartments/v0_1/PublicApartmentService"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://mk.soa.apartments/v0_1/PublicApartmentService" 
+	xmlns:msg="http://mk.soa.apartments/v0_1/public_messages">
+	
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://mk.soa.apartments/v0_1/types"
+						schemaLocation="types.xsd"></xsd:import>
+			<xsd:import namespace="http://mk.soa.apartments/v0_1/public_messages"
+						schemaLocation="public_messages.xsd"></xsd:import>						
+		</xsd:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="SearchRequest">
+		<wsdl:part element="msg:SearchRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="SearchResponse">
+		<wsdl:part element="msg:SearchResponse" name="parameters"/>
+	</wsdl:message>	
+	<wsdl:message name="AdvancedSearchRequest">
+		<wsdl:part element="msg:AdvancedSearchRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="AdvancedSearchResponse">
+		<wsdl:part element="msg:SearchRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="MakeBookingRequest">
+		<wsdl:part element="msg:MakeBookingRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="MakeBookingResponse">
+		<wsdl:part element="msg:MakeBookingResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="CancelBookingRequest">
+		<wsdl:part element="msg:CancelBookingRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="CancelBookingResponse">
+		<wsdl:part element="msg:CancelBookingResponse" name="parameters"/>
+	</wsdl:message>	
+	<wsdl:message name="GetBookingRequest">
+		<wsdl:part element="msg:GetBookingRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetBookingResponse">
+		<wsdl:part element="msg:GetBookingResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetBookingsForApartmentRequest">
+		<wsdl:part element="msg:GetBookingsForApartmentRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetBookingsForApartmentResponse">
+		<wsdl:part element="msg:GetBookingsForApartmentResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetBookingsForUserRequest">
+		<wsdl:part element="msg:GetBookingsForUserRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetBookingsForUserResponse">
+		<wsdl:part element="msg:GetBookingsForUserResponse" name="parameters"/>
+	</wsdl:message>	
+	<wsdl:message name="GetPackageArrangementsRequest">
+		<wsdl:part element="msg:GetPackageArrangementsRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetPackageArrangementsResponse">
+		<wsdl:part element="msg:GetPackageArrangementsResponse" name="parameters"/>
+	</wsdl:message>	
+	<wsdl:message name="GetDiscountsRequest">
+		<wsdl:part element="msg:GetDiscountsRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetDiscountsResponse">
+		<wsdl:part element="msg:GetDiscountsResponse" name="parameters"/>
+	</wsdl:message>	
+	<wsdl:message name="GetComplexInfoRequest">
+		<wsdl:part element="msg:GetComplexInfoRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetComplexInfoResponse">
+		<wsdl:part element="msg:GetComplexInfoResponse" name="parameters"/>
+	</wsdl:message>	
+	<wsdl:message name="GetApartmentInfoRequest">
+		<wsdl:part element="msg:GetApartmentInfoRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="GetApartmentInfoResponse">
+		<wsdl:part element="msg:GetApartmentInfoResponse" name="parameters"/>
+	</wsdl:message>		
+	
+	
+	<wsdl:portType name="PublicApartmentService">
+		<wsdl:operation name="Search">
+			<wsdl:input message="tns:SearchRequest"/>
+			<wsdl:output message="tns:SearchResponse"/>
+		</wsdl:operation>
+	
+			<wsdl:operation name="AdvancedSearch">
+				<wsdl:input message="tns:AdvancedSearchRequest" />
+				<wsdl:output message="tns:AdvancedSearchResponse"/>
+			</wsdl:operation>
+		
+		<wsdl:operation name="MakeBooking">
+			<wsdl:input message="tns:MakeBookingRequest"/>
+			<wsdl:output message="tns:MakeBookingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="CancelBooking">
+			<wsdl:input message="tns:CancelBookingRequest"/>
+			<wsdl:output message="tns:CancelBookingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBooking">
+			<wsdl:input message="tns:GetBookingRequest"/>
+			<wsdl:output message="tns:GetBookingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBookingsForApppartment">
+			<wsdl:input message="tns:GetBookingsForApartmentRequest"/>
+			<wsdl:output message="tns:GetBookingsForApartmentResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBookingsForUser">
+			<wsdl:input message="tns:GetBookingsForUserRequest"/>
+			<wsdl:output message="tns:GetBookingsForUserResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetPackagesArrangements">
+			<wsdl:input message="tns:GetPackageArrangementsRequest"/>
+			<wsdl:output message="tns:GetPackageArrangementsResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetDiscounts">
+			<wsdl:input message="tns:GetDiscountsRequest"/>
+			<wsdl:output message="tns:GetDiscountsResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetComplexInfo">
+			<wsdl:input message="tns:GetComplexInfoRequest"/>
+			<wsdl:output message="tns:GetComplexInfoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetApartmentInfo">
+			<wsdl:input message="tns:GetApartmentInfoRequest"/>
+			<wsdl:output message="tns:GetApartmentInfoResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="PublicApartmentServiceSOAP" type="tns:PublicApartmentService">
+				<soap:binding style="document"
+					transport="http://schemas.xmlsoap.org/soap/http" />
+					
+				<wsdl:operation name="Search">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/Search" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+				<wsdl:operation name="AdvancedSearch">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/AdvancedSearch" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+				<wsdl:operation name="MakeBooking">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/MakeBooking" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+				<wsdl:operation name="CancelBooking">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/CancelBooking" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+				<wsdl:operation name="GetBooking">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/GetBooking" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+
+				<wsdl:operation name="GetBookingsForApppartment">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/GetBookingsForApppartment" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+
+				<wsdl:operation name="GetBookingsForUser">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/GetBookingsForUser" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+				<wsdl:operation name="GetPackagesArrangements">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/GetPackagesArrangements" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+				<wsdl:operation name="GetDiscounts">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/GetDiscounts" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+				 <wsdl:operation name="GetComplexInfo">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/GetComplexInfo" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+				<wsdl:operation name="GetApartmentInfo">
+					<soap:operation soapAction="http://mk.soa.apartments/v0_1/PublicApartmentService/GetApartmentInfo" />
+					<wsdl:input>
+						<soap:body use="literal" />
+					</wsdl:input>
+					<wsdl:output>
+						<soap:body use="literal" />
+					</wsdl:output>
+				</wsdl:operation>
+				
+	</wsdl:binding>
+	
+	<wsdl:service name="PublicApartmentService">
+		<wsdl:port binding="tns:PublicApartmentServiceSOAP" name="PublicApartmentServiceSOAP">
+			<soap:address location="http://mk.soa.apartments/v0_1/PublicApartmentService/" />
+		</wsdl:port>
+	</wsdl:service>
+	
+
+</wsdl:definitions>

@@ -1,0 +1,204 @@
+<xs:schema 
+	targetNamespace="http://mk.soa.apartments/v0_1/public_messages"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://mk.soa.apartments/v0_1/types">
+
+	<xs:import namespace="http://mk.soa.apartments/v0_1/types"
+		   schemaLocation="types.xsd" />
+
+	<xs:element name="SearchRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="date_from" type="xs:int" />
+				<xs:element name="date_to" type="xs:int" />
+				<xs:element name="number_of_beds" type="xs:int" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="SearchResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="searchResults" type="tns:apartment" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AdvancedSearchRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="number_of_beds" type="xs:int" minOccurs="0"/>
+				<xs:element name="date_from" type="xs:int" minOccurs="0"/>
+				<xs:element name="date_to" type="xs:int" minOccurs="0"/>
+				<xs:element name="pet_friendly" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="no_king_beds" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="no_single_beds" type="xs:int" minOccurs="0"/>
+				<xs:element name="no_extra_beds" type="xs:int" minOccurs="0"/>
+				<xs:element name="internet" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="air_conditioning" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="tv" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="kitchen" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="class_stars" type="xs:int" minOccurs="0"/>
+				<xs:element name="balcony" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="accessible" type="xs:boolean" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AdvancedSearchResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="searchResults" type="tns:apartment" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+
+	<xs:element name="MakeBookingRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="user_id" type="xs:int"/>
+				<xs:element name="apartment_id" type="xs:int"/>
+				<xs:element name="date_from" type="xs:int"/>
+				<xs:element name="date_to" type="xs:int"/>
+				<xs:element name="package_arrangment_id" type="xs:int" minOccurs="0"/>
+				<xs:element name="discount_code" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MakeBookingResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="booking_status" type="tns:booking_response"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="CancelBookingRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="booking_id" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CancelBookingResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="booking_status" type="tns:cancel_booking_response"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetBookingRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="booking_id" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetBookingResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="bookings" type="tns:booking_description_response" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetBookingsForApartmentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apartment_id" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetBookingsForApartmentResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="bookings" type="tns:booking_description_response" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetBookingsForUserRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="user_id" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetBookingsForUserResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="bookings" type="tns:booking_description_response" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetPackageArrangementsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="date_from" type="xs:int"/>
+				<xs:element name="date_to" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetPackageArrangementsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="arrangments_result" type="tns:arrangement_package" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetDiscountsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="date_from" type="xs:int"/>
+				<xs:element name="date_to" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetDiscountsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="discounts_result" type="tns:discount" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GetComplexInfoRequest">
+		<xs:complexType>
+			<xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetComplexInfoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="decription" type="xs:string"/>
+				<xs:element name="longitude" type="xs:double"/>
+				<xs:element name="latitude" type="xs:double"/>
+				<xs:element name="images" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:element name="GetApartmentInfoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apartment_id" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetApartmentInfoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apartment" type="tns:apartment"/>
+				<xs:element name="images" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

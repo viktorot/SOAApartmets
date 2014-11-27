@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="16.0">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="Test.xpr">
+        <file name="administration.wsdl"/>
+        <file name="administration_messages.xsd"/>
+        <file name="public.wsdl"/>
+        <file name="public_messages.xsd"/>
+        <file name="types.xsd"/>
+    </projectTree>
+</project>

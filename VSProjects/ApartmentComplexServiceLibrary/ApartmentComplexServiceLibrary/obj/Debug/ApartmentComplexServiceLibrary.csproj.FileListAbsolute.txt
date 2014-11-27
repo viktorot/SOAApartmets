@@ -1,0 +1,6 @@
+C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.dll.config
+C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.dll
+C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.pdb
+C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.dll
+C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.pdb
+C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.csprojResolveAssemblyReference.cache
