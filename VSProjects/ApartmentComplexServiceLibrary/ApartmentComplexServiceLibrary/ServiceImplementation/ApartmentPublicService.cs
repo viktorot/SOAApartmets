@@ -13,57 +13,66 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 	{
 		public SearchResponse Search(SearchRequest request)
 		{
-			throw new NotImplementedException();
+			apartment ap = new apartment();
+			ap.title = "Apartment09";
+			return new SearchResponse(new apartment[] { ap });
 		}
 
 		public SearchResponse AdvancedSearch(AdvancedSearchRequest request)
 		{
-			throw new NotImplementedException();
+			apartment ap = new apartment();
+			return new SearchResponse(new apartment[] { ap });
 		}
 
 		public MakeBookingResponse MakeBooking(MakeBookingRequest request)
 		{
-			throw new NotImplementedException();
+			return new MakeBookingResponse(booking_response.booked);
 		}
 
 		public CancelBookingResponse CancelBooking(CancelBookingRequest request)
 		{
-			throw new NotImplementedException();
+			return new CancelBookingResponse(cancel_booking_response.cancelled);
 		}
 
 		public GetBookingResponse GetBooking(GetBookingRequest request)
 		{
-			throw new NotImplementedException();
+			booking_description_response desc = new booking_description_response();
+			return new GetBookingResponse(new booking_description_response[] { desc });
 		}
 
 		public GetBookingsForApppartmentResponse GetBookingsForApppartment(GetBookingsForApppartmentRequest request)
 		{
-			throw new NotImplementedException();
+			booking_description_response desc = new booking_description_response();
+			return new GetBookingsForApppartmentResponse(new booking_description_response[] { desc });
 		}
 
 		public GetBookingsForUserResponse GetBookingsForUser(GetBookingsForUserRequest request)
 		{
-			throw new NotImplementedException();
+			booking_description_response desc = new booking_description_response();
+			return new GetBookingsForUserResponse(new booking_description_response[] { desc });
 		}
 
 		public GetPackagesArrangementsResponse GetPackagesArrangements(GetPackagesArrangementsRequest request)
 		{
-			throw new NotImplementedException();
+			arrangement_package package = new arrangement_package();
+			return new GetPackagesArrangementsResponse(new arrangement_package[] { package });
 		}
 
 		public GetDiscountsResponse GetDiscounts(GetDiscountsRequest request)
 		{
-			throw new NotImplementedException();
+			discount disc = new discount();
+			return new GetDiscountsResponse(new discount[] { disc });
 		}
 
 		public GetComplexInfoResponse GetComplexInfo(GetComplexInfoRequest request)
 		{
-			throw new NotImplementedException();
+			return new GetComplexInfoResponse("description", 123.987, 987.123, new string[] { "img1", "img2" });
 		}
 
 		public GetApartmentInfoResponse GetApartmentInfo(GetApartmentInfoRequest request)
 		{
-			throw new NotImplementedException();
+			apartment ap = new apartment();
+			return new GetApartmentInfoResponse(ap, new string[] { "img1", "img2" });
 		}
 	}
 }
