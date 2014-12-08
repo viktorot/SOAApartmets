@@ -12,7 +12,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public partial class apartment
 	{
 
@@ -278,7 +278,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public partial class complex_info
 	{
 
@@ -352,7 +352,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public partial class arrangement_package
 	{
 
@@ -474,7 +474,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public partial class discount
 	{
 
@@ -596,7 +596,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public partial class payment_method
 	{
 
@@ -670,7 +670,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public partial class customer
 	{
 
@@ -776,7 +776,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public partial class booking
 	{
 
@@ -914,7 +914,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public partial class booking_description_response
 	{
 
@@ -1034,7 +1034,7 @@ namespace ApartmentComplexServiceLibrary.Types
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://svizec.informatika.uni-mb.si/SOATravel/apartma2/services/v0_1/types")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/types")]
 	public enum booking_status
 	{
 

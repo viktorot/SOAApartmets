@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5538b39d213f47c98c378c3e1a273c04" Name="Diagram1">
+        <EntityTypeShape EntityType="ApartmentModel.apartment" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApartmentModel.arrangement_package" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApartmentModel.booking" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApartmentModel.customer" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApartmentModel.discount" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApartmentModel.payment_method" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApartmentModel.review" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="ApartmentModel.fk_Booked_apartment1" ManuallyRouted="false" />
+        <AssociationConnector Association="ApartmentModel.fk_comments_apartment" ManuallyRouted="false" />
+        <AssociationConnector Association="ApartmentModel.fk_booked_arrangement_package1" ManuallyRouted="false" />
+        <AssociationConnector Association="ApartmentModel.fk_Booked_customer1" ManuallyRouted="false" />
+        <AssociationConnector Association="ApartmentModel.fk_booked_discounts1" ManuallyRouted="false" />
+        <AssociationConnector Association="ApartmentModel.fk_Booked_payment_method1" ManuallyRouted="false" />
+        <AssociationConnector Association="ApartmentModel.fk_comments_customer1" ManuallyRouted="false" />
+        <AssociationConnector Association="ApartmentModel.apartment_has_discounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ApartmentModel.arrangement_package_has_apartment" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
