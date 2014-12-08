@@ -15,97 +15,111 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 	{
 		public AddApartmentResponse AddApartment(AddApartmentRequest request)
 		{
-			throw new NotImplementedException();
+            return new AddApartmentResponse(false);
+			
 		}
 
 		public FindApartmentResponse FindApartment(FindApartmentRequest request)
 		{
-			throw new NotImplementedException();
+            apartment ap = new apartment();
+            ap.title = "Apartment09";
+            return new FindApartmentResponse( ap);
 		}
 
 		public UpdateApartmentResponse UpdateApartment(UpdateApartmentRequest request)
 		{
-			throw new NotImplementedException();
+            return new UpdateApartmentResponse(false);
 		}
 
 		public DeleteApartmentResponse DeleteApartment(DeleteApartmentRequest request)
 		{
-			throw new NotImplementedException();
+            return new DeleteApartmentResponse(true);
 		}
 
 		public AddBookingResponse AddBooking(AddBookingRequest request)
 		{
-			throw new NotImplementedException();
+            return new AddBookingResponse(true);
 		}
 
 		public GetBookingResponse GetBooking(GetBookingRequest request)
 		{
-			throw new NotImplementedException();
+            booking b = new booking();
+            b.id=3;
+            b.payment = new payment_method();
+            b.status= booking_status.completed ;
+            b.date_to = 65156415;
+
+            return new GetBookingResponse(b);
 		}
 
 		public UpdateBookingResponse UpdateBooking(UpdateBookingRequest request)
 		{
-			throw new NotImplementedException();
+            return new UpdateBookingResponse(true);
 		}
 
 		public AddPackageArrangementsResponse AddPackageArrangements(AddPackageArrangementsRequest request)
 		{
-			throw new NotImplementedException();
+            return new AddPackageArrangementsResponse(false);
 		}
 
 		public GetPackageArrangementsResponse GetPackageArrangements(GetPackageArrangementsRequest request)
 		{
-			throw new NotImplementedException();
+            arrangement_package package = new arrangement_package();
+            return new GetPackageArrangementsResponse(new arrangement_package[] { package });
 		}
 
 		public UpdatePackageArrangementsResponse UpdatePackageArrangements(UpdatePackageArrangementsRequest request)
 		{
-			throw new NotImplementedException();
+            return new UpdatePackageArrangementsResponse(false);
 		}
 
 		public DeletePackageArrangementsResponse DeletePackageArrangements(DeletePackageArrangementsRequest request)
 		{
-			throw new NotImplementedException();
+            return new DeletePackageArrangementsResponse(true);
 		}
 
 		public AddDiscountResponse AddDiscount(AddDiscountRequest request)
 		{
-			throw new NotImplementedException();
+            return new AddDiscountResponse(true);
 		}
 
 		public UpdateDiscountResponse UpdateDiscount(UpdateDiscountRequest request)
 		{
-			throw new NotImplementedException();
+            return new UpdateDiscountResponse(true);
 		}
 
 		public DeleteDiscountResponse DeleteDiscount(DeleteDiscountRequest request)
 		{
-			throw new NotImplementedException();
+            return new DeleteDiscountResponse(false);
 		}
 
 		public UpdateComplexInfoResponse UpdateComplexInfo(UpdateComplexInfoRequest request)
 		{
-			throw new NotImplementedException();
+            return new UpdateComplexInfoResponse(true);
 		}
 
 		public AddCustomerResponse AddCustomer(AddCustomerRequest request)
 		{
-			throw new NotImplementedException();
+            return new AddCustomerResponse(true);
 		}
 
 		public FindCustomerResponse FindCustomer(FindCustomerRequest request)
 		{
-			throw new NotImplementedException();
+            customer c = new customer();
+            c.first_name = "Pero";
+            c.last_name = "Deformero";
+            c.email = "horror@bishke.com";
+            return new FindCustomerResponse(c);
 		}
 
 		public UpdateCustomerResponse UpdateCustomer(UpdateCustomerRequest request)
 		{
-			throw new NotImplementedException();
+            return new UpdateCustomerResponse(true);
 		}
 
 		public DeleteCustomerResponse DeleteCustomer(DeleteCustomerRequest request)
 		{
-			throw new NotImplementedException();
+            return new DeleteCustomerResponse(true);
 		}
 	}
 }
