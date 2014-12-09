@@ -34,19 +34,74 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.6.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.6.9.5\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.Entity.6.9.5\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AdministrationServiceDAO.cs" />
+    <Compile Include="DAO\PublicServiceDAO.cs" />
+    <Compile Include="Models\apartment.cs">
+      <DependentUpon>ApartmentsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApartmentsDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApartmentsDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApartmentsDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApartmentsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApartmentsDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApartmentsDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\arrangement_package.cs">
+      <DependentUpon>ApartmentsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\booking.cs">
+      <DependentUpon>ApartmentsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\customer.cs">
+      <DependentUpon>ApartmentsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\discount.cs">
+      <DependentUpon>ApartmentsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\payment_method.cs">
+      <DependentUpon>ApartmentsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\review.cs">
+      <DependentUpon>ApartmentsDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Utils\AdministationTypesConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceImplementation\ApartmentAdministrationService.cs" />
     <Compile Include="ServiceImplementation\ApartmentPublicService.cs" />
@@ -58,6 +113,28 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <EntityDeploy Include="Models\ApartmentsDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ApartmentsDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ApartmentsDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ApartmentsDB.edmx</DependentUpon>
+      <LastGenOutput>ApartmentsDB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\ApartmentsDB.edmx.diagram">
+      <DependentUpon>ApartmentsDB.edmx</DependentUpon>
+    </None>
+    <None Include="Models\ApartmentsDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ApartmentsDB.edmx</DependentUpon>
+      <LastGenOutput>ApartmentsDB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\WCF\Microsoft.VisualStudio.ServiceModel.targets" />

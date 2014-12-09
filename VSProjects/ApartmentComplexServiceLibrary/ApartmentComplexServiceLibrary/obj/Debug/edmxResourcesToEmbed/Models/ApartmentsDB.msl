@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ApartmentModelStoreContainer" CdmEntityContainer="ApartmentEntities">
+    <EntitySetMapping Name="apartments">
+      <EntityTypeMapping TypeName="ApartmentModel.apartment">
+        <MappingFragment StoreEntitySet="apartment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="pet_friendly" ColumnName="pet_friendly" />
+          <ScalarProperty Name="no_king_beds" ColumnName="no_king_beds" />
+          <ScalarProperty Name="no_single_beds" ColumnName="no_single_beds" />
+          <ScalarProperty Name="no_extra_beds" ColumnName="no_extra_beds" />
+          <ScalarProperty Name="internet" ColumnName="internet" />
+          <ScalarProperty Name="air_conditioning" ColumnName="air_conditioning" />
+          <ScalarProperty Name="tv" ColumnName="tv" />
+          <ScalarProperty Name="kitchen" ColumnName="kitchen" />
+          <ScalarProperty Name="class_stars" ColumnName="class_stars" />
+          <ScalarProperty Name="balcony" ColumnName="balcony" />
+          <ScalarProperty Name="accessible" ColumnName="accessible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arrangement_package">
+      <EntityTypeMapping TypeName="ApartmentModel.arrangement_package">
+        <MappingFragment StoreEntitySet="arrangement_package">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="max_resevations" ColumnName="max_resevations" />
+          <ScalarProperty Name="valid_from" ColumnName="valid_from" />
+          <ScalarProperty Name="valid_to" ColumnName="valid_to" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bookings">
+      <EntityTypeMapping TypeName="ApartmentModel.booking">
+        <MappingFragment StoreEntitySet="booking">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date_from" ColumnName="date_from" />
+          <ScalarProperty Name="date_to" ColumnName="date_to" />
+          <ScalarProperty Name="apartment_idapartment" ColumnName="apartment_idapartment" />
+          <ScalarProperty Name="customer_idcustomer" ColumnName="customer_idcustomer" />
+          <ScalarProperty Name="payment_method_id" ColumnName="payment_method_id" />
+          <ScalarProperty Name="arrangement_package_id" ColumnName="arrangement_package_id" />
+          <ScalarProperty Name="discounts_id" ColumnName="discounts_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="ApartmentModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="discounts">
+      <EntityTypeMapping TypeName="ApartmentModel.discount">
+        <MappingFragment StoreEntitySet="discounts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="valid_from" ColumnName="valid_from" />
+          <ScalarProperty Name="valid_to" ColumnName="valid_to" />
+          <ScalarProperty Name="discount_percentage" ColumnName="discount_percentage" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payment_method">
+      <EntityTypeMapping TypeName="ApartmentModel.payment_method">
+        <MappingFragment StoreEntitySet="payment_method">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="card_number" ColumnName="card_number" />
+          <ScalarProperty Name="bank_payment" ColumnName="bank_payment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reviews">
+      <EntityTypeMapping TypeName="ApartmentModel.review">
+        <MappingFragment StoreEntitySet="review">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="apartment_id" ColumnName="apartment_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="apartment_has_discounts" TypeName="ApartmentModel.apartment_has_discounts" StoreEntitySet="apartment_has_discounts">
+      <EndProperty Name="apartment">
+        <ScalarProperty Name="id" ColumnName="apartment_id" />
+      </EndProperty>
+      <EndProperty Name="discounts">
+        <ScalarProperty Name="id" ColumnName="discounts_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="arrangement_package_has_apartment" TypeName="ApartmentModel.arrangement_package_has_apartment" StoreEntitySet="arrangement_package_has_apartment">
+      <EndProperty Name="apartment">
+        <ScalarProperty Name="id" ColumnName="apartment_id" />
+      </EndProperty>
+      <EndProperty Name="arrangement_package">
+        <ScalarProperty Name="id" ColumnName="arrangement_package_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

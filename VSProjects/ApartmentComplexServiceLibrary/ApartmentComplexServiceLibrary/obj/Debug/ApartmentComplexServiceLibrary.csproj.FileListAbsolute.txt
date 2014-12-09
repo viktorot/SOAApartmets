@@ -4,3 +4,15 @@ C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\Apa
 C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.dll
 C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.pdb
 C:\Users\viktor\Google Drive\School\current\semester1\SUA\project\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.csprojResolveAssemblyReference.cache
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.dll.config
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.dll
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.pdb
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.csprojResolveAssemblyReference.cache
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.dll
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.pdb
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.dll
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\MySql.Data.dll
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.xml
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
