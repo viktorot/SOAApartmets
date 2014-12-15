@@ -135,6 +135,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 				if (apartmentModel != null)
 				{
 					entities.Entry(apartmentModel).State = System.Data.Entity.EntityState.Deleted;
+					entities.SaveChanges();
 					return true;
 				}
 				else

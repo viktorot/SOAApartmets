@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ApartmentModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="ApartmentModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="ApartmentModelStoreContainer">
-    <EntitySet Name="apartment" EntityType="ApartmentModel.Store.apartment" store:Type="Tables" Schema="apartma2" />
-    <EntitySet Name="apartment_has_discounts" EntityType="ApartmentModel.Store.apartment_has_discounts" store:Type="Tables" Schema="apartma2" />
-    <EntitySet Name="arrangement_package" EntityType="ApartmentModel.Store.arrangement_package" store:Type="Tables" Schema="apartma2" />
-    <EntitySet Name="arrangement_package_has_apartment" EntityType="ApartmentModel.Store.arrangement_package_has_apartment" store:Type="Tables" Schema="apartma2" />
-    <EntitySet Name="booking" EntityType="ApartmentModel.Store.booking" store:Type="Tables" Schema="apartma2" />
-    <EntitySet Name="customer" EntityType="ApartmentModel.Store.customer" store:Type="Tables" Schema="apartma2" />
-    <EntitySet Name="discounts" EntityType="ApartmentModel.Store.discounts" store:Type="Tables" Schema="apartma2" />
-    <EntitySet Name="payment_method" EntityType="ApartmentModel.Store.payment_method" store:Type="Tables" Schema="apartma2" />
-    <EntitySet Name="review" EntityType="ApartmentModel.Store.review" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="apartment" EntityType="ApartmentModel.Store.apartment" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="apartment_has_discounts" EntityType="ApartmentModel.Store.apartment_has_discounts" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="arrangement_package" EntityType="ApartmentModel.Store.arrangement_package" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="arrangement_package_has_apartment" EntityType="ApartmentModel.Store.arrangement_package_has_apartment" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="booking" EntityType="ApartmentModel.Store.booking" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="customer" EntityType="ApartmentModel.Store.customer" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="discounts" EntityType="ApartmentModel.Store.discounts" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="payment_method" EntityType="ApartmentModel.Store.payment_method" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="review" EntityType="ApartmentModel.Store.review" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
     <AssociationSet Name="fk_apartment_has_discounts_apartment1" Association="ApartmentModel.Store.fk_apartment_has_discounts_apartment1">
       <End Role="apartment" EntitySet="apartment" />
       <End Role="apartment_has_discounts" EntitySet="apartment_has_discounts" />

@@ -5,7 +5,7 @@
       <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
         <WcfProjectProperties>
           <PublishCopyOption>RunFiles</PublishCopyOption>
-          <PublishTargetLocation>ftp://svizec.informatika.uni-mb.si/services/v0_1</PublishTargetLocation>
+          <PublishTargetLocation>C:\Users\viktor\Desktop\SOAPublish\</PublishTargetLocation>
           <PublishDeleteAllFiles>True</PublishDeleteAllFiles>
         </WcfProjectProperties>
       </FlavorProperties>

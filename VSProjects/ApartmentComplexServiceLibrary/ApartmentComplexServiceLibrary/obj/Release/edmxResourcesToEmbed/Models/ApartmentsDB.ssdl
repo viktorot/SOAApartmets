@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ApartmentModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ApartmentModelStoreContainer">
+    <EntitySet Name="apartment" EntityType="ApartmentModel.Store.apartment" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="apartment_has_discounts" EntityType="ApartmentModel.Store.apartment_has_discounts" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="arrangement_package" EntityType="ApartmentModel.Store.arrangement_package" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="arrangement_package_has_apartment" EntityType="ApartmentModel.Store.arrangement_package_has_apartment" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="booking" EntityType="ApartmentModel.Store.booking" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="customer" EntityType="ApartmentModel.Store.customer" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="discounts" EntityType="ApartmentModel.Store.discounts" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="payment_method" EntityType="ApartmentModel.Store.payment_method" store:Type="Tables" Schema="apartma2" />
+    <EntitySet Name="review" EntityType="ApartmentModel.Store.review" store:Type="Tables" Schema="apartma2" />
+    <AssociationSet Name="fk_apartment_has_discounts_apartment1" Association="ApartmentModel.Store.fk_apartment_has_discounts_apartment1">
+      <End Role="apartment" EntitySet="apartment" />
+      <End Role="apartment_has_discounts" EntitySet="apartment_has_discounts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_apartment_has_discounts_discounts1" Association="ApartmentModel.Store.fk_apartment_has_discounts_discounts1">
+      <End Role="discounts" EntitySet="discounts" />
+      <End Role="apartment_has_discounts" EntitySet="apartment_has_discounts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_arrangement_package_has_apartment_apartment1" Association="ApartmentModel.Store.fk_arrangement_package_has_apartment_apartment1">
+      <End Role="apartment" EntitySet="apartment" />
+      <End Role="arrangement_package_has_apartment" EntitySet="arrangement_package_has_apartment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_arrangement_package_has_apartment_arrangement_package1" Association="ApartmentModel.Store.fk_arrangement_package_has_apartment_arrangement_package1">
+      <End Role="arrangement_package" EntitySet="arrangement_package" />
+      <End Role="arrangement_package_has_apartment" EntitySet="arrangement_package_has_apartment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Booked_apartment1" Association="ApartmentModel.Store.fk_Booked_apartment1">
+      <End Role="apartment" EntitySet="apartment" />
+      <End Role="booking" EntitySet="booking" />
+    </AssociationSet>
+    <AssociationSet Name="fk_booked_arrangement_package1" Association="ApartmentModel.Store.fk_booked_arrangement_package1">
+      <End Role="arrangement_package" EntitySet="arrangement_package" />
+      <End Role="booking" EntitySet="booking" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Booked_customer1" Association="ApartmentModel.Store.fk_Booked_customer1">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="booking" EntitySet="booking" />
+    </AssociationSet>
+    <AssociationSet Name="fk_booked_discounts1" Association="ApartmentModel.Store.fk_booked_discounts1">
+      <End Role="discounts" EntitySet="discounts" />
+      <End Role="booking" EntitySet="booking" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Booked_payment_method1" Association="ApartmentModel.Store.fk_Booked_payment_method1">
+      <End Role="payment_method" EntitySet="payment_method" />
+      <End Role="booking" EntitySet="booking" />
+    </AssociationSet>
+    <AssociationSet Name="fk_comments_apartment" Association="ApartmentModel.Store.fk_comments_apartment">
+      <End Role="apartment" EntitySet="apartment" />
+      <End Role="review" EntitySet="review" />
+    </AssociationSet>
+    <AssociationSet Name="fk_comments_customer1" Association="ApartmentModel.Store.fk_comments_customer1">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="review" EntitySet="review" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="apartment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="varchar" MaxLength="45" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="latitude" Type="float" />
+    <Property Name="longitude" Type="float" />
+    <Property Name="pet_friendly" Type="bool" />
+    <Property Name="no_king_beds" Type="int" />
+    <Property Name="no_single_beds" Type="int" />
+    <Property Name="no_extra_beds" Type="int" />
+    <Property Name="internet" Type="bool" />
+    <Property Name="air_conditioning" Type="bool" />
+    <Property Name="tv" Type="bool" />
+    <Property Name="kitchen" Type="bool" />
+    <Property Name="class_stars" Type="int" />
+    <Property Name="balcony" Type="bool" />
+    <Property Name="accessible" Type="bool" />
+  </EntityType>
+  <EntityType Name="apartment_has_discounts">
+    <Key>
+      <PropertyRef Name="apartment_id" />
+      <PropertyRef Name="discounts_id" />
+    </Key>
+    <Property Name="apartment_id" Type="int" Nullable="false" />
+    <Property Name="discounts_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="arrangement_package">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="varchar" MaxLength="45" />
+    <Property Name="description" Type="varchar" MaxLength="45" />
+    <Property Name="max_resevations" Type="varchar" MaxLength="45" />
+    <Property Name="valid_from" Type="int" />
+    <Property Name="valid_to" Type="int" />
+    <Property Name="price" Type="float" />
+  </EntityType>
+  <EntityType Name="arrangement_package_has_apartment">
+    <Key>
+      <PropertyRef Name="arrangement_package_id" />
+      <PropertyRef Name="apartment_id" />
+    </Key>
+    <Property Name="arrangement_package_id" Type="int" Nullable="false" />
+    <Property Name="apartment_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="booking">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="date_from" Type="int" Nullable="false" />
+    <Property Name="date_to" Type="int" Nullable="false" />
+    <Property Name="apartment_idapartment" Type="int" Nullable="false" />
+    <Property Name="customer_idcustomer" Type="int" Nullable="false" />
+    <Property Name="payment_method_id" Type="int" Nullable="false" />
+    <Property Name="arrangement_package_id" Type="int" />
+    <Property Name="discounts_id" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="varchar" MaxLength="45" />
+    <Property Name="last_name" Type="varchar" MaxLength="45" />
+    <Property Name="email" Type="varchar" MaxLength="90" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="discounts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="valid_from" Type="int" Nullable="false" />
+    <Property Name="valid_to" Type="int" Nullable="false" />
+    <Property Name="discount_percentage" Type="float" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="45" />
+    <Property Name="description" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="payment_method">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="card_number" Type="varchar" MaxLength="45" />
+    <Property Name="bank_payment" Type="bool" />
+  </EntityType>
+  <EntityType Name="review">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="comment" Type="varchar" MaxLength="255" />
+    <Property Name="grade" Type="int" Nullable="false" />
+    <Property Name="apartment_id" Type="int" Nullable="false" />
+    <Property Name="customer_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_apartment_has_discounts_apartment1">
+    <End Role="apartment" Type="ApartmentModel.Store.apartment" Multiplicity="1" />
+    <End Role="apartment_has_discounts" Type="ApartmentModel.Store.apartment_has_discounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="apartment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="apartment_has_discounts">
+        <PropertyRef Name="apartment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_apartment_has_discounts_discounts1">
+    <End Role="discounts" Type="ApartmentModel.Store.discounts" Multiplicity="1" />
+    <End Role="apartment_has_discounts" Type="ApartmentModel.Store.apartment_has_discounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="discounts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="apartment_has_discounts">
+        <PropertyRef Name="discounts_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_arrangement_package_has_apartment_apartment1">
+    <End Role="apartment" Type="ApartmentModel.Store.apartment" Multiplicity="1" />
+    <End Role="arrangement_package_has_apartment" Type="ApartmentModel.Store.arrangement_package_has_apartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="apartment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="arrangement_package_has_apartment">
+        <PropertyRef Name="apartment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_arrangement_package_has_apartment_arrangement_package1">
+    <End Role="arrangement_package" Type="ApartmentModel.Store.arrangement_package" Multiplicity="1" />
+    <End Role="arrangement_package_has_apartment" Type="ApartmentModel.Store.arrangement_package_has_apartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="arrangement_package">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="arrangement_package_has_apartment">
+        <PropertyRef Name="arrangement_package_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Booked_apartment1">
+    <End Role="apartment" Type="ApartmentModel.Store.apartment" Multiplicity="1" />
+    <End Role="booking" Type="ApartmentModel.Store.booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="apartment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="booking">
+        <PropertyRef Name="apartment_idapartment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_booked_arrangement_package1">
+    <End Role="arrangement_package" Type="ApartmentModel.Store.arrangement_package" Multiplicity="0..1" />
+    <End Role="booking" Type="ApartmentModel.Store.booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="arrangement_package">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="booking">
+        <PropertyRef Name="arrangement_package_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Booked_customer1">
+    <End Role="customer" Type="ApartmentModel.Store.customer" Multiplicity="1" />
+    <End Role="booking" Type="ApartmentModel.Store.booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="booking">
+        <PropertyRef Name="customer_idcustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_booked_discounts1">
+    <End Role="discounts" Type="ApartmentModel.Store.discounts" Multiplicity="0..1" />
+    <End Role="booking" Type="ApartmentModel.Store.booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="discounts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="booking">
+        <PropertyRef Name="discounts_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Booked_payment_method1">
+    <End Role="payment_method" Type="ApartmentModel.Store.payment_method" Multiplicity="1" />
+    <End Role="booking" Type="ApartmentModel.Store.booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="payment_method">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="booking">
+        <PropertyRef Name="payment_method_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_comments_apartment">
+    <End Role="apartment" Type="ApartmentModel.Store.apartment" Multiplicity="1" />
+    <End Role="review" Type="ApartmentModel.Store.review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="apartment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="review">
+        <PropertyRef Name="apartment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_comments_customer1">
+    <End Role="customer" Type="ApartmentModel.Store.customer" Multiplicity="1" />
+    <End Role="review" Type="ApartmentModel.Store.review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="review">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

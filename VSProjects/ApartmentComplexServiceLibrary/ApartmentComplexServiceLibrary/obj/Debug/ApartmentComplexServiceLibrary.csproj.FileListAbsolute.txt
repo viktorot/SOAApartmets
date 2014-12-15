@@ -16,3 +16,5 @@ C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\A
 C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\mysql.data.entity.EF6.dll
 C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.xml
 C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\Newtonsoft.Json.xml
