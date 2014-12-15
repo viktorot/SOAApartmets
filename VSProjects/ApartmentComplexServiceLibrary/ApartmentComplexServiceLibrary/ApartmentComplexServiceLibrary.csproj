@@ -108,6 +108,7 @@
       <DependentUpon>ApartmentsDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Utils\AdministationTypesConverter.cs" />
+    <Compile Include="Models\Utils\PublicTypeConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceImplementation\ApartmentAdministrationService.cs" />
     <Compile Include="ServiceImplementation\ApartmentPublicService.cs" />

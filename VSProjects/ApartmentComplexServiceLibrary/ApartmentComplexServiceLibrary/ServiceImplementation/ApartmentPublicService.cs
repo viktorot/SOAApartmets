@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using ApartmentComplexServiceLibrary.ServiceInterfaces.PublicService;
 using ApartmentComplexServiceLibrary.Types;
+using ApartmentComplexServiceLibrary.DAO;
 
 namespace ApartmentComplexServiceLibrary.ServiceImplementation
 {
@@ -44,42 +45,70 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 
 		public MakeBookingResponse MakeBooking(MakeBookingRequest request)
 		{
-			return new MakeBookingResponse(booking_response.booked);
-		}
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			if (publicDAO.MakeBooking(request.user_id, request.apartment_id, request.date_from, request.date_to, request.package_arrangment_id, request.discount_code))
+			{
+				return new MakeBookingResponse(booking_response.booked);
+			}
+			else
+			{
+				return new MakeBookingResponse(booking_response.failed);
+			}
+}
 
 		public CancelBookingResponse CancelBooking(CancelBookingRequest request)
 		{
-			return new CancelBookingResponse(cancel_booking_response.cancelled);
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			if (publicDAO.CancleBooking(request.booking_id))
+			{
+				return new CancelBookingResponse(cancel_booking_response.cancelled);
+			}
+			else
+			{
+				return new CancelBookingResponse(cancel_booking_response.failed);
+			}
 		}
 
 		public GetBookingResponse GetBooking(GetBookingRequest request)
 		{
-			booking_description_response desc = new booking_description_response();
-			return new GetBookingResponse(new booking_description_response[] { desc });
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			booking_description_response desc = publicDAO.GetBooking(request.booking_id);
+			if (desc != null)
+			{
+				return new GetBookingResponse(new booking_description_response[] { desc });
+			}
+			else
+			{
+				return new GetBookingResponse(new booking_description_response[] { });
+			}
 		}
 
 		public GetBookingsForApppartmentResponse GetBookingsForApppartment(GetBookingsForApppartmentRequest request)
 		{
-			booking_description_response desc = new booking_description_response();
-			return new GetBookingsForApppartmentResponse(new booking_description_response[] { desc });
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			booking_description_response[] result = publicDAO.GetBookingsForApppartment(request.apartment_id);
+			return new GetBookingsForApppartmentResponse(result);
 		}
 
 		public GetBookingsForUserResponse GetBookingsForUser(GetBookingsForUserRequest request)
 		{
-			booking_description_response desc = new booking_description_response();
-			return new GetBookingsForUserResponse(new booking_description_response[] { desc });
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			booking_description_response[] result = publicDAO.GetBookingsForApppartment(request.user_id);
+			return new GetBookingsForUserResponse(result);
 		}
 
 		public GetPackagesArrangementsResponse GetPackagesArrangements(GetPackagesArrangementsRequest request)
 		{
-			arrangement_package package = new arrangement_package();
-			return new GetPackagesArrangementsResponse(new arrangement_package[] { package });
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			arrangement_package[] result = publicDAO.GetPackagesArrangements(request.date_from, request.date_to);
+			return new GetPackagesArrangementsResponse(result);
 		}
 
 		public GetDiscountsResponse GetDiscounts(GetDiscountsRequest request)
 		{
-			discount disc = new discount();
-			return new GetDiscountsResponse(new discount[] { disc });
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			discount[] result = publicDAO.GetDiscounts(request.date_from, request.date_to);
+			return new GetDiscountsResponse(result);
 		}
 
 		public GetComplexInfoResponse GetComplexInfo(GetComplexInfoRequest request)
