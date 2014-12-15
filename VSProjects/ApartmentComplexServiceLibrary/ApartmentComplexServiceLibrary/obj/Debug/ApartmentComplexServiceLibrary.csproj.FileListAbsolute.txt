@@ -16,3 +16,14 @@ C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\A
 C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\mysql.data.entity.EF6.dll
 C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.xml
 C:\Users\viktor\Desktop\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.dll.config
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.dll
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\ApartmentComplexServiceLibrary.pdb
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\MySql.Data.dll
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.dll
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.pdb
