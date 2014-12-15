@@ -12,28 +12,10 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 {
 	class ApartmentPublicService : IApartmentPublicService
 	{
-		private void test()
-		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
-			try
-			{
-				//Models.payment_method method = new Models.payment_method { card_number = "67890", bank_payment = false, id = 1 };
-				Models.payment_method method = entities.payment_method.FirstOrDefault(el => el.id == 1);
-				method.card_number = "123";
-				entities.Entry(method).State = System.Data.Entity.EntityState.Modified;
-				entities.SaveChanges();
-			}
-			catch (Exception ex)
-			{
-	
-			}
-		}
-
 		public SearchResponse Search(SearchRequest request)
 		{
 			apartment ap = new apartment();
 			ap.title = "Apartment09";
-			test();
 			return new SearchResponse(new apartment[] { ap });
 		}
 

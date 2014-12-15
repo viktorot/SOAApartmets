@@ -31,7 +31,10 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces
 		string GetApartment(string id);
 
 		[OperationContract]
-		[WebInvoke(Method = "PUT", ResponseFormat = WebMessageFormat.Json, UriTemplate = "apartment/{id}")]
+		[WebInvoke(	Method = "PUT", UriTemplate = "apartment/{id}",
+					ResponseFormat = WebMessageFormat.Json, 
+					RequestFormat = WebMessageFormat.Json, 
+					BodyStyle = WebMessageBodyStyle.Bare)]
 		string UpdateApartment(string id);
 
 		[OperationContract]

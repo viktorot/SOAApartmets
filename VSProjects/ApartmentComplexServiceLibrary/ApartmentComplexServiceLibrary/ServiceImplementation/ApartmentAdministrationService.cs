@@ -7,13 +7,28 @@ using System.Threading.Tasks;
 using ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService;
 using ApartmentComplexServiceLibrary.Types;
 using ApartmentComplexServiceLibrary.DAO;
+using ApartmentComplexServiceLibrary.Faults;
 
 using MySql.Data;
+using System.ServiceModel;
 
 namespace ApartmentComplexServiceLibrary.ServiceImplementation
 {
 	class ApartmentAdministrationService : IApartmentAdministrationService
 	{
+		private void ThrowNotFoundException()
+		{
+			NotFoundException ex = new NotFoundException();
+			throw new FaultException<NotFoundException>(ex, String.Format("Reason: Item not found."));
+		}
+
+		private void ThrowNotFoundException(int id) 
+		{
+			NotFoundException ex = new NotFoundException();
+			ex.ItemId = id.ToString();
+			throw new FaultException<NotFoundException>(ex, String.Format("Reason: Item  with ID:{0} not found.", id));
+		}
+
 		public AddApartmentResponse AddApartment(AddApartmentRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
@@ -25,21 +40,47 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			apartment result = adminDAO.FindApartment(request.id, request.number_of_beds, request.apartment_number.ToString());
-			return new FindApartmentResponse(result);
+			if (result != null)
+			{
+				return new FindApartmentResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.id);
+				return null;
+			}
 		}
 
 		public UpdateApartmentResponse UpdateApartment(UpdateApartmentRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.UpdateApartment(request.apartment);
-            return new UpdateApartmentResponse(result);
+			if (result)
+			{
+				return new UpdateApartmentResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.apartment.id);
+				return null;
+			}
+            
 		}
 
 		public DeleteApartmentResponse DeleteApartment(DeleteApartmentRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.DeleteApartment(request.apartment);
-            return new DeleteApartmentResponse(result);
+			if (result)
+			{
+				return new DeleteApartmentResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.apartment.id);
+				return null;
+			}
+            
 		}
 
 		public AddBookingResponse AddBooking(AddBookingRequest request)
@@ -53,14 +94,31 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			booking result = adminDAO.GetBooking(request.id, request.user_id, request.apartment_id, request.date_from, request.date_to);
-            return new GetBookingResponse(result);
+			if (result != null)
+			{
+				return new GetBookingResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException();
+				return null;
+			} 
+            
 		}
 
 		public UpdateBookingResponse UpdateBooking(UpdateBookingRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.UpdateBooking(request.booking);
-            return new UpdateBookingResponse(result);
+			if (result)
+			{
+				return new UpdateBookingResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.booking.id);
+				return null;
+			}
 		}
 
 		public AddPackageArrangementsResponse AddPackageArrangements(AddPackageArrangementsRequest request)
@@ -81,14 +139,30 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.UpdatePackageArrangements(request.package_arrangements);
-			return new UpdatePackageArrangementsResponse(result);
+			if (result)
+			{
+				return new UpdatePackageArrangementsResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.package_arrangements.id);
+				return null;
+			}
 		}
 
 		public DeletePackageArrangementsResponse DeletePackageArrangements(DeletePackageArrangementsRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.DeletePackageArrangments(request.package_arrangements);
-            return new DeletePackageArrangementsResponse(result);
+			if (result)
+			{
+				return new DeletePackageArrangementsResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.package_arrangements.id);
+				return null;
+			}
 		}
 
 		public AddDiscountResponse AddDiscount(AddDiscountRequest request)
@@ -102,14 +176,30 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.UpdateDiscoint(request.discounts);
-            return new UpdateDiscountResponse(result);
+			if (result)
+			{
+				return new UpdateDiscountResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.discounts.id);
+				return null;
+			}
 		}
 
 		public DeleteDiscountResponse DeleteDiscount(DeleteDiscountRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.DeleteDiscount(request.discounts);
-			return new DeleteDiscountResponse(result);
+			if (result)
+			{
+				return new DeleteDiscountResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.discounts.id);
+				return null;
+			}
 		}
 
 		public UpdateComplexInfoResponse UpdateComplexInfo(UpdateComplexInfoRequest request)
@@ -130,21 +220,45 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			customer c = adminDAO.FindCustomer(Convert.ToInt32(request.id), request.first_name, request.last_name, request.tax_number);
-            return new FindCustomerResponse(c);
+			if (c != null)
+			{
+				return new FindCustomerResponse(c);
+			}
+			else
+			{
+				ThrowNotFoundException(Convert.ToInt32(request.id));
+				return null;
+			}
 		}
 
 		public UpdateCustomerResponse UpdateCustomer(UpdateCustomerRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.UpdateCustomer(request.customer);
-            return new UpdateCustomerResponse(result);
+			if (result)
+			{
+				return new UpdateCustomerResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.customer.id);
+				return null;
+			}
 		}
 
 		public DeleteCustomerResponse DeleteCustomer(DeleteCustomerRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.DeleteCustomer(request.customer);
-            return new DeleteCustomerResponse(result);
+			if (result)
+			{
+				return new DeleteCustomerResponse(result);
+			}
+			else
+			{
+				ThrowNotFoundException(request.customer.id);
+				return null;
+			}
 		}
 	}
 }

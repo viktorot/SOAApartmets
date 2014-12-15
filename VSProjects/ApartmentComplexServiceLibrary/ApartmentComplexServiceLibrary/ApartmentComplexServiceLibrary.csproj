@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="DAO\AdministrationServiceDAO.cs" />
     <Compile Include="DAO\PublicServiceDAO.cs" />
+    <Compile Include="Faults\NotFoundException.cs" />
     <Compile Include="Models\apartment.cs">
       <DependentUpon>ApartmentsDB.tt</DependentUpon>
     </Compile>
