@@ -25,7 +25,7 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 		}
 
 		public string DoWork() {
-			return "Viktor";
+			return "well done Viktor! You are king of the world!";
 		}
 
 		private string GetBody() 
