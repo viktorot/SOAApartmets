@@ -27,3 +27,4 @@ C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibr
 C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.dll
 C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.pdb
+C:\Users\Martin\Source\Repos\SOAApartmets\VSProjects\ApartmentComplexServiceLibrary\ApartmentComplexServiceLibrary\obj\Debug\ApartmentComplexServiceLibrary.csprojResolveAssemblyReference.cache
