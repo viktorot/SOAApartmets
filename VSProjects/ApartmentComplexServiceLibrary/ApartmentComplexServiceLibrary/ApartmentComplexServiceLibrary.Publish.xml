@@ -1,4 +1,19 @@
 <publishData>
+  <publishTarget publishUrl="C:\Users\viktor\Desktop\SOAPublish\">
+    <file relUrl="Web.config" publishTime="12/08/2014 20:12:23" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="12/08/2014 18:55:12" />
+    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentAdministrationService.svc" publishTime="12/14/2014 15:12:31" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.pdb" publishTime="12/14/2014 15:12:27" />
+    <file relUrl="bin/desktop.ini" publishTime="11/23/2014 18:15:23" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="12/08/2014 18:55:12" />
+    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentPublicService.svc" publishTime="12/14/2014 15:12:31" />
+    <file relUrl="bin/EntityFramework.SqlServer.dll" publishTime="12/08/2014 18:55:12" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.dll.config" publishTime="12/08/2014 20:12:23" />
+    <file relUrl="bin/ApartmentComplexServiceLibrary.dll" publishTime="12/14/2014 15:12:27" />
+    <file relUrl="bin/MySql.Data.dll" publishTime="12/08/2014 20:12:22" />
+    <file relUrl="bin/EntityFramework.SqlServer.xml" publishTime="12/08/2014 18:55:12" />
+    <file relUrl="bin/mysql.data.entity.EF6.dll" publishTime="12/08/2014 20:12:22" />
+  </publishTarget>
   <publishTarget publishUrl="ftp://svizec.informatika.uni-mb.si/services/v0_1">
     <file relUrl="bin/desktop.ini" publishTime="11/23/2014 18:15:23" />
     <file relUrl="bin/ApartmentComplexServiceLibrary.pdb" publishTime="11/24/2014 20:11:52" />

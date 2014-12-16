@@ -4,17 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ApartmentModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ApartmentModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ApartmentModelStoreContainer">
-          <EntitySet Name="apartment" EntityType="ApartmentModel.Store.apartment" store:Type="Tables" Schema="apartma2" />
-          <EntitySet Name="apartment_has_discounts" EntityType="ApartmentModel.Store.apartment_has_discounts" store:Type="Tables" Schema="apartma2" />
-          <EntitySet Name="arrangement_package" EntityType="ApartmentModel.Store.arrangement_package" store:Type="Tables" Schema="apartma2" />
-          <EntitySet Name="arrangement_package_has_apartment" EntityType="ApartmentModel.Store.arrangement_package_has_apartment" store:Type="Tables" Schema="apartma2" />
-          <EntitySet Name="booking" EntityType="ApartmentModel.Store.booking" store:Type="Tables" Schema="apartma2" />
-          <EntitySet Name="customer" EntityType="ApartmentModel.Store.customer" store:Type="Tables" Schema="apartma2" />
-          <EntitySet Name="discounts" EntityType="ApartmentModel.Store.discounts" store:Type="Tables" Schema="apartma2" />
-          <EntitySet Name="payment_method" EntityType="ApartmentModel.Store.payment_method" store:Type="Tables" Schema="apartma2" />
-          <EntitySet Name="review" EntityType="ApartmentModel.Store.review" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="apartment" EntityType="ApartmentModel.Store.apartment" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="apartment_has_discounts" EntityType="ApartmentModel.Store.apartment_has_discounts" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="arrangement_package" EntityType="ApartmentModel.Store.arrangement_package" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="arrangement_package_has_apartment" EntityType="ApartmentModel.Store.arrangement_package_has_apartment" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="booking" EntityType="ApartmentModel.Store.booking" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="customer" EntityType="ApartmentModel.Store.customer" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="discounts" EntityType="ApartmentModel.Store.discounts" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="payment_method" EntityType="ApartmentModel.Store.payment_method" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="review" EntityType="ApartmentModel.Store.review" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="fk_apartment_has_discounts_apartment1" Association="ApartmentModel.Store.fk_apartment_has_discounts_apartment1">
             <End Role="apartment" EntitySet="apartment" />
             <End Role="apartment_has_discounts" EntitySet="apartment_has_discounts" />
@@ -300,7 +300,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ApartmentModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ApartmentModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="ApartmentEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="apartments" EntityType="ApartmentModel.apartment" />
           <EntitySet Name="arrangement_package" EntityType="ApartmentModel.arrangement_package" />
@@ -681,6 +681,6 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams />
   </Designer>
 </edmx:Edmx>
