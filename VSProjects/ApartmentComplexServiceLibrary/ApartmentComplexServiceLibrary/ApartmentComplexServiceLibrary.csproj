@@ -80,6 +80,8 @@
   <ItemGroup>
     <Compile Include="DAO\AdministrationServiceDAO.cs" />
     <Compile Include="DAO\PublicServiceDAO.cs" />
+    <Compile Include="Faults\DBAccessException.cs" />
+    <Compile Include="Faults\InvalidParamenterException.cs" />
     <Compile Include="Faults\NotFoundException.cs" />
     <Compile Include="Models\apartment.cs">
       <DependentUpon>ApartmentsDB.tt</DependentUpon>
@@ -124,8 +126,9 @@
     <Compile Include="ServiceImplementation\ApartmentPublicService.cs" />
     <Compile Include="ServiceInterfaces\IApartmentAdministrationService.cs" />
     <Compile Include="ServiceInterfaces\IApartmentPublicService.cs" />
-    <Compile Include="ServiceImplementation\IRestService.cs" />
-    <Compile Include="ServiceInterfaces\RestService.cs" />
+    <Compile Include="ServiceImplementation\RestService.cs" />
+    <Compile Include="ServiceInterfaces\IRestService.cs" />
+    <Compile Include="StaticData\ComplexInfo.cs" />
     <Compile Include="Types\ApartmentTypes.cs" />
     <Compile Include="Types\Rest\RestApartment.cs" />
   </ItemGroup>

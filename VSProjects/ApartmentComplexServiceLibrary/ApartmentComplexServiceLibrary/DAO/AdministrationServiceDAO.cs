@@ -12,7 +12,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 {
 	class AdministrationServiceDAO
 	{
-		public bool AddApartment(apartment apartmentObj)
+		public int AddApartment(apartment apartmentObj)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
@@ -36,15 +36,16 @@ namespace ApartmentComplexServiceLibrary.DAO
 				};
 				entities.apartments.Add(apartmentModel);
 				entities.SaveChanges();
-				return true;
+
+				return apartmentModel.id;
 			}
 			catch (Exception ex)
 			{
-				return false;
+				return -1;
 			}
 		}
 
-		public apartment FindApartment(int id, int numOfBeds, string apartmentNumber)
+		public apartment FindApartment(int id)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
@@ -125,12 +126,12 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 		}
 
-		public bool DeleteApartment(apartment apartmentObj)
+		public bool DeleteApartment(int apartmentId)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				Models.apartment apartmentModel = entities.apartments.FirstOrDefault(el => el.id.Equals(apartmentObj.id));
+				Models.apartment apartmentModel = entities.apartments.FirstOrDefault(el => el.id.Equals(apartmentId));
 
 				if (apartmentModel != null)
 				{
@@ -149,7 +150,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 		}
 
-		public bool AddBooking(int userId, int apartmentId, int dateFrom, int dateTo, int packagArrangementId, string discountCode)
+		public int AddBooking(int userId, int apartmentId, int dateFrom, int dateTo, int packagArrangementId, string discountCode)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
@@ -164,11 +165,11 @@ namespace ApartmentComplexServiceLibrary.DAO
 					arrangement_package_id = packagArrangementId,
 					discounts_id = discountModel != null ? discountModel.id : -1
 				};
-				return true;
+				return bookingModel.id;
 			}
 			catch (Exception ex)
 			{
-				return false;
+				return -1;
 			}
 		}
 
@@ -177,8 +178,8 @@ namespace ApartmentComplexServiceLibrary.DAO
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				Models.booking bookingModel = entities.bookings.FirstOrDefault(el => el.id.Equals(id));
-
+				Models.booking bookingModel = entities.bookings.FirstOrDefault(el => el.id.Equals(id) || el.customer.id.Equals(userId) || el.apartment.id.Equals(apartmentId) || 
+												(el.date_from >= dateFrom && el.date_to <= dateTo));
 				if (bookingModel != null)
 				{
 					booking bookingObj = new booking
@@ -237,7 +238,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 		}
 
-		public bool AddPackageArrangments(arrangement_package arrangmentObj)
+		public int AddPackageArrangments(arrangement_package arrangmentObj)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
@@ -245,11 +246,11 @@ namespace ApartmentComplexServiceLibrary.DAO
 				Models.arrangement_package arrangmentModel = ApartmentTypeConverter.ArrangmentObjToModel(arrangmentObj);
 				entities.arrangement_package.Add(arrangmentModel);
 				entities.SaveChanges();
-				return true;
+				return arrangmentModel.id;
 			}
 			catch (Exception ex)
 			{
-				return false;
+				return -1;
 			}
 		}
 
@@ -298,12 +299,12 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 		}
 
-		public bool DeletePackageArrangments(arrangement_package arrangementObj)
+		public bool DeletePackageArrangments(int arrangementId)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				Models.arrangement_package arrangementModel = entities.arrangement_package.FirstOrDefault(el => el.id.Equals(arrangementObj.id));
+				Models.arrangement_package arrangementModel = entities.arrangement_package.FirstOrDefault(el => el.id.Equals(arrangementId));
 				if (arrangementModel != null)
 				{
 					entities.Entry(arrangementModel).State = System.Data.Entity.EntityState.Deleted;
@@ -321,7 +322,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 		}
 
-		public bool AddDiscount(discount discountObj)
+		public int AddDiscount(discount discountObj)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
@@ -329,11 +330,11 @@ namespace ApartmentComplexServiceLibrary.DAO
 				Models.discount discountModel = ApartmentTypeConverter.DiscountObjToModel(discountObj);
 				entities.discounts.Add(discountModel);
 				entities.SaveChanges();
-				return true;
+				return discountModel.id;
 			}
 			catch (Exception ex)
 			{
-				return false;
+				return -1;
 			}
 		}
 
@@ -367,12 +368,12 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 		}
 
-		public bool DeleteDiscount(discount discountObj)
+		public bool DeleteDiscount(int discountId)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				Models.discount discountModel = entities.discounts.FirstOrDefault(el => el.id.Equals(discountObj.id));
+				Models.discount discountModel = entities.discounts.FirstOrDefault(el => el.id.Equals(discountId));
 				if (discountModel != null)
 				{
 					entities.Entry(discountModel).State = System.Data.Entity.EntityState.Deleted;
@@ -392,10 +393,14 @@ namespace ApartmentComplexServiceLibrary.DAO
 
 		public bool UpdateComplexInfo(complex_info infoObj)
 		{
-			throw new NotImplementedException();
+			StaticData.ComplexInfo.Title = infoObj.title;
+			StaticData.ComplexInfo.Description = infoObj.description;
+			StaticData.ComplexInfo.NumOfAppartments = infoObj.number_of_apartments;
+			StaticData.ComplexInfo.Capacity = infoObj.capacity;
+			return true;
 		}
 
-		public bool AddCustomer(customer customerObj)
+		public int AddCustomer(customer customerObj)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
@@ -403,11 +408,11 @@ namespace ApartmentComplexServiceLibrary.DAO
 				Models.customer customerModel = ApartmentTypeConverter.CustomerObjToModel(customerObj);
 				entities.customers.Add(customerModel);
 				entities.SaveChanges();
-				return true;
+				return customerModel.id;
 			}
 			catch (Exception ex)
 			{
-				return false;
+				return -1;
 			}
 		}
 
@@ -416,7 +421,8 @@ namespace ApartmentComplexServiceLibrary.DAO
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				Models.customer customerModel = entities.customers.FirstOrDefault(el => el.id.Equals(id) && el.first_name.Equals(firstName) && el.last_name.Equals(lastName));
+				Models.customer customerModel = entities.customers.FirstOrDefault(el => el.id.Equals(id) || el.first_name.Equals(firstName) || 
+													el.last_name.Equals(lastName) || el.tax_number.Equals(taxNumber));
 				if (customerModel != null)
 				{
 					return ApartmentTypeConverter.CustomerModelToObj(customerModel);
@@ -464,14 +470,12 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 		}
 
-		public bool DeleteCustomer(customer customerObj)
+		public bool DeleteCustomer(int customerId)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				Models.customer customerModel = entities.customers.FirstOrDefault(el => el.id.Equals(customerObj.id) &&
-																		el.first_name.Equals(customerObj.first_name) &&
-																		el.last_name.Equals(customerObj.last_name));
+				Models.customer customerModel = entities.customers.FirstOrDefault(el => el.id.Equals(customerId));
 				if (customerModel != null)
 				{
 					entities.Entry(customerModel).State = System.Data.Entity.EntityState.Deleted;

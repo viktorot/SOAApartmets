@@ -40,7 +40,6 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces
 		[OperationContract]
 		[WebInvoke(Method = "DELETE", ResponseFormat = WebMessageFormat.Json, UriTemplate = "apartment/{id}")]
 		string RemoveApartment(string id);
-
 	}
 }
 

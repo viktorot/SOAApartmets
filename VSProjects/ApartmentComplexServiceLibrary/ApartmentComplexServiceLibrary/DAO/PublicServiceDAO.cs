@@ -11,7 +11,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 	class PublicServiceDAO
 	{
 
-		public bool MakeBooking(int userId, int apartmentId, int dateFrom, int dateTo, int package_arrangment_id, string discountCode)
+		public int MakeBooking(int userId, int apartmentId, int dateFrom, int dateTo, int package_arrangment_id, string discountCode)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
@@ -44,17 +44,17 @@ namespace ApartmentComplexServiceLibrary.DAO
 
 					entities.bookings.Add(newBooking);
 					entities.SaveChanges();
-					return true;
+					return newBooking.id;
 				}
 				else 
 				{
-					return false;
+					return -1;
 				}
 
 			}
 			catch (Exception ex)
 			{
-				return false;
+				return -1;
 			}
 		}
 
@@ -120,7 +120,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 			catch (Exception ex)
 			{
-				return new Types.booking_description_response[] { }; // TODO: exception
+				return null;
 			}
 		}
 
@@ -141,7 +141,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 			catch (Exception ex)
 			{
-				return new Types.booking_description_response[] { }; // TODO: exception
+				return null;
 			}
 		}
 
@@ -163,7 +163,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 			catch (Exception ex)
 			{
-				return new Types.arrangement_package[] { }; // TODO: exception
+				return null;
 			}
 		}
 
@@ -185,7 +185,7 @@ namespace ApartmentComplexServiceLibrary.DAO
 			}
 			catch (Exception ex)
 			{
-				return new Types.discount[] { }; // TODO: exception
+				return null;
 			}
 		}
 

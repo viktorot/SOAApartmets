@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="ApartmentModel.apartment" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ApartmentModel.arrangement_package" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ApartmentModel.booking" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ApartmentModel.customer" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApartmentModel.customer" Width="1.5" PointX="0.625" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ApartmentModel.discount" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ApartmentModel.payment_method" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ApartmentModel.review" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />

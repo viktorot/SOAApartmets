@@ -9,7 +9,7 @@ using System.ServiceModel;
 
 namespace ApartmentComplexServiceLibrary.Faults
 {
-	[DataContract]
+	[DataContract(Name="DatabaseAccessException")]
 	class DBAccessException
 	{
 

@@ -45,7 +45,7 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 			if (ap != null)
 			{
 				AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-				if (adminDAO.AddApartment(ap))
+				if (adminDAO.AddApartment(ap) != -1)
 				{
 					response.status = "ok";
 				}
@@ -64,7 +64,7 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 		public string GetApartment(string id)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-			apartment ap = adminDAO.FindApartment(Convert.ToInt32(id), -1, null);
+			apartment ap = adminDAO.FindApartment(Convert.ToInt32(id));
 			if (ap != null)
 			{
 				return JsonConvert.SerializeObject(ap);
@@ -101,11 +101,8 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 
-			apartment ap = new apartment();
-			ap.id = Convert.ToInt32(id);
-
 			Response response = new Response();
-			if (adminDAO.DeleteApartment(ap))
+			if (adminDAO.DeleteApartment(Convert.ToInt32(id)))
 			{
 				response.status = "ok";
 			}

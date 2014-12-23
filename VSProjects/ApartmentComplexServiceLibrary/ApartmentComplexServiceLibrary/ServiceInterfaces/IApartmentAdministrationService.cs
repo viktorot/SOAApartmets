@@ -145,13 +145,18 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public bool status;
 
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 1)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int id;
+
 		public AddApartmentResponse()
 		{
 		}
 
-		public AddApartmentResponse(bool status)
+		public AddApartmentResponse(bool status, int id)
 		{
 			this.status = status;
+			this.id = id;
 		}
 	}
 
@@ -161,16 +166,7 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 	[System.ServiceModel.MessageContractAttribute(WrapperName = "FindApartmentRequest", WrapperNamespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", IsWrapped = true)]
 	public partial class FindApartmentRequest
 	{
-
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 0)]
-		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int apartment_number;
-
-		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 1)]
-		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int number_of_beds;
-
-		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 2)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public int id;
 
@@ -178,10 +174,8 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 		{
 		}
 
-		public FindApartmentRequest(int apartment_number, int number_of_beds, int id)
+		public FindApartmentRequest(int id)
 		{
-			this.apartment_number = apartment_number;
-			this.number_of_beds = number_of_beds;
 			this.id = id;
 		}
 	}
@@ -258,15 +252,15 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 0)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ApartmentComplexServiceLibrary.Types.apartment apartment;
+		public int id;
 
 		public DeleteApartmentRequest()
 		{
 		}
 
-		public DeleteApartmentRequest(ApartmentComplexServiceLibrary.Types.apartment apartment)
+		public DeleteApartmentRequest(int id)
 		{
-			this.apartment = apartment;
+			this.id = id;
 		}
 	}
 
@@ -348,13 +342,18 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public bool booking_status;
 
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 1)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int id;
+
 		public AddBookingResponse()
 		{
 		}
 
-		public AddBookingResponse(bool booking_status)
+		public AddBookingResponse(bool booking_status, int id)
 		{
 			this.booking_status = booking_status;
+			this.id = id;
 		}
 	}
 
@@ -494,13 +493,18 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public bool status;
 
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 1)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int id;
+
 		public AddPackageArrangementsResponse()
 		{
 		}
 
-		public AddPackageArrangementsResponse(bool status)
+		public AddPackageArrangementsResponse(bool status, int id)
 		{
 			this.status = status;
+			this.id = id;
 		}
 	}
 
@@ -602,15 +606,15 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 0)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ApartmentComplexServiceLibrary.Types.arrangement_package package_arrangements;
+		public int id;
 
 		public DeletePackageArrangementsRequest()
 		{
 		}
 
-		public DeletePackageArrangementsRequest(ApartmentComplexServiceLibrary.Types.arrangement_package package_arrangements)
+		public DeletePackageArrangementsRequest(int id)
 		{
-			this.package_arrangements = package_arrangements;
+			this.id = id;
 		}
 	}
 
@@ -667,13 +671,18 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public bool status;
 
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 1)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int id;
+
 		public AddDiscountResponse()
 		{
 		}
 
-		public AddDiscountResponse(bool status)
+		public AddDiscountResponse(bool status, int id)
 		{
 			this.status = status;
+			this.id = id;
 		}
 	}
 
@@ -728,15 +737,15 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 0)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ApartmentComplexServiceLibrary.Types.discount discounts;
+		public int id;
 
 		public DeleteDiscountRequest()
 		{
 		}
 
-		public DeleteDiscountRequest(ApartmentComplexServiceLibrary.Types.discount discounts)
+		public DeleteDiscountRequest(int id)
 		{
-			this.discounts = discounts;
+			this.id = id;
 		}
 	}
 
@@ -835,13 +844,18 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public bool status;
 
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 1)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int id;
+
 		public AddCustomerResponse()
 		{
 		}
 
-		public AddCustomerResponse(bool status)
+		public AddCustomerResponse(bool status, int id)
 		{
 			this.status = status;
+			this.id = id;
 		}
 	}
 
@@ -853,8 +867,8 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 	{
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 0)]
-		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, DataType = "integer")]
-		public string id;
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int id;
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 1)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -872,7 +886,7 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 		{
 		}
 
-		public FindCustomerRequest(string id, string first_name, string last_name, string tax_number)
+		public FindCustomerRequest(int id, string first_name, string last_name, string tax_number)
 		{
 			this.id = id;
 			this.first_name = first_name;
@@ -953,15 +967,15 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/administration_messages", Order = 0)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ApartmentComplexServiceLibrary.Types.customer customer;
+		public int id;
 
 		public DeleteCustomerRequest()
 		{
 		}
 
-		public DeleteCustomerRequest(ApartmentComplexServiceLibrary.Types.customer customer)
+		public DeleteCustomerRequest(int id)
 		{
-			this.customer = customer;
+			this.id = id;
 		}
 	}
 

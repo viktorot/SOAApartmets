@@ -4,17 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ApartmentModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ApartmentModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ApartmentModelStoreContainer">
-          <EntitySet Name="apartment" EntityType="ApartmentModel.Store.apartment" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="apartment_has_discounts" EntityType="ApartmentModel.Store.apartment_has_discounts" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="arrangement_package" EntityType="ApartmentModel.Store.arrangement_package" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="arrangement_package_has_apartment" EntityType="ApartmentModel.Store.arrangement_package_has_apartment" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="booking" EntityType="ApartmentModel.Store.booking" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="customer" EntityType="ApartmentModel.Store.customer" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="discounts" EntityType="ApartmentModel.Store.discounts" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="payment_method" EntityType="ApartmentModel.Store.payment_method" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="review" EntityType="ApartmentModel.Store.review" store:Type="Tables" Schema="apartma2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="apartment" EntityType="ApartmentModel.Store.apartment" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="apartment_has_discounts" EntityType="ApartmentModel.Store.apartment_has_discounts" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="arrangement_package" EntityType="ApartmentModel.Store.arrangement_package" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="arrangement_package_has_apartment" EntityType="ApartmentModel.Store.arrangement_package_has_apartment" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="booking" EntityType="ApartmentModel.Store.booking" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="customer" EntityType="ApartmentModel.Store.customer" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="discounts" EntityType="ApartmentModel.Store.discounts" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="payment_method" EntityType="ApartmentModel.Store.payment_method" store:Type="Tables" Schema="apartma2" />
+          <EntitySet Name="review" EntityType="ApartmentModel.Store.review" store:Type="Tables" Schema="apartma2" />
           <AssociationSet Name="fk_apartment_has_discounts_apartment1" Association="ApartmentModel.Store.fk_apartment_has_discounts_apartment1">
             <End Role="apartment" EntitySet="apartment" />
             <End Role="apartment_has_discounts" EntitySet="apartment_has_discounts" />
@@ -128,11 +128,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="first_name" Type="varchar" MaxLength="45" />
-          <Property Name="last_name" Type="varchar" MaxLength="45" />
-          <Property Name="email" Type="varchar" MaxLength="90" />
-          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="90" />
+          <Property Name="address" Type="varchar" Nullable="false" MaxLength="255" />
           <Property Name="password" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="tax_number" Type="varchar" Nullable="false" MaxLength="20" />
         </EntityType>
         <EntityType Name="discounts">
           <Key>
@@ -296,8 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ApartmentModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
@@ -416,6 +416,7 @@
           <Property Name="password" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="bookings" Relationship="ApartmentModel.fk_Booked_customer1" FromRole="customer" ToRole="booking" />
           <NavigationProperty Name="reviews" Relationship="ApartmentModel.fk_comments_customer1" FromRole="customer" ToRole="review" />
+          <Property Type="String" Name="tax_number" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="discount">
           <Key>
@@ -603,6 +604,7 @@
           <EntitySetMapping Name="customers">
             <EntityTypeMapping TypeName="ApartmentModel.customer">
               <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="tax_number" ColumnName="tax_number" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="first_name" ColumnName="first_name" />
                 <ScalarProperty Name="last_name" ColumnName="last_name" />

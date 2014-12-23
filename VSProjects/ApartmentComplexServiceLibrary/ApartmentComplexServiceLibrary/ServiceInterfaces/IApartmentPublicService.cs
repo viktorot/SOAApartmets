@@ -277,13 +277,18 @@ namespace ApartmentComplexServiceLibrary.ServiceInterfaces.PublicService
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ApartmentComplexServiceLibrary.ServiceInterfaces.PublicService.booking_response booking_status;
 
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v0_1/public_messages", Order = 1)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int id;
+
 		public MakeBookingResponse()
 		{
 		}
 
-		public MakeBookingResponse(ApartmentComplexServiceLibrary.ServiceInterfaces.PublicService.booking_response booking_status)
+		public MakeBookingResponse(ApartmentComplexServiceLibrary.ServiceInterfaces.PublicService.booking_response booking_status, int id)
 		{
 			this.booking_status = booking_status;
+			this.id = id;
 		}
 	}
 
