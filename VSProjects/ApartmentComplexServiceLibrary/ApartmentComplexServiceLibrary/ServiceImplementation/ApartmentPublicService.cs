@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using ApartmentComplexServiceLibrary.ServiceInterfaces.PublicService;
-using ApartmentComplexServiceLibrary.Types;
-using ApartmentComplexServiceLibrary.DAO;
-using ApartmentComplexServiceLibrary.Faults;
+using ApartmentComplexServiceLibraryV1.ServiceInterfaces.PublicService;
+using ApartmentComplexServiceLibraryV1.Types;
+using ApartmentComplexServiceLibraryV1.DAO;
+using ApartmentComplexServiceLibraryV1.Faults;
 using System.ServiceModel;
 
-namespace ApartmentComplexServiceLibrary.ServiceImplementation
+namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 {
 	class ApartmentPublicService : IApartmentPublicService
 	{
@@ -23,15 +23,18 @@ namespace ApartmentComplexServiceLibrary.ServiceImplementation
 
 		public SearchResponse Search(SearchRequest request)
 		{
-			apartment ap = new apartment();
-			ap.title = "Apartment09";
-			return new SearchResponse(new apartment[] { ap });
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			List<apartment> searchResult = publicDAO.Search(request.date_from, request.date_to, request.number_of_beds);
+			return new SearchResponse(searchResult.ToArray());
 		}
 
 		public SearchResponse AdvancedSearch(AdvancedSearchRequest request)
 		{
-			apartment ap = new apartment();
-			return new SearchResponse(new apartment[] { ap });
+			PublicServiceDAO publicDAO = new PublicServiceDAO();
+			List<apartment> searchResult = publicDAO.AdvancedSearch(request.date_from, request.date_to, request.no_king_beds, request.no_single_beds, request.no_extra_beds,
+																	request.pet_friendly, request.internet, request.air_conditioning, request.tv,
+																	request.kitchen, request.class_stars, request.balcony, request.accessible);
+			return new SearchResponse(searchResult.ToArray());
 		}
 
 		public MakeBookingResponse MakeBooking(MakeBookingRequest request)

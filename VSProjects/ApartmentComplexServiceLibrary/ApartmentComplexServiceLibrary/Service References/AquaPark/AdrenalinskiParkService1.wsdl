@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.adrenalinski-park.com/16/12/2014" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AdrenalinskiParkService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.adrenalinski-park.com/16/12/2014" location="http://svizec.informatika.uni-mb.si/SOATravel/adrenalin2/services/V2/AdrenalinskiParkService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_DogodkiService" type="i0:DogodkiService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VrniDogodke">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VrniPrihajajoceDogodke">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniPrihajajoceDogodke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VrniDogodkeMedDatumoma">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeMedDatumoma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VrniDogodkeGledeNaTip">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeGledeNaTip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiCenoDogodka">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PridobiCenoDogodka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IzracunCeneSkupinskePrijave">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/IzracunCeneSkupinskePrijave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VrniSteviloProstihMestDogodka">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniSteviloProstihMestDogodka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrijavaNaDogodek">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PrijavaNaDogodek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OdjavaZdogodka">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/OdjavaZdogodka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PregledLastnihPrijav">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PregledLastnihPrijav" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DodajKomentarDogodka">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/DodajKomentarDogodka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DodajOcenoDogodka">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/DodajOcenoDogodka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrijavaNaObvestila">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PrijavaNaObvestila" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OrganizirajPrevoz">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/OrganizirajPrevoz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlacajPrijavo">
+      <soap:operation soapAction="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PlacajPrijavo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultTypeFault">
+        <soap:fault use="literal" name="FaultTypeFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdrenalinskiParkService">
+    <wsdl:port name="BasicHttpBinding_DogodkiService" binding="tns:BasicHttpBinding_DogodkiService">
+      <soap:address location="http://svizec.informatika.uni-mb.si/SOATravel/adrenalin2/services/V2/AdrenalinskiParkService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

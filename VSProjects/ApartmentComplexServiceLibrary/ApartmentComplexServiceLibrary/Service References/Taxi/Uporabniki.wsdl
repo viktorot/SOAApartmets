@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="www.projekt-taksi.org/7/12/2014)" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Uporabniki" targetNamespace="www.projekt-taksi.org/7/12/2014)" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="www.projekt-taksi.org/7/12/2014)" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/TaksiSluzba.Data" />
+      <xs:element name="OddajNarocilo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TaksiSluzba.Data" minOccurs="0" name="oddaj" nillable="true" type="q1:Narocilo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OddajNarociloResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DobiLastnaNarocila">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DobiLastnaNarocilaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TaksiSluzba.Data" minOccurs="0" name="DobiLastnaNarocilaResult" nillable="true" type="q2:ArrayOfNarocilo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DobiCenik">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DobiCenikResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TaksiSluzba.Data" minOccurs="0" name="DobiCenikResult" nillable="true" type="q3:ArrayOfCenik" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DobiVozila">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DobiVozilaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TaksiSluzba.Data" minOccurs="0" name="DobiVozilaResult" nillable="true" type="q4:ArrayOfVozila" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OddajPritozbo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TaksiSluzba.Data" minOccurs="0" name="pritozba" nillable="true" type="q5:Pritozba" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OddajPritozboResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PreventivnaCenaVoznje">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id_cenika" type="xs:int" />
+            <xs:element minOccurs="0" name="st_kilometrov" type="xs:double" />
+            <xs:element minOccurs="0" name="minuteCakanja" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PreventivnaCenaVoznjeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="PreventivnaCenaVoznjeResult" type="xs:double" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TaksiSluzba.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TaksiSluzba.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Narocilo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CiljRelacije" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnaslovUporabnika" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdNarocila" type="xs:int" />
+          <xs:element minOccurs="0" name="ImeUporabnika" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Prevzem" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PriimekUporabnika" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartRelacije" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SteviloOseb" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Narocilo" nillable="true" type="tns:Narocilo" />
+      <xs:complexType name="ArrayOfNarocilo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Narocilo" nillable="true" type="tns:Narocilo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfNarocilo" nillable="true" type="tns:ArrayOfNarocilo" />
+      <xs:complexType name="ArrayOfCenik">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Cenik" nillable="true" type="tns:Cenik" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCenik" nillable="true" type="tns:ArrayOfCenik" />
+      <xs:complexType name="Cenik">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CakalnaUra" type="xs:double" />
+          <xs:element minOccurs="0" name="IdCenika" type="xs:int" />
+          <xs:element minOccurs="0" name="Kilometer" type="xs:double" />
+          <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Startnina" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Cenik" nillable="true" type="tns:Cenik" />
+      <xs:complexType name="ArrayOfVozila">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Vozila" nillable="true" type="tns:Vozila" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfVozila" nillable="true" type="tns:ArrayOfVozila" />
+      <xs:complexType name="Vozila">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DodatnaOprema" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdVozila" type="xs:int" />
+          <xs:element minOccurs="0" name="Letnik" type="xs:int" />
+          <xs:element minOccurs="0" name="NazivVozila" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SteviloSedezev" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Vozila" nillable="true" type="tns:Vozila" />
+      <xs:complexType name="Pritozba">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CasDogodka" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KrajDogodka" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Opis" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Pritozba" nillable="true" type="tns:Pritozba" />
+    </xs:schema>
+    <xs:schema xmlns:tns="www.projekt-taksi.org/7/12/2014" elementFormDefault="qualified" targetNamespace="www.projekt-taksi.org/7/12/2014" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="JaviNapako">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperacijaSOAP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="javiSporocilo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="JaviNapako" nillable="true" type="tns:JaviNapako" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Uporabniki_OddajNarocilo_InputMessage">
+    <wsdl:part name="parameters" element="tns:OddajNarocilo" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_OddajNarocilo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OddajNarociloResponse" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiLastnaNarocila_InputMessage">
+    <wsdl:part name="parameters" element="tns:DobiLastnaNarocila" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiLastnaNarocila_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DobiLastnaNarocilaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiLastnaNarocila_JaviNapakoFault_FaultMessage">
+    <wsdl:part xmlns:q1="www.projekt-taksi.org/7/12/2014" name="detail" element="q1:JaviNapako" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiCenik_InputMessage">
+    <wsdl:part name="parameters" element="tns:DobiCenik" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiCenik_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DobiCenikResponse" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiCenik_JaviNapakoFault_FaultMessage">
+    <wsdl:part xmlns:q2="www.projekt-taksi.org/7/12/2014" name="detail" element="q2:JaviNapako" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiVozila_InputMessage">
+    <wsdl:part name="parameters" element="tns:DobiVozila" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiVozila_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DobiVozilaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_DobiVozila_JaviNapakoFault_FaultMessage">
+    <wsdl:part xmlns:q3="www.projekt-taksi.org/7/12/2014" name="detail" element="q3:JaviNapako" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_OddajPritozbo_InputMessage">
+    <wsdl:part name="parameters" element="tns:OddajPritozbo" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_OddajPritozbo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OddajPritozboResponse" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_PreventivnaCenaVoznje_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreventivnaCenaVoznje" />
+  </wsdl:message>
+  <wsdl:message name="Uporabniki_PreventivnaCenaVoznje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreventivnaCenaVoznjeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Uporabniki">
+    <wsdl:operation name="OddajNarocilo">
+      <wsdl:input wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/OddajNarocilo" message="tns:Uporabniki_OddajNarocilo_InputMessage" />
+      <wsdl:output wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/OddajNarociloResponse" message="tns:Uporabniki_OddajNarocilo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DobiLastnaNarocila">
+      <wsdl:input wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiLastnaNarocila" message="tns:Uporabniki_DobiLastnaNarocila_InputMessage" />
+      <wsdl:output wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiLastnaNarocilaResponse" message="tns:Uporabniki_DobiLastnaNarocila_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiLastnaNarocilaJaviNapakoFault" name="JaviNapakoFault" message="tns:Uporabniki_DobiLastnaNarocila_JaviNapakoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DobiCenik">
+      <wsdl:input wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiCenik" message="tns:Uporabniki_DobiCenik_InputMessage" />
+      <wsdl:output wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiCenikResponse" message="tns:Uporabniki_DobiCenik_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiCenikJaviNapakoFault" name="JaviNapakoFault" message="tns:Uporabniki_DobiCenik_JaviNapakoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DobiVozila">
+      <wsdl:input wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiVozila" message="tns:Uporabniki_DobiVozila_InputMessage" />
+      <wsdl:output wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiVozilaResponse" message="tns:Uporabniki_DobiVozila_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiVozilaJaviNapakoFault" name="JaviNapakoFault" message="tns:Uporabniki_DobiVozila_JaviNapakoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OddajPritozbo">
+      <wsdl:input wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/OddajPritozbo" message="tns:Uporabniki_OddajPritozbo_InputMessage" />
+      <wsdl:output wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/OddajPritozboResponse" message="tns:Uporabniki_OddajPritozbo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreventivnaCenaVoznje">
+      <wsdl:input wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/PreventivnaCenaVoznje" message="tns:Uporabniki_PreventivnaCenaVoznje_InputMessage" />
+      <wsdl:output wsaw:Action="www.projekt-taksi.org/7/12/2014)/Uporabniki/PreventivnaCenaVoznjeResponse" message="tns:Uporabniki_PreventivnaCenaVoznje_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Uporabniki" type="tns:Uporabniki">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OddajNarocilo">
+      <soap:operation soapAction="www.projekt-taksi.org/7/12/2014)/Uporabniki/OddajNarocilo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DobiLastnaNarocila">
+      <soap:operation soapAction="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiLastnaNarocila" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="JaviNapakoFault">
+        <soap:fault use="literal" name="JaviNapakoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DobiCenik">
+      <soap:operation soapAction="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiCenik" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="JaviNapakoFault">
+        <soap:fault use="literal" name="JaviNapakoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DobiVozila">
+      <soap:operation soapAction="www.projekt-taksi.org/7/12/2014)/Uporabniki/DobiVozila" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="JaviNapakoFault">
+        <soap:fault use="literal" name="JaviNapakoFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OddajPritozbo">
+      <soap:operation soapAction="www.projekt-taksi.org/7/12/2014)/Uporabniki/OddajPritozbo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreventivnaCenaVoznje">
+      <soap:operation soapAction="www.projekt-taksi.org/7/12/2014)/Uporabniki/PreventivnaCenaVoznje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Uporabniki">
+    <wsdl:port name="BasicHttpBinding_Uporabniki" binding="tns:BasicHttpBinding_Uporabniki">
+      <soap:address location="http://svizec.informatika.uni-mb.si/SOATravel/taksi2/services/V2/Uporabniki.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

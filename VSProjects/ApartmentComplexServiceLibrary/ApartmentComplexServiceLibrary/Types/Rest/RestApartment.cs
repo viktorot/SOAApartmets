@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApartmentComplexServiceLibrary.Types.Rest
+namespace ApartmentComplexServiceLibraryV1.Types.Rest
 {
 	[DataContract]
 	public class RestApartment

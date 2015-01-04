@@ -7,9 +7,9 @@ using System.ServiceModel.Configuration;
 using System.ServiceModel.Web;
 using System.Text;
 
-using ApartmentComplexServiceLibrary.Types.Rest;
+using ApartmentComplexServiceLibraryV1.Types.Rest;
 
-namespace ApartmentComplexServiceLibrary.ServiceInterfaces
+namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces
 {
 	[ServiceContract]
 	public interface IRestService

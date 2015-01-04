@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.soa.com/projekt/rezultatFunkcije/V3" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/rezultatFunkcije/V3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RezultatFunkcije">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DodatneInformacije" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Uspesno" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RezultatFunkcije" nillable="true" type="tns:RezultatFunkcije" />
+</xs:schema>

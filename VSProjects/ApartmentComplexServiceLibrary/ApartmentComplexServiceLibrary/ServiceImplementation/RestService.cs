@@ -9,11 +9,11 @@ using System.Text;
 using System.Web.Http;
 using Newtonsoft.Json;
 
-using ApartmentComplexServiceLibrary.ServiceInterfaces;
-using ApartmentComplexServiceLibrary.Types;
-using ApartmentComplexServiceLibrary.DAO;
+using ApartmentComplexServiceLibraryV1.ServiceInterfaces;
+using ApartmentComplexServiceLibraryV1.Types;
+using ApartmentComplexServiceLibraryV1.DAO;
 
-namespace ApartmentComplexServiceLibrary.ServiceImplementation
+namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 {
 	// NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "IRestService" in both code and config file together.
 	public class RestService : IRestService

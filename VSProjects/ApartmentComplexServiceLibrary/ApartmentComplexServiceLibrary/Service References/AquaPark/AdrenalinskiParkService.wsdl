@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.adrenalinski-park.com/16/12/2014" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.adrenalinski-park.com/16/12/2014" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.adrenalinski-park.com/16/12/2014/Imports">
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/adrenalin2/services/V2/AdrenalinskiParkService.svc?xsd=xsd0" namespace="http://www.adrenalinski-park.com/16/12/2014" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/adrenalin2/services/V2/AdrenalinskiParkService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DogodkiService_VrniDogodke_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDogodke" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniDogodke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDogodkeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniDogodke_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniPrihajajoceDogodke_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniPrihajajoceDogodke" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniPrihajajoceDogodke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniPrihajajoceDogodkeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniPrihajajoceDogodke_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniDogodkeMedDatumoma_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDogodkeMedDatumoma" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniDogodkeMedDatumoma_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDogodkeMedDatumomaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniDogodkeMedDatumoma_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniDogodkeGledeNaTip_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDogodkeGledeNaTip" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniDogodkeGledeNaTip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDogodkeGledeNaTipResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniDogodkeGledeNaTip_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PridobiCenoDogodka_InputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiCenoDogodka" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PridobiCenoDogodka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiCenoDogodkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PridobiCenoDogodka_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_IzracunCeneSkupinskePrijave_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzracunCeneSkupinskePrijave" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_IzracunCeneSkupinskePrijave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzracunCeneSkupinskePrijaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_IzracunCeneSkupinskePrijave_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniSteviloProstihMestDogodka_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniSteviloProstihMestDogodka" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniSteviloProstihMestDogodka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniSteviloProstihMestDogodkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_VrniSteviloProstihMestDogodka_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PrijavaNaDogodek_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrijavaNaDogodek" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PrijavaNaDogodek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrijavaNaDogodekResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PrijavaNaDogodek_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_OdjavaZdogodka_InputMessage">
+    <wsdl:part name="parameters" element="tns:OdjavaZdogodka" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_OdjavaZdogodka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OdjavaZdogodkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_OdjavaZdogodka_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PregledLastnihPrijav_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledLastnihPrijav" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PregledLastnihPrijav_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledLastnihPrijavResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PregledLastnihPrijav_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_DodajKomentarDogodka_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajKomentarDogodka" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_DodajKomentarDogodka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajKomentarDogodkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_DodajKomentarDogodka_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_DodajOcenoDogodka_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajOcenoDogodka" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_DodajOcenoDogodka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajOcenoDogodkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_DodajOcenoDogodka_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PrijavaNaObvestila_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrijavaNaObvestila" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PrijavaNaObvestila_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrijavaNaObvestilaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PrijavaNaObvestila_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_OrganizirajPrevoz_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganizirajPrevoz" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_OrganizirajPrevoz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganizirajPrevozResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_OrganizirajPrevoz_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PlacajPrijavo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlacajPrijavo" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PlacajPrijavo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlacajPrijavoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DogodkiService_PlacajPrijavo_FaultTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FaultType" />
+  </wsdl:message>
+  <wsdl:portType name="DogodkiService">
+    <wsdl:operation name="VrniDogodke">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodke" message="tns:DogodkiService_VrniDogodke_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeResponse" message="tns:DogodkiService_VrniDogodke_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_VrniDogodke_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniPrihajajoceDogodke">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniPrihajajoceDogodke" message="tns:DogodkiService_VrniPrihajajoceDogodke_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniPrihajajoceDogodkeResponse" message="tns:DogodkiService_VrniPrihajajoceDogodke_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniPrihajajoceDogodkeFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_VrniPrihajajoceDogodke_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniDogodkeMedDatumoma">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeMedDatumoma" message="tns:DogodkiService_VrniDogodkeMedDatumoma_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeMedDatumomaResponse" message="tns:DogodkiService_VrniDogodkeMedDatumoma_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeMedDatumomaFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_VrniDogodkeMedDatumoma_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniDogodkeGledeNaTip">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeGledeNaTip" message="tns:DogodkiService_VrniDogodkeGledeNaTip_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeGledeNaTipResponse" message="tns:DogodkiService_VrniDogodkeGledeNaTip_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniDogodkeGledeNaTipFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_VrniDogodkeGledeNaTip_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiCenoDogodka">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PridobiCenoDogodka" message="tns:DogodkiService_PridobiCenoDogodka_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PridobiCenoDogodkaResponse" message="tns:DogodkiService_PridobiCenoDogodka_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PridobiCenoDogodkaFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_PridobiCenoDogodka_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzracunCeneSkupinskePrijave">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/IzracunCeneSkupinskePrijave" message="tns:DogodkiService_IzracunCeneSkupinskePrijave_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/IzracunCeneSkupinskePrijaveResponse" message="tns:DogodkiService_IzracunCeneSkupinskePrijave_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/IzracunCeneSkupinskePrijaveFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_IzracunCeneSkupinskePrijave_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniSteviloProstihMestDogodka">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniSteviloProstihMestDogodka" message="tns:DogodkiService_VrniSteviloProstihMestDogodka_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniSteviloProstihMestDogodkaResponse" message="tns:DogodkiService_VrniSteviloProstihMestDogodka_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/VrniSteviloProstihMestDogodkaFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_VrniSteviloProstihMestDogodka_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrijavaNaDogodek">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PrijavaNaDogodek" message="tns:DogodkiService_PrijavaNaDogodek_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PrijavaNaDogodekResponse" message="tns:DogodkiService_PrijavaNaDogodek_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PrijavaNaDogodekFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_PrijavaNaDogodek_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OdjavaZdogodka">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/OdjavaZdogodka" message="tns:DogodkiService_OdjavaZdogodka_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/OdjavaZdogodkaResponse" message="tns:DogodkiService_OdjavaZdogodka_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/OdjavaZdogodkaFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_OdjavaZdogodka_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledLastnihPrijav">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PregledLastnihPrijav" message="tns:DogodkiService_PregledLastnihPrijav_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PregledLastnihPrijavResponse" message="tns:DogodkiService_PregledLastnihPrijav_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PregledLastnihPrijavFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_PregledLastnihPrijav_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajKomentarDogodka">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/DodajKomentarDogodka" message="tns:DogodkiService_DodajKomentarDogodka_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/DodajKomentarDogodkaResponse" message="tns:DogodkiService_DodajKomentarDogodka_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/DodajKomentarDogodkaFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_DodajKomentarDogodka_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajOcenoDogodka">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/DodajOcenoDogodka" message="tns:DogodkiService_DodajOcenoDogodka_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/DodajOcenoDogodkaResponse" message="tns:DogodkiService_DodajOcenoDogodka_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/DodajOcenoDogodkaFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_DodajOcenoDogodka_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrijavaNaObvestila">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PrijavaNaObvestila" message="tns:DogodkiService_PrijavaNaObvestila_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PrijavaNaObvestilaResponse" message="tns:DogodkiService_PrijavaNaObvestila_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PrijavaNaObvestilaFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_PrijavaNaObvestila_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganizirajPrevoz">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/OrganizirajPrevoz" message="tns:DogodkiService_OrganizirajPrevoz_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/OrganizirajPrevozResponse" message="tns:DogodkiService_OrganizirajPrevoz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/OrganizirajPrevozFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_OrganizirajPrevoz_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlacajPrijavo">
+      <wsdl:input wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PlacajPrijavo" message="tns:DogodkiService_PlacajPrijavo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PlacajPrijavoResponse" message="tns:DogodkiService_PlacajPrijavo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.adrenalinski-park.com/16/12/2014/DogodkiService/PlacajPrijavoFaultTypeFault" name="FaultTypeFault" message="tns:DogodkiService_PlacajPrijavo_FaultTypeFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

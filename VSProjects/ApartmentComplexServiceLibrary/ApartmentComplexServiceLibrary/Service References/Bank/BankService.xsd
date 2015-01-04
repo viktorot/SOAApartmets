@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://projekt/SOA/V3" elementFormDefault="qualified" targetNamespace="http://projekt/SOA/V3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LastnaNapaka">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Operacija" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sporocilo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LastnaNapaka" nillable="true" type="tns:LastnaNapaka" />
+</xs:schema>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="www.soa.com/projekt/V3" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="www.soa.com/projekt/V3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="www.soa.com/projekt/V3/Imports">
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd0" namespace="www.soa.com/projekt/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd2" namespace="www.soa.com/projekt/komitent/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd3" namespace="www.soa.com/projekt/fizicnaOseba/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd4" namespace="www.soa.com/projekt/poslovnaOseba/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd5" namespace="www.soa.com/projekt/racun/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd6" namespace="www.soa.com/projekt/transakcija/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd7" namespace="www.soa.com/projekt/tipTransakcije/11/23" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd8" namespace="www.soa.com/projekt/rezultatFunkcije/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd9" namespace="www.soa.com/projekt/eRacun/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd10" namespace="www.soa.com/projekt/postavka/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd11" namespace="http://projekt/SOA/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd12" namespace="www.soa.com/projekt/TemplateERacun/V3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Banka_UstvariRacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:UstvariRacun" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvariRacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UstvariRacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledTransakcij_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledTransakcij" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledTransakcij_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledTransakcijResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledStanja_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledStanja" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledStanja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledStanjaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PologSredstev_InputMessage">
+    <wsdl:part name="parameters" element="tns:PologSredstev" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PologSredstev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PologSredstevResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PrenosSredstevMedRacuni_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrenosSredstevMedRacuni" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PrenosSredstevMedRacuni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrenosSredstevMedRacuniResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvarjanjeERacuna_InputMessage">
+    <wsdl:part name="parameters" element="tns:UstvarjanjeERacuna" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvarjanjeERacuna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UstvarjanjeERacunaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloERacuna_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlaciloERacuna" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloERacuna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlaciloERacunaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniSpecificniERacun" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniSpecificniERacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacun_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://projekt/SOA/V3" name="detail" element="q1:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledNeplacanihERacunov_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledNeplacanihERacunov" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledNeplacanihERacunov_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledNeplacanihERacunovResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunov_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledVsehERacunov" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunov_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledVsehERacunovResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloSPlacilnoKartico_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlaciloSPlacilnoKartico" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloSPlacilnoKartico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlaciloSPlacilnoKarticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvariTemplateERacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:UstvariTemplateERacun" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvariTemplateERacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UstvariTemplateERacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiTemplatesERacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiTemplatesERacun" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiTemplatesERacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiTemplatesERacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiSpecificniTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiSpecificniTemplate" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiSpecificniTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiSpecificniTemplateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Banka">
+    <wsdl:operation name="UstvariRacun">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariRacun" message="tns:Banka_UstvariRacun_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariRacunResponse" message="tns:Banka_UstvariRacun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledTransakcij">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledTransakcij" message="tns:Banka_PregledTransakcij_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledTransakcijResponse" message="tns:Banka_PregledTransakcij_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledStanja">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledStanja" message="tns:Banka_PregledStanja_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledStanjaResponse" message="tns:Banka_PregledStanja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PologSredstev">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PologSredstev" message="tns:Banka_PologSredstev_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PologSredstevResponse" message="tns:Banka_PologSredstev_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrenosSredstevMedRacuni">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuni" message="tns:Banka_PrenosSredstevMedRacuni_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuniResponse" message="tns:Banka_PrenosSredstevMedRacuni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UstvarjanjeERacuna">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/UstvarjanjeERacuna" message="tns:Banka_UstvarjanjeERacuna_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/UstvarjanjeERacunaResponse" message="tns:Banka_UstvarjanjeERacuna_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaciloERacuna">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloERacuna" message="tns:Banka_PlaciloERacuna_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloERacunaResponse" message="tns:Banka_PlaciloERacuna_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniSpecificniERacun">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacun" message="tns:Banka_VrniSpecificniERacun_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunResponse" message="tns:Banka_VrniSpecificniERacun_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_VrniSpecificniERacun_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledNeplacanihERacunov">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunov" message="tns:Banka_PregledNeplacanihERacunov_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovResponse" message="tns:Banka_PregledNeplacanihERacunov_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledVsehERacunov">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunov" message="tns:Banka_PregledVsehERacunov_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovResponse" message="tns:Banka_PregledVsehERacunov_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaciloSPlacilnoKartico">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKartico" message="tns:Banka_PlaciloSPlacilnoKartico_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKarticoResponse" message="tns:Banka_PlaciloSPlacilnoKartico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UstvariTemplateERacun">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariTemplateERacun" message="tns:Banka_UstvariTemplateERacun_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariTemplateERacunResponse" message="tns:Banka_UstvariTemplateERacun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiTemplatesERacun">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacun" message="tns:Banka_PridobiTemplatesERacun_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacunResponse" message="tns:Banka_PridobiTemplatesERacun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiSpecificniTemplate">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplate" message="tns:Banka_PridobiSpecificniTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplateResponse" message="tns:Banka_PridobiSpecificniTemplate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

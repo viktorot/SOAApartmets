@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService;
-using ApartmentComplexServiceLibrary.Types;
-using ApartmentComplexServiceLibrary.Models.Utils;
+using ApartmentComplexServiceLibraryV1.ServiceInterfaces.AdministrationService;
+using ApartmentComplexServiceLibraryV1.Types;
+using ApartmentComplexServiceLibraryV1.Models.Utils;
 
-namespace ApartmentComplexServiceLibrary.DAO
+namespace ApartmentComplexServiceLibraryV1.DAO
 {
 	class AdministrationServiceDAO
 	{

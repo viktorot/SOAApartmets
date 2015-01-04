@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.adrenalinski-park.com/16/12/2014" elementFormDefault="qualified" targetNamespace="http://www.adrenalinski-park.com/16/12/2014" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="VrniDogodke">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniDogodkeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VrniDogodkeResult" nillable="true" type="tns:ArrayOfDogodek" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfDogodek">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dogodek" nillable="true" type="tns:Dogodek" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDogodek" nillable="true" type="tns:ArrayOfDogodek" />
+  <xs:complexType name="Dogodek">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cena" type="xs:double" />
+      <xs:element minOccurs="0" name="DatumDogodka" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdDogodka" type="xs:int" />
+      <xs:element minOccurs="0" name="KomentarDogodka" nillable="true" type="tns:ArrayOfKomentarDogodka" />
+      <xs:element minOccurs="0" name="Lokacija" nillable="true" type="tns:LokacijaDogodka" />
+      <xs:element minOccurs="0" name="MaxSteviloPrijav" type="xs:int" />
+      <xs:element minOccurs="0" name="NazivDogodka" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Opis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PovprecnaOcena" type="xs:double" />
+      <xs:element minOccurs="0" name="TipDogodka" type="tns:TipDogodka" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dogodek" nillable="true" type="tns:Dogodek" />
+  <xs:complexType name="ArrayOfKomentarDogodka">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KomentarDogodka" nillable="true" type="tns:KomentarDogodka" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKomentarDogodka" nillable="true" type="tns:ArrayOfKomentarDogodka" />
+  <xs:complexType name="KomentarDogodka">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OcenaDogodka" type="xs:int" />
+      <xs:element minOccurs="0" name="VsebinaKomentarja" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KomentarDogodka" nillable="true" type="tns:KomentarDogodka" />
+  <xs:complexType name="LokacijaDogodka">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lokacija">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NazivParka" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LokacijaDogodka" nillable="true" type="tns:LokacijaDogodka" />
+  <xs:complexType name="Lokacija">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mesto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Naslov" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Posta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lokacija" nillable="true" type="tns:Lokacija" />
+  <xs:complexType name="Narocnik">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Lokacija">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Geslo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Priimek" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TelefonskaStevilka" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UporabniskoIme" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Narocnik" nillable="true" type="tns:Narocnik" />
+  <xs:simpleType name="TipDogodka">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Kanjoning" />
+      <xs:enumeration value="Rafting" />
+      <xs:enumeration value="Sportno_plezanje" />
+      <xs:enumeration value="Gorsko_kolesarjenje" />
+      <xs:enumeration value="Zorbing" />
+      <xs:enumeration value="Zip_line" />
+      <xs:enumeration value="Bungee_jump" />
+      <xs:enumeration value="Bob_cart" />
+      <xs:enumeration value="Gokart" />
+      <xs:enumeration value="Paintball" />
+      <xs:enumeration value="Airsoft" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipDogodka" nillable="true" type="tns:TipDogodka" />
+  <xs:complexType name="FaultType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FaultType" nillable="true" type="tns:FaultType" />
+  <xs:element name="VrniPrihajajoceDogodke">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniPrihajajoceDogodkeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VrniPrihajajoceDogodkeResult" nillable="true" type="tns:ArrayOfDogodek" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniDogodkeMedDatumoma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="datumOd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="datumDo" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniDogodkeMedDatumomaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VrniDogodkeMedDatumomaResult" nillable="true" type="tns:ArrayOfDogodek" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniDogodkeGledeNaTip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipDogodka" type="tns:TipDogodka" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniDogodkeGledeNaTipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VrniDogodkeGledeNaTipResult" nillable="true" type="tns:ArrayOfDogodek" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PridobiCenoDogodka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDogodka" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PridobiCenoDogodkaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PridobiCenoDogodkaResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzracunCeneSkupinskePrijave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDogodka" type="xs:int" />
+        <xs:element minOccurs="0" name="stPrijav" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzracunCeneSkupinskePrijaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzracunCeneSkupinskePrijaveResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniSteviloProstihMestDogodka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDogodka" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniSteviloProstihMestDogodkaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VrniSteviloProstihMestDogodkaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijavaNaDogodek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDogodka" type="xs:int" />
+        <xs:element minOccurs="0" name="upIme" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="geslo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stOseb" type="xs:int" />
+        <xs:element minOccurs="0" name="lastniPrevoz" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijavaNaDogodekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrijavaNaDogodekResult" nillable="true" type="tns:Prijava" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Prijava">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cena" type="xs:double" />
+      <xs:element minOccurs="0" name="DatumPrijave" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Dogodek" nillable="true" type="tns:Dogodek" />
+      <xs:element minOccurs="0" name="IdPrijava" type="xs:int" />
+      <xs:element minOccurs="0" name="LastenPrevoz" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Narocnik" nillable="true" type="tns:Narocnik" />
+      <xs:element minOccurs="0" name="PrijavaPlacana" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SteviloOseb" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Prijava" nillable="true" type="tns:Prijava" />
+  <xs:element name="OdjavaZdogodka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPrijave" type="xs:int" />
+        <xs:element minOccurs="0" name="uporabniskoIme" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="geslo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OdjavaZdogodkaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OdjavaZdogodkaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledLastnihPrijav">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uporabniskoIme" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="geslo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledLastnihPrijavResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PregledLastnihPrijavResult" nillable="true" type="tns:ArrayOfPrijava" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfPrijava">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Prijava" nillable="true" type="tns:Prijava" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrijava" nillable="true" type="tns:ArrayOfPrijava" />
+  <xs:element name="DodajKomentarDogodka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDogodka" type="xs:int" />
+        <xs:element minOccurs="0" name="komentar" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uporabniskoIme" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="geslo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajKomentarDogodkaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajKomentarDogodkaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajOcenoDogodka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDogodka" type="xs:int" />
+        <xs:element minOccurs="0" name="ocena" type="xs:int" />
+        <xs:element minOccurs="0" name="uporabniskoIme" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="geslo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DodajOcenoDogodkaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DodajOcenoDogodkaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijavaNaObvestila">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijavaNaObvestilaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrijavaNaObvestilaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganizirajPrevoz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPrijave" type="xs:int" />
+        <xs:element minOccurs="0" name="lokacijaPrevzema" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uporabniskoIme" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="geslo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganizirajPrevozResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrganizirajPrevozResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlacajPrijavo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPrijave" type="xs:int" />
+        <xs:element minOccurs="0" name="uporabniskoIme" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="geslo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TRR" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="placajPrekoERacuna" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlacajPrijavoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PlacajPrijavoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

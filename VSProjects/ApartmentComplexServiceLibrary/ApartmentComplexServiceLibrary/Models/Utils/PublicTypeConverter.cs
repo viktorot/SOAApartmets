@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApartmentComplexServiceLibrary.Models.Utils
+namespace ApartmentComplexServiceLibraryV1.Models.Utils
 {
 	class PublicTypeConverter
 	{

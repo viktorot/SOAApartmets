@@ -9,8 +9,8 @@
     <ProjectGuid>{15B3E0D2-6217-493A-A690-158C497F5318}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApartmentComplexServiceLibrary</RootNamespace>
-    <AssemblyName>ApartmentComplexServiceLibrary</AssemblyName>
+    <RootNamespace>ApartmentComplexServiceLibraryV1</RootNamespace>
+    <AssemblyName>ApartmentComplexServiceLibraryV1</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -80,6 +80,9 @@
   <ItemGroup>
     <Compile Include="DAO\AdministrationServiceDAO.cs" />
     <Compile Include="DAO\PublicServiceDAO.cs" />
+    <Compile Include="External\AquaParkAccess.cs" />
+    <Compile Include="External\BankAccess.cs" />
+    <Compile Include="External\TaxiAccess.cs" />
     <Compile Include="Faults\DBAccessException.cs" />
     <Compile Include="Faults\InvalidParamenterException.cs" />
     <Compile Include="Faults\NotFoundException.cs" />
@@ -122,6 +125,21 @@
     <Compile Include="Models\Utils\AdministationTypesConverter.cs" />
     <Compile Include="Models\Utils\PublicTypeConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AquaPark\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Bank\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Taxi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceImplementation\ApartmentAdministrationService.cs" />
     <Compile Include="ServiceImplementation\ApartmentPublicService.cs" />
     <Compile Include="ServiceInterfaces\IApartmentAdministrationService.cs" />
@@ -154,10 +172,133 @@
       <LastGenOutput>ApartmentsDB.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Service References\AquaPark\AdrenalinskiParkService.wsdl" />
+    <None Include="Service References\AquaPark\AdrenalinskiParkService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AquaPark\AdrenalinskiParkService1.wsdl" />
+    <None Include="Service References\AquaPark\AdrenalinskiParkService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AquaPark\ApartmentComplexServiceLibraryV1.AquaPark.Dogodek.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AquaPark\ApartmentComplexServiceLibraryV1.AquaPark.Prijava.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Bank\ApartmentComplexServiceLibraryV1.Bank.eRacun.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Bank\ApartmentComplexServiceLibraryV1.Bank.Racun.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Bank\ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Bank\ApartmentComplexServiceLibraryV1.Bank.TemplateERacun.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Bank\ApartmentComplexServiceLibraryV1.Bank.Transakcija.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Bank\BankaServiceV3.wsdl" />
+    <None Include="Service References\Bank\BankService.wsdl" />
+    <None Include="Service References\Bank\BankService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Bank\BankService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Taxi\ApartmentComplexServiceLibraryV1.Taxi.Cenik.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Taxi\ApartmentComplexServiceLibraryV1.Taxi.Narocilo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Taxi\ApartmentComplexServiceLibraryV1.Taxi.Vozila.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Taxi\Uporabniki.wsdl" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AquaPark\" />
+    <WCFMetadataStorage Include="Service References\Bank\" />
+    <WCFMetadataStorage Include="Service References\Taxi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AquaPark\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AquaPark\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AquaPark\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Taxi\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Taxi\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Taxi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Bank\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Bank\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Bank\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

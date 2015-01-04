@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ApartmentComplexServiceLibrary.Models
+namespace ApartmentComplexServiceLibraryV1.Models
 {
     using System;
     using System.Data.Entity;

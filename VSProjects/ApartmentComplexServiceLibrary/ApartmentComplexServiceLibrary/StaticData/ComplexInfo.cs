@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApartmentComplexServiceLibrary.StaticData
+namespace ApartmentComplexServiceLibraryV1.StaticData
 {
 	class ComplexInfo
 	{
@@ -12,5 +12,6 @@ namespace ApartmentComplexServiceLibrary.StaticData
 		public static string Description { get; set; }
 		public static int NumOfAppartments { get; set; }
 		public static int Capacity { get; set; }
+		public static string Address { get; set; }
 	}
 }

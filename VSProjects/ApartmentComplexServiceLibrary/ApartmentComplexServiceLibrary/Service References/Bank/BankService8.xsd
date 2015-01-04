@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.soa.com/projekt/tipTransakcije/11/23" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/tipTransakcije/11/23" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TipTransakcije">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="priliv" />
+      <xs:enumeration value="odliv" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipTransakcije" nillable="true" type="tns:TipTransakcije" />
+</xs:schema>

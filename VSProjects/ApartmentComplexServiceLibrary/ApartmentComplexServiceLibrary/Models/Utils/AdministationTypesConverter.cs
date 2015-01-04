@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApartmentComplexServiceLibrary.Models.Utils
+namespace ApartmentComplexServiceLibraryV1.Models.Utils
 {
 	class ApartmentTypeConverter
 	{
-
 		public static Types.apartment ApartmentModelToObj(Models.apartment model) 
 		{
 			Types.apartment obj = new Types.apartment

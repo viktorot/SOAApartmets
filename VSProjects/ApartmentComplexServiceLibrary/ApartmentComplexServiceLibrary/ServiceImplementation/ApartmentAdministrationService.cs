@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using ApartmentComplexServiceLibrary.ServiceInterfaces.AdministrationService;
-using ApartmentComplexServiceLibrary.Types;
-using ApartmentComplexServiceLibrary.DAO;
-using ApartmentComplexServiceLibrary.Faults;
+using ApartmentComplexServiceLibraryV1.ServiceInterfaces.AdministrationService;
+using ApartmentComplexServiceLibraryV1.Types;
+using ApartmentComplexServiceLibraryV1.DAO;
+using ApartmentComplexServiceLibraryV1.Faults;
 
 using MySql.Data;
 using System.ServiceModel;
 
-namespace ApartmentComplexServiceLibrary.ServiceImplementation
+namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 {
 	class ApartmentAdministrationService : IApartmentAdministrationService
 	{
