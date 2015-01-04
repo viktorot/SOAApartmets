@@ -11,6 +11,150 @@ namespace ApartmentComplexServiceLibrary.DAO
 	class PublicServiceDAO
 	{
 
+		public List<Types.apartment> Search(int dateFrom, int dateTo, int numOfBeds)
+		{
+			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			try
+			{
+				List<Models.apartment> result = entities.apartments.ToList();
+
+				if (numOfBeds != -1)
+				{
+					result = entities.apartments.Where(ap => ap.no_single_beds + ap.no_king_beds * 2 + ap.no_extra_beds >= numOfBeds).ToList();
+				}
+
+				if (dateFrom != -1 && dateTo != -1)
+				{
+					List<Models.apartment> tmp = entities.apartments.ToList();
+
+					foreach (Models.apartment ap in result)
+					{
+						if (ap.bookings.Count > 0)
+						{
+							Models.booking b = ap.bookings.FirstOrDefault(el => el.date_from >= dateFrom || el.date_to <= dateTo);
+							if (b == null)
+							{
+								tmp.Add(ap);
+							}
+						}
+						else
+						{
+							tmp.Add(ap);
+						}
+					}
+
+					result = tmp;
+				}
+
+				return result.Select(el => ApartmentTypeConverter.ApartmentModelToObj(el)).ToList();
+			}
+			catch (Exception ex)
+			{
+				return new List<Types.apartment>();
+			}
+		}
+
+		public List<Types.apartment> AdvancedSearch(int dateFrom, int dateTo, int numOfKingBeds, int numOfSingleBeds, int numOfExtraBeds,
+														bool petFriendly, bool internet, bool airContitioning, bool tv, bool kitchen,
+														int stars, bool balcony, bool accessable)
+		{
+			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			try
+			{
+				List<Models.apartment> result = entities.apartments.ToList();
+
+				// filter by avilability
+				if (dateFrom != -1 && dateTo != -1)
+				{
+					List<Models.apartment> tmp = entities.apartments.ToList();
+
+					foreach (Models.apartment ap in result)
+					{
+						if (ap.bookings.Count > 0)
+						{
+							Models.booking b = ap.bookings.FirstOrDefault(el => el.date_from >= dateFrom || el.date_to <= dateTo);
+							if (b == null)
+							{
+								tmp.Add(ap);
+							}
+						}
+						else
+						{
+							tmp.Add(ap);
+						}
+					}
+
+					result = tmp;
+				}
+
+				if (numOfKingBeds != -1)
+				{
+					result = result.Where(ap => ap.no_king_beds >= numOfKingBeds).ToList();
+				}
+
+				if (numOfSingleBeds != -1)
+				{
+					result = result.Where(ap => ap.no_single_beds >= numOfSingleBeds).ToList();
+				}
+
+				if (numOfExtraBeds != -1)
+				{
+					result = result.Where(ap => ap.no_extra_beds >= numOfExtraBeds).ToList();
+				}
+
+				if (petFriendly)
+				{
+					result = result.Where(ap => ap.pet_friendly == true).ToList();
+				}
+
+				if (petFriendly)
+				{
+					result = result.Where(ap => ap.pet_friendly == true).ToList();
+				}
+
+				if (internet)
+				{
+					result = result.Where(ap => ap.internet == true).ToList();
+				}
+
+				if (airContitioning)
+				{
+					result = result.Where(ap => ap.air_conditioning == true).ToList();
+				}
+
+				if (tv)
+				{
+					result = result.Where(ap => ap.tv == true).ToList();
+				}
+
+				if (kitchen)
+				{
+					result = result.Where(ap => ap.kitchen == true).ToList();
+				}
+				
+				if (stars != -1)
+				{
+					result = result.Where(ap => ap.class_stars >= stars).ToList();
+				}
+
+				if (balcony)
+				{
+					result = result.Where(ap => ap.balcony == true).ToList();
+				}
+
+				if (accessable)
+				{
+					result = result.Where(ap => ap.accessible == true).ToList();
+				}
+
+				return result.Select(el => ApartmentTypeConverter.ApartmentModelToObj(el)).ToList();
+			}
+			catch (Exception ex)
+			{
+				return new List<Types.apartment>();
+			}
+		}
+
 		public int MakeBooking(int userId, int apartmentId, int dateFrom, int dateTo, int package_arrangment_id, string discountCode)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
