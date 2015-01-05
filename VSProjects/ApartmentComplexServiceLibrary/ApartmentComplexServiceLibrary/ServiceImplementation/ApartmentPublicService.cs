@@ -8,6 +8,7 @@ using ApartmentComplexServiceLibraryV1.ServiceInterfaces.PublicService;
 using ApartmentComplexServiceLibraryV1.Types;
 using ApartmentComplexServiceLibraryV1.DAO;
 using ApartmentComplexServiceLibraryV1.Faults;
+using ApartmentComplexServiceLibraryV1.External;
 using System.ServiceModel;
 
 namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
@@ -44,6 +45,21 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 									request.package_arrangment_id, request.discount_code, request.bank_payment);
 			if (itemId != -1)
 			{
+				if (request.package_arrangment_id != 0)
+				{
+					TaxiAccess.OrderTaxi(StaticData.ComplexInfo.Address, request.num_of_people, DateTime.FromFileTimeUtc(request.date_from));
+					AquaParkAccess.ReserveAndPayForEvent(1, request.num_of_people, request.user_trr.ToString());
+
+					if (request.bank_payment)
+					{
+						BankAccess.PlayEBill(1, request.user_trr, request.pin_number, 12.0d);
+					}
+					else 
+					{
+						BankAccess.PayWithCard(request.user_trr, request.pin_number, 12.0d);
+					}
+				}
+
 				return new MakeBookingResponse(booking_response.booked, itemId);
 			}
 			else

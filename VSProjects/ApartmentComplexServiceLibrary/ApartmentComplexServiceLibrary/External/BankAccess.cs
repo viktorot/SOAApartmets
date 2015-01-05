@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApartmentComplexServiceLibraryV1.External
 {
-	class BankAccess
+	public class BankAccess
 	{
 		private static void CreateAccountForUs()
 		{
@@ -18,12 +18,12 @@ namespace ApartmentComplexServiceLibraryV1.External
 
 		}
 
-		private static void PlayEBill(int id)
+		public static void PlayEBill(int bill_id, int trr, int pin, double amount)
 		{
 
 		}
 
-		private static void PayWithCard()
+		public static void PayWithCard(int trr, int pin, double amount)
 		{
 
 		}

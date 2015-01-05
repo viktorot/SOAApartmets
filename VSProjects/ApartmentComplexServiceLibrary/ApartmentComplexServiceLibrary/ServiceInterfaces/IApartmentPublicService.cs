@@ -259,11 +259,15 @@ namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces.PublicService
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public bool bank_payment;
 
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 8)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int num_of_people;
+
 		public MakeBookingRequest()
 		{
 		}
 
-		public MakeBookingRequest(int user_trr, int pin, int apartment_id, int date_from, int date_to, int package_arrangment_id, string discount_code, bool payment)
+		public MakeBookingRequest(int user_trr, int pin, int apartment_id, int date_from, int date_to, int package_arrangment_id, string discount_code, bool payment, int num_of_people)
 		{
 			this.user_trr = user_trr;
 			this.pin_number = pin;
@@ -273,6 +277,7 @@ namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces.PublicService
 			this.package_arrangment_id = package_arrangment_id;
 			this.discount_code = discount_code;
 			this.bank_payment = payment;
+			this.num_of_people = num_of_people;
 		}
 	}
 

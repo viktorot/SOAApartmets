@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApartmentComplexServiceLibraryV1.External
 {
-	class AquaParkAccess
+	public class AquaParkAccess
 	{
 
 		public static AquaPark.Dogodek[] GetAllEvents()
@@ -15,6 +15,14 @@ namespace ApartmentComplexServiceLibraryV1.External
 			AquaPark.Dogodek[] dogodki = client.VrniDogodke();
 
 			return dogodki;
+		}
+
+		public static AquaPark.Dogodek GetEvent()
+		{
+			AquaPark.Dogodek[] dogodki = GetAllEvents();
+			Random rnd = new Random(DateTime.Now.Millisecond);
+
+			return dogodki[rnd.Next() & dogodki.Length];
 		}
 
 		public static int GetAvailablePlacesForEvent(int eventId)

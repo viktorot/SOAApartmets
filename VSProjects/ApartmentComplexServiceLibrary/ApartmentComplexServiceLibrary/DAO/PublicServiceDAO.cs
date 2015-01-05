@@ -174,7 +174,15 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 					newBooking.date_from = dateFrom;
 					newBooking.date_to = dateTo;
 					newBooking.payment_method = method;
-					newBooking.status = "pending";
+
+					if (bank_payment)
+					{
+						newBooking.status = "pending";
+					}
+					else
+					{
+						newBooking.status = "paid";
+					}					
 
 					Models.arrangement_package arrangementModel = entities.arrangement_package.FirstOrDefault(el => el.id.Equals(package_arrangment_id));
 					Models.discount discountModel = entities.discounts.FirstOrDefault(el => el.code.Equals(discountCode));

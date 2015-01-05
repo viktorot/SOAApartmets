@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApartmentComplexServiceLibraryV1.External
 {
-	class TaxiAccess
+	public class TaxiAccess
 	{
 
 		public static void OrderTaxi(string destination, int numOfPeople, DateTime timeOfDeparture)
