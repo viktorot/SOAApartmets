@@ -1,17 +1,19 @@
 <publishData>
   <publishTarget publishUrl="C:\Users\viktor\Desktop\SOAPublish\">
-    <file relUrl="Web.config" publishTime="12/08/2014 20:12:23" />
+    <file relUrl="Web.config" publishTime="01/04/2015 19:50:45" />
     <file relUrl="bin/EntityFramework.dll" publishTime="12/08/2014 18:55:12" />
-    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentAdministrationService.svc" publishTime="12/14/2014 15:12:31" />
-    <file relUrl="bin/ApartmentComplexServiceLibrary.pdb" publishTime="12/14/2014 15:12:27" />
-    <file relUrl="bin/desktop.ini" publishTime="11/23/2014 18:15:23" />
+    <file relUrl="bin/Newtonsoft.Json.xml" publishTime="12/15/2014 22:05:06" />
+    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.ApartmentAdministrationService.svc" publishTime="01/04/2015 20:34:54" />
+    <file relUrl="bin/ApartmentComplexServiceLibraryV1.dll.config" publishTime="01/04/2015 19:50:45" />
     <file relUrl="bin/EntityFramework.xml" publishTime="12/08/2014 18:55:12" />
-    <file relUrl="ApartmentComplexServiceLibrary.ServiceImplementation.ApartmentPublicService.svc" publishTime="12/14/2014 15:12:31" />
     <file relUrl="bin/EntityFramework.SqlServer.dll" publishTime="12/08/2014 18:55:12" />
-    <file relUrl="bin/ApartmentComplexServiceLibrary.dll.config" publishTime="12/08/2014 20:12:23" />
-    <file relUrl="bin/ApartmentComplexServiceLibrary.dll" publishTime="12/14/2014 15:12:27" />
+    <file relUrl="bin/ApartmentComplexServiceLibraryV1.pdb" publishTime="01/04/2015 20:32:57" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="12/15/2014 22:05:06" />
     <file relUrl="bin/MySql.Data.dll" publishTime="12/08/2014 20:12:22" />
     <file relUrl="bin/EntityFramework.SqlServer.xml" publishTime="12/08/2014 18:55:12" />
+    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.RestService.svc" publishTime="01/04/2015 20:34:54" />
+    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.ApartmentPublicService.svc" publishTime="01/04/2015 20:34:54" />
+    <file relUrl="bin/ApartmentComplexServiceLibraryV1.dll" publishTime="01/04/2015 20:32:57" />
     <file relUrl="bin/mysql.data.entity.EF6.dll" publishTime="12/08/2014 20:12:22" />
   </publishTarget>
   <publishTarget publishUrl="ftp://svizec.informatika.uni-mb.si/services/v0_1">

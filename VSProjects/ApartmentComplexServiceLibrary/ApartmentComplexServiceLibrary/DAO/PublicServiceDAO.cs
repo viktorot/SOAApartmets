@@ -155,21 +155,25 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 			}
 		}
 
-		public int MakeBooking(int userId, int apartmentId, int dateFrom, int dateTo, int package_arrangment_id, string discountCode)
+		public int MakeBooking(int user_trr, int apartmentId, int dateFrom, int dateTo, int package_arrangment_id, string discountCode, bool bank_payment)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				Models.customer customerModel = entities.customers.FirstOrDefault(el => el.id.Equals(userId));
 				Models.apartment apartmentModel = entities.apartments.FirstOrDefault(el => el.id.Equals(apartmentId));
 
-				if(customerModel != null && apartmentModel != null) 
+				if(apartmentModel != null) 
 				{
+					Models.payment_method method = new Models.payment_method();
+					method.bank_payment = bank_payment; // true -> e-bull; false -> card
+					method.card_number = user_trr.ToString();
+
 					Models.booking newBooking = new Models.booking();
-					newBooking.customer_idcustomer = userId;
+					newBooking.customer_idcustomer = user_trr;
 					newBooking.apartment_idapartment = apartmentId;
 					newBooking.date_from = dateFrom;
 					newBooking.date_to = dateTo;
+					newBooking.payment_method = method;
 					newBooking.status = "pending";
 
 					Models.arrangement_package arrangementModel = entities.arrangement_package.FirstOrDefault(el => el.id.Equals(package_arrangment_id));
@@ -268,12 +272,12 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 			}
 		}
 
-		public Types.booking_description_response[] GetBookingsForUser(int userId)
+		public Types.booking_description_response[] GetBookingsForUser(string userTrr)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				List<Models.booking> bookingModelList = entities.bookings.Where(el => el.customer.id.Equals(userId)).ToList();
+				List<Models.booking> bookingModelList = entities.bookings.Where(el => el.customer.id.Equals(userTrr)).ToList();
 				if (bookingModelList != null)
 				{
 					return bookingModelList.Select(el => PublicTypeConverter.BookingModelToBookingDescriptionResponse(el)).ToArray();

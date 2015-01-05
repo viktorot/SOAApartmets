@@ -55,36 +55,6 @@ namespace ApartmentComplexServiceLibraryV1.Models.Utils
 			return model;
 		}
 
-		public static Types.customer CustomerModelToObj(Models.customer model)
-		{
-			Types.customer obj = new Types.customer
-			{
-				id = model.id,
-				first_name = model.first_name,
-				last_name = model.last_name,
-				email = model.email,
-				address = model.address,
-				password = model.password
-			};
-
-			return obj;
-		}
-
-		public static Models.customer CustomerObjToModel(Types.customer obj)
-		{
-			Models.customer model = new Models.customer
-			{
-				id = obj.id,
-				first_name = obj.first_name,
-				last_name = obj.last_name,
-				email = obj.email,
-				address = obj.address,
-				password = obj.password
-			};
-
-			return model;
-		}
-
 		public static Types.discount DiscountModelToObj(Models.discount model)
 		{
 			Types.discount obj = new Types.discount

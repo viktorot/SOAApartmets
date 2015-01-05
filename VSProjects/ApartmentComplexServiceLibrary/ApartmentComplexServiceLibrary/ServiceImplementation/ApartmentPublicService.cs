@@ -40,7 +40,8 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 		public MakeBookingResponse MakeBooking(MakeBookingRequest request)
 		{
 			PublicServiceDAO publicDAO = new PublicServiceDAO();
-			int itemId = publicDAO.MakeBooking(request.user_id, request.apartment_id, request.date_from, request.date_to, request.package_arrangment_id, request.discount_code);
+			int itemId = publicDAO.MakeBooking(request.user_trr, request.apartment_id, request.date_from, request.date_to, 
+									request.package_arrangment_id, request.discount_code, request.bank_payment);
 			if (itemId != -1)
 			{
 				return new MakeBookingResponse(booking_response.booked, itemId);
@@ -96,7 +97,7 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 		public GetBookingsForUserResponse GetBookingsForUser(GetBookingsForUserRequest request)
 		{
 			PublicServiceDAO publicDAO = new PublicServiceDAO();
-			booking_description_response[] result = publicDAO.GetBookingsForUser(request.user_id);
+			booking_description_response[] result = publicDAO.GetBookingsForUser(request.user_trr);
 			if (result != null)
 			{
 				return new GetBookingsForUserResponse(result);

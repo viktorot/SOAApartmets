@@ -45,35 +45,29 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 			}
 		}
 
-		public apartment FindApartment(int id)
+		public apartment[] FindApartment(int id, int num_of_beds)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				Models.apartment apartmentModel = entities.apartments.FirstOrDefault(el => el.id.Equals(id));
+				List<Models.apartment> apartmentModels = new List<Models.apartment>();
 
-				if (apartmentModel != null)
+				if (id == 0 && num_of_beds == 0)
 				{
-					apartment apartmentObj = new apartment
-					{
-						id = apartmentModel.id,
-						title = apartmentModel.title,
-						description = apartmentModel.description,
-						latitude = (double) apartmentModel.latitude,
-						longitude = (double) apartmentModel.longitude,
-						no_king_beds = (int) apartmentModel.no_king_beds,
-						no_extra_beds = (int)apartmentModel.no_extra_beds,
-						no_single_beds = (int)apartmentModel.no_single_beds,
-						pet_friendly = (bool) apartmentModel.pet_friendly,
-						internet = (bool) apartmentModel.internet,
-						air_conditioning = (bool) apartmentModel.air_conditioning,
-						tv = (bool) apartmentModel.tv,
-						kitchen = (bool )apartmentModel.kitchen,
-						accessible = (bool) apartmentModel.accessible,
-						class_stars = (int) apartmentModel.class_stars
-					};
+					apartmentModels = entities.apartments.ToList();
+				}
+				else if (id > 0)
+				{
+					apartmentModels = entities.apartments.Where(el => el.id.Equals(id)).ToList();
+				}
+				else
+				{
+					apartmentModels = entities.apartments.Where(el => el.no_extra_beds + el.no_king_beds * 2 + el.no_single_beds >= num_of_beds).ToList();
+				}				
 
-					return apartmentObj;
+				if (apartmentModels != null)
+				{
+					return apartmentModels.Select(el => Models.Utils.ApartmentTypeConverter.ApartmentModelToObj(el)).ToArray();
 				}
 				else
 				{
@@ -150,7 +144,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 			}
 		}
 
-		public int AddBooking(int userId, int apartmentId, int dateFrom, int dateTo, int packagArrangementId, string discountCode)
+		public int AddBooking(int user_trr, int apartmentId, int dateFrom, int dateTo, int packagArrangementId, string discountCode)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
@@ -159,7 +153,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 				
 				Models.booking bookingModel = new Models.booking
 				{
-					customer_idcustomer = userId,
+					customer_idcustomer = user_trr,
 					date_from = dateFrom,
 					date_to = dateTo,
 					arrangement_package_id = packagArrangementId,
@@ -187,7 +181,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 						id = bookingModel.id,
 						date_from = bookingModel.date_from,
 						date_to = bookingModel.date_to,
-						customer = ApartmentTypeConverter.CustomerModelToObj(bookingModel.customer),
+						//customer = ApartmentTypeConverter.CustomerModelToObj(bookingModel.customer),
 						apartment = ApartmentTypeConverter.ApartmentModelToObj(bookingModel.apartment),
 						status = ApartmentTypeConverter.BookingStatusStringToEnum(bookingModel.status),
 						discount = ApartmentTypeConverter.DiscountModelToObj(bookingModel.discount),
@@ -219,7 +213,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 					bookingModel.date_to = bookingObj.date_to;
 					bookingModel.status = bookingObj.status.ToString();
 					bookingModel.apartment = ApartmentTypeConverter.ApartmentObjToModel(bookingObj.apartment);
-					bookingModel.customer = ApartmentTypeConverter.CustomerObjToModel(bookingObj.customer);
+					//bookingModel.customer = ApartmentTypeConverter.CustomerObjToModel(bookingObj.customer);
 					bookingModel.payment_method = ApartmentTypeConverter.PaymentObjToModel(bookingObj.payment);
 					bookingModel.discount = ApartmentTypeConverter.DiscountObjToModel(bookingObj.discount);
 
@@ -259,7 +253,16 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
-				List<Models.arrangement_package> packageModels = entities.arrangement_package.Where(el => el.valid_from >= dateFrom && el.valid_to <= dateTo).ToList();
+				List<Models.arrangement_package> packageModels = new List<Models.arrangement_package>();
+
+				if (dateFrom == 0 && dateTo == 0)
+				{
+					packageModels = entities.arrangement_package.ToList();
+				}
+				else
+				{
+					packageModels = entities.arrangement_package.Where(el => el.valid_from >= dateFrom && el.valid_to <= dateTo).ToList();
+				}
 				return packageModels.Select(el => ApartmentTypeConverter.ArrangmentModelToObj(el)).ToArray();
 			}
 			catch (Exception ex)
@@ -400,6 +403,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 			return true;
 		}
 
+		/*
 		public int AddCustomer(customer customerObj)
 		{
 			Models.ApartmentEntities entities = new Models.ApartmentEntities();
@@ -425,7 +429,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 													el.last_name.Equals(lastName) || el.tax_number.Equals(taxNumber));
 				if (customerModel != null)
 				{
-					return ApartmentTypeConverter.CustomerModelToObj(customerModel);
+					//return ApartmentTypeConverter.CustomerModelToObj(customerModel);
 				}
 				else 
 				{
@@ -492,7 +496,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 				return false;
 			}
 		}
-
+		*/
 
 	}
 }

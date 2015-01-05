@@ -53,7 +53,7 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 		public FindApartmentResponse FindApartment(FindApartmentRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-			apartment result = adminDAO.FindApartment(request.id);
+			apartment[] result = adminDAO.FindApartment(request.id, request.num_of_beds);
 			if (result != null)
 			{
 				return new FindApartmentResponse(result);
@@ -100,7 +100,7 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 		public AddBookingResponse AddBooking(AddBookingRequest request)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-			int itemId = adminDAO.AddBooking(request.user_id, request.apartment_id, request.date_from, request.date_to, request.package_arrangment_id, request.discount_code);
+			int itemId = adminDAO.AddBooking(request.user_trr, request.apartment_id, request.date_from, request.date_to, request.package_arrangment_id, request.discount_code);
 			if (itemId != -1)
 			{
 				return new AddBookingResponse(true, itemId);
@@ -255,66 +255,6 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.UpdateComplexInfo(request.complex);
 			return new UpdateComplexInfoResponse(result);
-		}
-
-		public AddCustomerResponse AddCustomer(AddCustomerRequest request)
-		{
-			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-			int itemId = adminDAO.AddCustomer(request.customer);
-			if (itemId != -1)
-			{
-				return new AddCustomerResponse(true, itemId);
-			}
-			else
-			{
-				ThrowDatabaseAccessException();
-				return new AddCustomerResponse(false, itemId);
-			}
-		}
-
-		public FindCustomerResponse FindCustomer(FindCustomerRequest request)
-		{
-			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-			customer c = adminDAO.FindCustomer(request.id, request.first_name, request.last_name, request.tax_number);
-			if (c != null)
-			{
-				return new FindCustomerResponse(c);
-			}
-			else
-			{
-				ThrowNotFoundException(request.id);
-				return null;
-			}
-		}
-
-		public UpdateCustomerResponse UpdateCustomer(UpdateCustomerRequest request)
-		{
-			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-			bool result = adminDAO.UpdateCustomer(request.customer);
-			if (result)
-			{
-				return new UpdateCustomerResponse(result);
-			}
-			else
-			{
-				ThrowNotFoundException(request.customer.id);
-				return null;
-			}
-		}
-
-		public DeleteCustomerResponse DeleteCustomer(DeleteCustomerRequest request)
-		{
-			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-			bool result = adminDAO.DeleteCustomer(request.id);
-			if (result)
-			{
-				return new DeleteCustomerResponse(result);
-			}
-			else
-			{
-				ThrowNotFoundException(request.id);
-				return null;
-			}
 		}
 	}
 }

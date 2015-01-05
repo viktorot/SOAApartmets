@@ -15,7 +15,6 @@ using ApartmentComplexServiceLibraryV1.DAO;
 
 namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 {
-	// NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "IRestService" in both code and config file together.
 	public class RestService : IRestService
 	{
 
@@ -64,7 +63,7 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 		public string GetApartment(string id)
 		{
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
-			apartment ap = adminDAO.FindApartment(Convert.ToInt32(id));
+			apartment[] ap = adminDAO.FindApartment(Convert.ToInt32(id), 1);
 			if (ap != null)
 			{
 				return JsonConvert.SerializeObject(ap);

@@ -229,40 +229,50 @@ namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces.PublicService
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 0)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int user_id;
+		public int user_trr;
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 1)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int apartment_id;
+		public int pin_number;
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 2)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int date_from;
+		public int apartment_id;
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 3)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int date_to;
+		public int date_from;
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 4)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int package_arrangment_id;
+		public int date_to;
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 5)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public int package_arrangment_id;
+
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 6)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public string discount_code;
+
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 7)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public bool bank_payment;
 
 		public MakeBookingRequest()
 		{
 		}
 
-		public MakeBookingRequest(int user_id, int apartment_id, int date_from, int date_to, int package_arrangment_id, string discount_code)
+		public MakeBookingRequest(int user_trr, int pin, int apartment_id, int date_from, int date_to, int package_arrangment_id, string discount_code, bool payment)
 		{
-			this.user_id = user_id;
+			this.user_trr = user_trr;
+			this.pin_number = pin;
 			this.apartment_id = apartment_id;
 			this.date_from = date_from;
 			this.date_to = date_to;
 			this.package_arrangment_id = package_arrangment_id;
 			this.discount_code = discount_code;
+			this.bank_payment = payment;
 		}
 	}
 
@@ -441,15 +451,15 @@ namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces.PublicService
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 0)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int user_id;
+		public string user_trr;
 
 		public GetBookingsForUserRequest()
 		{
 		}
 
-		public GetBookingsForUserRequest(int user_id)
+		public GetBookingsForUserRequest(string user_trr)
 		{
-			this.user_id = user_id;
+			this.user_trr = user_trr;
 		}
 	}
 

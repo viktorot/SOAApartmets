@@ -39,10 +39,6 @@
             <End Role="arrangement_package" EntitySet="arrangement_package" />
             <End Role="booking" EntitySet="booking" />
           </AssociationSet>
-          <AssociationSet Name="fk_Booked_customer1" Association="ApartmentModel.Store.fk_Booked_customer1">
-            <End Role="customer" EntitySet="customer" />
-            <End Role="booking" EntitySet="booking" />
-          </AssociationSet>
           <AssociationSet Name="fk_booked_discounts1" Association="ApartmentModel.Store.fk_booked_discounts1">
             <End Role="discounts" EntitySet="discounts" />
             <End Role="booking" EntitySet="booking" />
@@ -128,12 +124,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="45" />
-          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="45" />
-          <Property Name="email" Type="varchar" Nullable="false" MaxLength="90" />
-          <Property Name="address" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="password" Type="varchar" Nullable="false" MaxLength="255" />
-          <Property Name="tax_number" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="first_name" Type="varchar" MaxLength="45" />
+          <Property Name="last_name" Type="varchar" MaxLength="45" />
+          <Property Name="email" Type="varchar" MaxLength="90" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="tax_number" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="discounts">
           <Key>
@@ -234,18 +230,6 @@
             </Principal>
             <Dependent Role="booking">
               <PropertyRef Name="arrangement_package_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_Booked_customer1">
-          <End Role="customer" Type="ApartmentModel.Store.customer" Multiplicity="1" />
-          <End Role="booking" Type="ApartmentModel.Store.booking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="customer">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="booking">
-              <PropertyRef Name="customer_idcustomer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
