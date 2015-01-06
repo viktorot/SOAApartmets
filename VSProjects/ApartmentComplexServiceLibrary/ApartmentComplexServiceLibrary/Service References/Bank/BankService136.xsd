@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.soa.com/projekt/V3" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/V3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd2" namespace="www.soa.com/projekt/komitent/V4" />
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd5" namespace="www.soa.com/projekt/ustvarjenRacunResponse/V4" />
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd6" namespace="www.soa.com/projekt/transakcija/V4" />
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd10" namespace="www.soa.com/projekt/eRacun/V4" />
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd12" namespace="www.soa.com/projekt/ustvarjenERacunResponse/V4" />
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd13" namespace="www.soa.com/projekt/TemplateERacun/V4" />
+  <xs:element name="UstvariRacun">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="www.soa.com/projekt/komitent/V4" minOccurs="0" name="komitent" nillable="true" type="q1:Komitent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UstvariRacunResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="www.soa.com/projekt/ustvarjenRacunResponse/V4" minOccurs="0" name="UstvariRacunResult" nillable="true" type="q2:UstvarjenRacunResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledTransakcij">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledTransakcijResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="www.soa.com/projekt/transakcija/V4" minOccurs="0" name="PregledTransakcijResult" nillable="true" type="q3:ArrayOfTransakcija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledStanja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledStanjaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PregledStanjaResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PologSredstev">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="znesekPologa" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PologSredstevResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrenosSredstevMedRacuni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr_posiljatelj" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin_posiljatelj" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trr_prejemnik" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="znesekPrenosa" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrenosSredstevMedRacuniResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UstvarjanjeERacuna">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="eRacun" nillable="true" type="q4:eRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UstvarjanjeERacunaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="www.soa.com/projekt/ustvarjenERacunResponse/V4" minOccurs="0" name="UstvarjanjeERacunaResult" nillable="true" type="q5:UstvarjenERacunResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaciloERacuna">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="identifikatorRacuna" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaciloERacunaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniSpecificniERacunIdentifikator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="identifikatorRacuna" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniSpecificniERacunIdentifikatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="VrniSpecificniERacunIdentifikatorResult" nillable="true" type="q6:eRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniSpecificniERacunIzdajatelj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idRacuna" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VrniSpecificniERacunIzdajateljResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="VrniSpecificniERacunIzdajateljResult" nillable="true" type="q7:eRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledNeplacanihERacunov">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledNeplacanihERacunovResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="PregledNeplacanihERacunovResult" nillable="true" type="q8:ArrayOfeRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledNeplacanihERacunovIzdajatelj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledNeplacanihERacunovIzdajateljResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="PregledNeplacanihERacunovIzdajateljResult" nillable="true" type="q9:ArrayOfeRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pregledNeplacanihERacunovPrejemnik">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pregledNeplacanihERacunovPrejemnikResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="pregledNeplacanihERacunovPrejemnikResult" nillable="true" type="q10:ArrayOfeRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledVsehERacunov">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledVsehERacunovResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="PregledVsehERacunovResult" nillable="true" type="q11:ArrayOfeRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledVsehERacunovIzdajatelj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledVsehERacunovIzdajateljResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="PregledVsehERacunovIzdajateljResult" nillable="true" type="q12:ArrayOfeRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledVsehERacunovPrejemnik">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledVsehERacunovPrejemnikResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="PregledVsehERacunovPrejemnikResult" nillable="true" type="q13:ArrayOfeRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaciloSPlacilnoKartico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr_placnik" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin_placnik" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="znesek" type="xs:decimal" />
+        <xs:element minOccurs="0" name="trr_prejemnika" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaciloSPlacilnoKarticoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UstvariTemplateERacun">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="www.soa.com/projekt/TemplateERacun/V4" minOccurs="0" name="TemplateERacun" nillable="true" type="q14:TemplateERacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UstvariTemplateERacunResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PridobiTemplatesERacun">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PridobiTemplatesERacunResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="www.soa.com/projekt/TemplateERacun/V4" minOccurs="0" name="PridobiTemplatesERacunResult" nillable="true" type="q15:ArrayOfTemplateERacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PridobiSpecificniTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id_template" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PridobiSpecificniTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="www.soa.com/projekt/eRacun/V4" minOccurs="0" name="PridobiSpecificniTemplateResult" nillable="true" type="q16:eRacun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

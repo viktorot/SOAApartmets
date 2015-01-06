@@ -15,7 +15,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Komitent", Namespace="www.soa.com/projekt/komitent/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Komitent", Namespace="www.soa.com/projekt/komitent/V4")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.FizicnaOseba))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.PoslovnaOseba))]
@@ -46,7 +46,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FizicnaOseba", Namespace="www.soa.com/projekt/fizicnaOseba/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FizicnaOseba", Namespace="www.soa.com/projekt/fizicnaOseba/V4")]
     [System.SerializableAttribute()]
     public partial class FizicnaOseba : ApartmentComplexServiceLibraryV1.Bank.Komitent {
         
@@ -101,7 +101,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PoslovnaOseba", Namespace="www.soa.com/projekt/poslovnaOseba/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PoslovnaOseba", Namespace="www.soa.com/projekt/poslovnaOseba/V4")]
     [System.SerializableAttribute()]
     public partial class PoslovnaOseba : ApartmentComplexServiceLibraryV1.Bank.Komitent {
         
@@ -156,9 +156,9 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Racun", Namespace="www.soa.com/projekt/racun/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UstvarjenRacunResponse", Namespace="www.soa.com/projekt/ustvarjenRacunResponse/V4")]
     [System.SerializableAttribute()]
-    public partial class Racun : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class UstvarjenRacunResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -217,7 +217,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Transakcija", Namespace="www.soa.com/projekt/transakcija/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Transakcija", Namespace="www.soa.com/projekt/transakcija/V4")]
     [System.SerializableAttribute()]
     public partial class Transakcija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -240,7 +240,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         private ApartmentComplexServiceLibraryV1.Bank.TipTransakcije TipField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double ZnesekField;
+        private decimal ZnesekField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -318,7 +318,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Znesek {
+        public decimal Znesek {
             get {
                 return this.ZnesekField;
             }
@@ -340,31 +340,17 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TipTransakcije", Namespace="www.soa.com/projekt/tipTransakcije/11/23")]
-    public enum TipTransakcije : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        priliv = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        odliv = 1,
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RezultatFunkcije", Namespace="www.soa.com/projekt/rezultatFunkcije/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Racun", Namespace="www.soa.com/projekt/racun/V4")]
     [System.SerializableAttribute()]
-    public partial class RezultatFunkcije : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Racun : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DodatneInformacijeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool UspesnoField;
+        private string stevilkaTRRField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -377,27 +363,86 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DodatneInformacije {
+        public string stevilkaTRR {
             get {
-                return this.DodatneInformacijeField;
+                return this.stevilkaTRRField;
             }
             set {
-                if ((object.ReferenceEquals(this.DodatneInformacijeField, value) != true)) {
-                    this.DodatneInformacijeField = value;
-                    this.RaisePropertyChanged("DodatneInformacije");
+                if ((object.ReferenceEquals(this.stevilkaTRRField, value) != true)) {
+                    this.stevilkaTRRField = value;
+                    this.RaisePropertyChanged("stevilkaTRR");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipTransakcije", Namespace="www.soa.com/projekt/tipTransakcije/V4")]
+    public enum TipTransakcije : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        priliv = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        odliv = 1,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+    [System.SerializableAttribute()]
+    public partial class LastnaNapaka : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OperacijaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SporociloField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Operacija {
+            get {
+                return this.OperacijaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OperacijaField, value) != true)) {
+                    this.OperacijaField = value;
+                    this.RaisePropertyChanged("Operacija");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Uspesno {
+        public string Sporocilo {
             get {
-                return this.UspesnoField;
+                return this.SporociloField;
             }
             set {
-                if ((this.UspesnoField.Equals(value) != true)) {
-                    this.UspesnoField = value;
-                    this.RaisePropertyChanged("Uspesno");
+                if ((object.ReferenceEquals(this.SporociloField, value) != true)) {
+                    this.SporociloField = value;
+                    this.RaisePropertyChanged("Sporocilo");
                 }
             }
         }
@@ -414,7 +459,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="eRacun", Namespace="www.soa.com/projekt/eRacun/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="eRacun", Namespace="www.soa.com/projekt/eRacun/V4")]
     [System.SerializableAttribute()]
     public partial class eRacun : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -429,6 +474,9 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DatumPlacilaRacunaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdentifikatorRacunaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NazivRacunaField;
@@ -449,7 +497,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         private ApartmentComplexServiceLibraryV1.Bank.Postavka[] VsePostavkeNaRacunuField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double ZnesekRacunaField;
+        private decimal ZnesekRacunaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_racunaField;
@@ -499,6 +547,19 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
                 if ((this.DatumPlacilaRacunaField.Equals(value) != true)) {
                     this.DatumPlacilaRacunaField = value;
                     this.RaisePropertyChanged("DatumPlacilaRacuna");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IdentifikatorRacuna {
+            get {
+                return this.IdentifikatorRacunaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdentifikatorRacunaField, value) != true)) {
+                    this.IdentifikatorRacunaField = value;
+                    this.RaisePropertyChanged("IdentifikatorRacuna");
                 }
             }
         }
@@ -582,7 +643,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double ZnesekRacuna {
+        public decimal ZnesekRacuna {
             get {
                 return this.ZnesekRacunaField;
             }
@@ -619,7 +680,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Postavka", Namespace="www.soa.com/projekt/postavka/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Postavka", Namespace="www.soa.com/projekt/postavka/V4")]
     [System.SerializableAttribute()]
     public partial class Postavka : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -744,18 +805,15 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UstvarjenERacunResponse", Namespace="www.soa.com/projekt/ustvarjenERacunResponse/V4")]
     [System.SerializableAttribute()]
-    public partial class LastnaNapaka : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class UstvarjenERacunResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OperacijaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SporociloField;
+        private string IdentifikatorERacunaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -768,27 +826,14 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Operacija {
+        public string IdentifikatorERacuna {
             get {
-                return this.OperacijaField;
+                return this.IdentifikatorERacunaField;
             }
             set {
-                if ((object.ReferenceEquals(this.OperacijaField, value) != true)) {
-                    this.OperacijaField = value;
-                    this.RaisePropertyChanged("Operacija");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Sporocilo {
-            get {
-                return this.SporociloField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SporociloField, value) != true)) {
-                    this.SporociloField = value;
-                    this.RaisePropertyChanged("Sporocilo");
+                if ((object.ReferenceEquals(this.IdentifikatorERacunaField, value) != true)) {
+                    this.IdentifikatorERacunaField = value;
+                    this.RaisePropertyChanged("IdentifikatorERacuna");
                 }
             }
         }
@@ -805,7 +850,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TemplateERacun", Namespace="www.soa.com/projekt/TemplateERacun/V3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TemplateERacun", Namespace="www.soa.com/projekt/TemplateERacun/V4")]
     [System.SerializableAttribute()]
     public partial class TemplateERacun : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -822,16 +867,13 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         private ApartmentComplexServiceLibraryV1.Bank.Racun RacunIzdajateljField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ApartmentComplexServiceLibraryV1.Bank.Racun RacunPrejemnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ValutaZneskaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ApartmentComplexServiceLibraryV1.Bank.Postavka[] VsePostavkeNaRacunuField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double ZnesekRacunaField;
+        private decimal ZnesekRacunaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_templateField;
@@ -886,19 +928,6 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ApartmentComplexServiceLibraryV1.Bank.Racun RacunPrejemnik {
-            get {
-                return this.RacunPrejemnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RacunPrejemnikField, value) != true)) {
-                    this.RacunPrejemnikField = value;
-                    this.RaisePropertyChanged("RacunPrejemnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ValutaZneska {
             get {
                 return this.ValutaZneskaField;
@@ -925,7 +954,7 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double ZnesekRacuna {
+        public decimal ZnesekRacuna {
             get {
                 return this.ZnesekRacunaField;
             }
@@ -965,85 +994,133 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
     public interface Banka {
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/UstvariRacun", ReplyAction="www.soa.com/projekt/V3/Banka/UstvariRacunResponse")]
-        ApartmentComplexServiceLibraryV1.Bank.Racun UstvariRacun(ApartmentComplexServiceLibraryV1.Bank.Komitent komitent);
+        ApartmentComplexServiceLibraryV1.Bank.UstvarjenRacunResponse UstvariRacun(ApartmentComplexServiceLibraryV1.Bank.Komitent komitent);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/UstvariRacun", ReplyAction="www.soa.com/projekt/V3/Banka/UstvariRacunResponse")]
-        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.Racun> UstvariRacunAsync(ApartmentComplexServiceLibraryV1.Bank.Komitent komitent);
+        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.UstvarjenRacunResponse> UstvariRacunAsync(ApartmentComplexServiceLibraryV1.Bank.Komitent komitent);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledTransakcij", ReplyAction="www.soa.com/projekt/V3/Banka/PregledTransakcijResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PregledTransakcijLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
         ApartmentComplexServiceLibraryV1.Bank.Transakcija[] PregledTransakcij(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledTransakcij", ReplyAction="www.soa.com/projekt/V3/Banka/PregledTransakcijResponse")]
         System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.Transakcija[]> PregledTransakcijAsync(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledStanja", ReplyAction="www.soa.com/projekt/V3/Banka/PregledStanjaResponse")]
-        double PregledStanja(string trr, string pin);
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PregledStanjaLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        decimal PregledStanja(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledStanja", ReplyAction="www.soa.com/projekt/V3/Banka/PregledStanjaResponse")]
-        System.Threading.Tasks.Task<double> PregledStanjaAsync(string trr, string pin);
+        System.Threading.Tasks.Task<decimal> PregledStanjaAsync(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PologSredstev", ReplyAction="www.soa.com/projekt/V3/Banka/PologSredstevResponse")]
-        ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije PologSredstev(string trr, double znesekPologa);
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PologSredstevLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        void PologSredstev(string trr, decimal znesekPologa);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PologSredstev", ReplyAction="www.soa.com/projekt/V3/Banka/PologSredstevResponse")]
-        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> PologSredstevAsync(string trr, double znesekPologa);
+        System.Threading.Tasks.Task PologSredstevAsync(string trr, decimal znesekPologa);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuni", ReplyAction="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuniResponse")]
-        ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije PrenosSredstevMedRacuni(string trr_posiljatelj, string pin_posiljatelj, string trr_prejemnik, double znesekPrenosa);
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuniLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        void PrenosSredstevMedRacuni(string trr_posiljatelj, string pin_posiljatelj, string trr_prejemnik, decimal znesekPrenosa);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuni", ReplyAction="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuniResponse")]
-        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> PrenosSredstevMedRacuniAsync(string trr_posiljatelj, string pin_posiljatelj, string trr_prejemnik, double znesekPrenosa);
+        System.Threading.Tasks.Task PrenosSredstevMedRacuniAsync(string trr_posiljatelj, string pin_posiljatelj, string trr_prejemnik, decimal znesekPrenosa);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/UstvarjanjeERacuna", ReplyAction="www.soa.com/projekt/V3/Banka/UstvarjanjeERacunaResponse")]
-        ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije UstvarjanjeERacuna(ApartmentComplexServiceLibraryV1.Bank.eRacun eRacun);
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/UstvarjanjeERacunaLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        ApartmentComplexServiceLibraryV1.Bank.UstvarjenERacunResponse UstvarjanjeERacuna(string trr, string pin, ApartmentComplexServiceLibraryV1.Bank.eRacun eRacun);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/UstvarjanjeERacuna", ReplyAction="www.soa.com/projekt/V3/Banka/UstvarjanjeERacunaResponse")]
-        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> UstvarjanjeERacunaAsync(ApartmentComplexServiceLibraryV1.Bank.eRacun eRacun);
+        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.UstvarjenERacunResponse> UstvarjanjeERacunaAsync(string trr, string pin, ApartmentComplexServiceLibraryV1.Bank.eRacun eRacun);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PlaciloERacuna", ReplyAction="www.soa.com/projekt/V3/Banka/PlaciloERacunaResponse")]
-        ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije PlaciloERacuna(string trr, string pin, int id_racuna);
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PlaciloERacunaLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        void PlaciloERacuna(string trr, string pin, string identifikatorRacuna);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PlaciloERacuna", ReplyAction="www.soa.com/projekt/V3/Banka/PlaciloERacunaResponse")]
-        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> PlaciloERacunaAsync(string trr, string pin, int id_racuna);
+        System.Threading.Tasks.Task PlaciloERacunaAsync(string trr, string pin, string identifikatorRacuna);
         
-        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacun", ReplyAction="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
-        ApartmentComplexServiceLibraryV1.Bank.eRacun VrniSpecificniERacun(string trr, string pin, int id_racuna);
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIdentifikator", ReplyAction="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIdentifikatorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIdentifikatorLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        ApartmentComplexServiceLibraryV1.Bank.eRacun VrniSpecificniERacunIdentifikator(string trr, string pin, string identifikatorRacuna);
         
-        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacun", ReplyAction="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunResponse")]
-        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun> VrniSpecificniERacunAsync(string trr, string pin, int id_racuna);
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIdentifikator", ReplyAction="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIdentifikatorResponse")]
+        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun> VrniSpecificniERacunIdentifikatorAsync(string trr, string pin, string identifikatorRacuna);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIzdajatelj", ReplyAction="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIzdajateljResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIzdajateljLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        ApartmentComplexServiceLibraryV1.Bank.eRacun VrniSpecificniERacunIzdajatelj(string trr, string pin, int idRacuna);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIzdajatelj", ReplyAction="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIzdajateljResponse")]
+        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun> VrniSpecificniERacunIzdajateljAsync(string trr, string pin, int idRacuna);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunov", ReplyAction="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
         ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledNeplacanihERacunov(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunov", ReplyAction="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovResponse")]
         System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> PregledNeplacanihERacunovAsync(string trr, string pin);
         
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovIzdajatelj", ReplyAction="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovIzdajateljResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovIzdajateljLastnaNapakaFault" +
+            "", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledNeplacanihERacunovIzdajatelj(string trr, string pin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovIzdajatelj", ReplyAction="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovIzdajateljResponse")]
+        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> PregledNeplacanihERacunovIzdajateljAsync(string trr, string pin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/pregledNeplacanihERacunovPrejemnik", ReplyAction="www.soa.com/projekt/V3/Banka/pregledNeplacanihERacunovPrejemnikResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/pregledNeplacanihERacunovPrejemnikLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        ApartmentComplexServiceLibraryV1.Bank.eRacun[] pregledNeplacanihERacunovPrejemnik(string trr, string pin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/pregledNeplacanihERacunovPrejemnik", ReplyAction="www.soa.com/projekt/V3/Banka/pregledNeplacanihERacunovPrejemnikResponse")]
+        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> pregledNeplacanihERacunovPrejemnikAsync(string trr, string pin);
+        
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunov", ReplyAction="www.soa.com/projekt/V3/Banka/PregledVsehERacunovResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
         ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledVsehERacunov(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunov", ReplyAction="www.soa.com/projekt/V3/Banka/PregledVsehERacunovResponse")]
         System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> PregledVsehERacunovAsync(string trr, string pin);
         
-        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKartico", ReplyAction="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKarticoResponse")]
-        ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije PlaciloSPlacilnoKartico(string trr_placnik, string pin_placnik, double znesek, string trr_prejemnika);
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovIzdajatelj", ReplyAction="www.soa.com/projekt/V3/Banka/PregledVsehERacunovIzdajateljResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovIzdajateljLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledVsehERacunovIzdajatelj(string trr, string pin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovIzdajatelj", ReplyAction="www.soa.com/projekt/V3/Banka/PregledVsehERacunovIzdajateljResponse")]
+        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> PregledVsehERacunovIzdajateljAsync(string trr, string pin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovPrejemnik", ReplyAction="www.soa.com/projekt/V3/Banka/PregledVsehERacunovPrejemnikResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovPrejemnikLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledVsehERacunovPrejemnik(string trr, string pin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovPrejemnik", ReplyAction="www.soa.com/projekt/V3/Banka/PregledVsehERacunovPrejemnikResponse")]
+        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> PregledVsehERacunovPrejemnikAsync(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKartico", ReplyAction="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKarticoResponse")]
-        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> PlaciloSPlacilnoKarticoAsync(string trr_placnik, string pin_placnik, double znesek, string trr_prejemnika);
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKarticoLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        void PlaciloSPlacilnoKartico(string trr_placnik, string pin_placnik, decimal znesek, string trr_prejemnika);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKartico", ReplyAction="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKarticoResponse")]
+        System.Threading.Tasks.Task PlaciloSPlacilnoKarticoAsync(string trr_placnik, string pin_placnik, decimal znesek, string trr_prejemnika);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/UstvariTemplateERacun", ReplyAction="www.soa.com/projekt/V3/Banka/UstvariTemplateERacunResponse")]
-        ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije UstvariTemplateERacun(ApartmentComplexServiceLibraryV1.Bank.TemplateERacun TemplateERacun, string trr, string pin);
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/UstvariTemplateERacunLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
+        void UstvariTemplateERacun(string trr, string pin, ApartmentComplexServiceLibraryV1.Bank.TemplateERacun TemplateERacun);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/UstvariTemplateERacun", ReplyAction="www.soa.com/projekt/V3/Banka/UstvariTemplateERacunResponse")]
-        System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> UstvariTemplateERacunAsync(ApartmentComplexServiceLibraryV1.Bank.TemplateERacun TemplateERacun, string trr, string pin);
+        System.Threading.Tasks.Task UstvariTemplateERacunAsync(string trr, string pin, ApartmentComplexServiceLibraryV1.Bank.TemplateERacun TemplateERacun);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacun", ReplyAction="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacunResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacunLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
         ApartmentComplexServiceLibraryV1.Bank.TemplateERacun[] PridobiTemplatesERacun(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacun", ReplyAction="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacunResponse")]
         System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.TemplateERacun[]> PridobiTemplatesERacunAsync(string trr, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplate", ReplyAction="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplateResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ApartmentComplexServiceLibraryV1.Bank.LastnaNapaka), Action="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplateLastnaNapakaFault", Name="LastnaNapaka", Namespace="http://projekt/SOA/V3")]
         ApartmentComplexServiceLibraryV1.Bank.eRacun PridobiSpecificniTemplate(string trr, string pin, int id_template);
         
         [System.ServiceModel.OperationContractAttribute(Action="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplate", ReplyAction="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplateResponse")]
@@ -1077,11 +1154,11 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
                 base(binding, remoteAddress) {
         }
         
-        public ApartmentComplexServiceLibraryV1.Bank.Racun UstvariRacun(ApartmentComplexServiceLibraryV1.Bank.Komitent komitent) {
+        public ApartmentComplexServiceLibraryV1.Bank.UstvarjenRacunResponse UstvariRacun(ApartmentComplexServiceLibraryV1.Bank.Komitent komitent) {
             return base.Channel.UstvariRacun(komitent);
         }
         
-        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.Racun> UstvariRacunAsync(ApartmentComplexServiceLibraryV1.Bank.Komitent komitent) {
+        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.UstvarjenRacunResponse> UstvariRacunAsync(ApartmentComplexServiceLibraryV1.Bank.Komitent komitent) {
             return base.Channel.UstvariRacunAsync(komitent);
         }
         
@@ -1093,52 +1170,60 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
             return base.Channel.PregledTransakcijAsync(trr, pin);
         }
         
-        public double PregledStanja(string trr, string pin) {
+        public decimal PregledStanja(string trr, string pin) {
             return base.Channel.PregledStanja(trr, pin);
         }
         
-        public System.Threading.Tasks.Task<double> PregledStanjaAsync(string trr, string pin) {
+        public System.Threading.Tasks.Task<decimal> PregledStanjaAsync(string trr, string pin) {
             return base.Channel.PregledStanjaAsync(trr, pin);
         }
         
-        public ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije PologSredstev(string trr, double znesekPologa) {
-            return base.Channel.PologSredstev(trr, znesekPologa);
+        public void PologSredstev(string trr, decimal znesekPologa) {
+            base.Channel.PologSredstev(trr, znesekPologa);
         }
         
-        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> PologSredstevAsync(string trr, double znesekPologa) {
+        public System.Threading.Tasks.Task PologSredstevAsync(string trr, decimal znesekPologa) {
             return base.Channel.PologSredstevAsync(trr, znesekPologa);
         }
         
-        public ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije PrenosSredstevMedRacuni(string trr_posiljatelj, string pin_posiljatelj, string trr_prejemnik, double znesekPrenosa) {
-            return base.Channel.PrenosSredstevMedRacuni(trr_posiljatelj, pin_posiljatelj, trr_prejemnik, znesekPrenosa);
+        public void PrenosSredstevMedRacuni(string trr_posiljatelj, string pin_posiljatelj, string trr_prejemnik, decimal znesekPrenosa) {
+            base.Channel.PrenosSredstevMedRacuni(trr_posiljatelj, pin_posiljatelj, trr_prejemnik, znesekPrenosa);
         }
         
-        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> PrenosSredstevMedRacuniAsync(string trr_posiljatelj, string pin_posiljatelj, string trr_prejemnik, double znesekPrenosa) {
+        public System.Threading.Tasks.Task PrenosSredstevMedRacuniAsync(string trr_posiljatelj, string pin_posiljatelj, string trr_prejemnik, decimal znesekPrenosa) {
             return base.Channel.PrenosSredstevMedRacuniAsync(trr_posiljatelj, pin_posiljatelj, trr_prejemnik, znesekPrenosa);
         }
         
-        public ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije UstvarjanjeERacuna(ApartmentComplexServiceLibraryV1.Bank.eRacun eRacun) {
-            return base.Channel.UstvarjanjeERacuna(eRacun);
+        public ApartmentComplexServiceLibraryV1.Bank.UstvarjenERacunResponse UstvarjanjeERacuna(string trr, string pin, ApartmentComplexServiceLibraryV1.Bank.eRacun eRacun) {
+            return base.Channel.UstvarjanjeERacuna(trr, pin, eRacun);
         }
         
-        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> UstvarjanjeERacunaAsync(ApartmentComplexServiceLibraryV1.Bank.eRacun eRacun) {
-            return base.Channel.UstvarjanjeERacunaAsync(eRacun);
+        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.UstvarjenERacunResponse> UstvarjanjeERacunaAsync(string trr, string pin, ApartmentComplexServiceLibraryV1.Bank.eRacun eRacun) {
+            return base.Channel.UstvarjanjeERacunaAsync(trr, pin, eRacun);
         }
         
-        public ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije PlaciloERacuna(string trr, string pin, int id_racuna) {
-            return base.Channel.PlaciloERacuna(trr, pin, id_racuna);
+        public void PlaciloERacuna(string trr, string pin, string identifikatorRacuna) {
+            base.Channel.PlaciloERacuna(trr, pin, identifikatorRacuna);
         }
         
-        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> PlaciloERacunaAsync(string trr, string pin, int id_racuna) {
-            return base.Channel.PlaciloERacunaAsync(trr, pin, id_racuna);
+        public System.Threading.Tasks.Task PlaciloERacunaAsync(string trr, string pin, string identifikatorRacuna) {
+            return base.Channel.PlaciloERacunaAsync(trr, pin, identifikatorRacuna);
         }
         
-        public ApartmentComplexServiceLibraryV1.Bank.eRacun VrniSpecificniERacun(string trr, string pin, int id_racuna) {
-            return base.Channel.VrniSpecificniERacun(trr, pin, id_racuna);
+        public ApartmentComplexServiceLibraryV1.Bank.eRacun VrniSpecificniERacunIdentifikator(string trr, string pin, string identifikatorRacuna) {
+            return base.Channel.VrniSpecificniERacunIdentifikator(trr, pin, identifikatorRacuna);
         }
         
-        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun> VrniSpecificniERacunAsync(string trr, string pin, int id_racuna) {
-            return base.Channel.VrniSpecificniERacunAsync(trr, pin, id_racuna);
+        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun> VrniSpecificniERacunIdentifikatorAsync(string trr, string pin, string identifikatorRacuna) {
+            return base.Channel.VrniSpecificniERacunIdentifikatorAsync(trr, pin, identifikatorRacuna);
+        }
+        
+        public ApartmentComplexServiceLibraryV1.Bank.eRacun VrniSpecificniERacunIzdajatelj(string trr, string pin, int idRacuna) {
+            return base.Channel.VrniSpecificniERacunIzdajatelj(trr, pin, idRacuna);
+        }
+        
+        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun> VrniSpecificniERacunIzdajateljAsync(string trr, string pin, int idRacuna) {
+            return base.Channel.VrniSpecificniERacunIzdajateljAsync(trr, pin, idRacuna);
         }
         
         public ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledNeplacanihERacunov(string trr, string pin) {
@@ -1149,6 +1234,22 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
             return base.Channel.PregledNeplacanihERacunovAsync(trr, pin);
         }
         
+        public ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledNeplacanihERacunovIzdajatelj(string trr, string pin) {
+            return base.Channel.PregledNeplacanihERacunovIzdajatelj(trr, pin);
+        }
+        
+        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> PregledNeplacanihERacunovIzdajateljAsync(string trr, string pin) {
+            return base.Channel.PregledNeplacanihERacunovIzdajateljAsync(trr, pin);
+        }
+        
+        public ApartmentComplexServiceLibraryV1.Bank.eRacun[] pregledNeplacanihERacunovPrejemnik(string trr, string pin) {
+            return base.Channel.pregledNeplacanihERacunovPrejemnik(trr, pin);
+        }
+        
+        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> pregledNeplacanihERacunovPrejemnikAsync(string trr, string pin) {
+            return base.Channel.pregledNeplacanihERacunovPrejemnikAsync(trr, pin);
+        }
+        
         public ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledVsehERacunov(string trr, string pin) {
             return base.Channel.PregledVsehERacunov(trr, pin);
         }
@@ -1157,20 +1258,36 @@ namespace ApartmentComplexServiceLibraryV1.Bank {
             return base.Channel.PregledVsehERacunovAsync(trr, pin);
         }
         
-        public ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije PlaciloSPlacilnoKartico(string trr_placnik, string pin_placnik, double znesek, string trr_prejemnika) {
-            return base.Channel.PlaciloSPlacilnoKartico(trr_placnik, pin_placnik, znesek, trr_prejemnika);
+        public ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledVsehERacunovIzdajatelj(string trr, string pin) {
+            return base.Channel.PregledVsehERacunovIzdajatelj(trr, pin);
         }
         
-        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> PlaciloSPlacilnoKarticoAsync(string trr_placnik, string pin_placnik, double znesek, string trr_prejemnika) {
+        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> PregledVsehERacunovIzdajateljAsync(string trr, string pin) {
+            return base.Channel.PregledVsehERacunovIzdajateljAsync(trr, pin);
+        }
+        
+        public ApartmentComplexServiceLibraryV1.Bank.eRacun[] PregledVsehERacunovPrejemnik(string trr, string pin) {
+            return base.Channel.PregledVsehERacunovPrejemnik(trr, pin);
+        }
+        
+        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.eRacun[]> PregledVsehERacunovPrejemnikAsync(string trr, string pin) {
+            return base.Channel.PregledVsehERacunovPrejemnikAsync(trr, pin);
+        }
+        
+        public void PlaciloSPlacilnoKartico(string trr_placnik, string pin_placnik, decimal znesek, string trr_prejemnika) {
+            base.Channel.PlaciloSPlacilnoKartico(trr_placnik, pin_placnik, znesek, trr_prejemnika);
+        }
+        
+        public System.Threading.Tasks.Task PlaciloSPlacilnoKarticoAsync(string trr_placnik, string pin_placnik, decimal znesek, string trr_prejemnika) {
             return base.Channel.PlaciloSPlacilnoKarticoAsync(trr_placnik, pin_placnik, znesek, trr_prejemnika);
         }
         
-        public ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije UstvariTemplateERacun(ApartmentComplexServiceLibraryV1.Bank.TemplateERacun TemplateERacun, string trr, string pin) {
-            return base.Channel.UstvariTemplateERacun(TemplateERacun, trr, pin);
+        public void UstvariTemplateERacun(string trr, string pin, ApartmentComplexServiceLibraryV1.Bank.TemplateERacun TemplateERacun) {
+            base.Channel.UstvariTemplateERacun(trr, pin, TemplateERacun);
         }
         
-        public System.Threading.Tasks.Task<ApartmentComplexServiceLibraryV1.Bank.RezultatFunkcije> UstvariTemplateERacunAsync(ApartmentComplexServiceLibraryV1.Bank.TemplateERacun TemplateERacun, string trr, string pin) {
-            return base.Channel.UstvariTemplateERacunAsync(TemplateERacun, trr, pin);
+        public System.Threading.Tasks.Task UstvariTemplateERacunAsync(string trr, string pin, ApartmentComplexServiceLibraryV1.Bank.TemplateERacun TemplateERacun) {
+            return base.Channel.UstvariTemplateERacunAsync(trr, pin, TemplateERacun);
         }
         
         public ApartmentComplexServiceLibraryV1.Bank.TemplateERacun[] PridobiTemplatesERacun(string trr, string pin) {

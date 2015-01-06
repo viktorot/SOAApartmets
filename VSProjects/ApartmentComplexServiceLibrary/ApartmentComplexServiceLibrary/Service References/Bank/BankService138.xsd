@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.soa.com/projekt/TemplateERacun/V4" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/TemplateERacun/V4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd7" namespace="www.soa.com/projekt/racun/V4" />
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd11" namespace="www.soa.com/projekt/postavka/V4" />
+  <xs:complexType name="TemplateERacun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NazivRacuna" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NazivTemplate" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="www.soa.com/projekt/racun/V4" minOccurs="0" name="RacunIzdajatelj" nillable="true" type="q1:Racun" />
+      <xs:element minOccurs="0" name="ValutaZneska" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="www.soa.com/projekt/postavka/V4" minOccurs="0" name="VsePostavkeNaRacunu" nillable="true" type="q2:ArrayOfPostavka" />
+      <xs:element minOccurs="0" name="ZnesekRacuna" type="xs:decimal" />
+      <xs:element minOccurs="0" name="id_template" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TemplateERacun" nillable="true" type="tns:TemplateERacun" />
+  <xs:complexType name="ArrayOfTemplateERacun">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TemplateERacun" nillable="true" type="tns:TemplateERacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTemplateERacun" nillable="true" type="tns:ArrayOfTemplateERacun" />
+</xs:schema>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="www.soa.com/projekt/poslovnaOseba/V3" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/poslovnaOseba/V3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd2" namespace="www.soa.com/projekt/komitent/V3" />
+<xs:schema xmlns:tns="www.soa.com/projekt/poslovnaOseba/V4" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/poslovnaOseba/V4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd2" namespace="www.soa.com/projekt/komitent/V4" />
   <xs:complexType name="PoslovnaOseba">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="www.soa.com/projekt/komitent/V3" base="q1:Komitent">
+      <xs:extension xmlns:q1="www.soa.com/projekt/komitent/V4" base="q1:Komitent">
         <xs:sequence>
           <xs:element minOccurs="0" name="DavcnaStevilka" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="NazivPodjetja" nillable="true" type="xs:string" />

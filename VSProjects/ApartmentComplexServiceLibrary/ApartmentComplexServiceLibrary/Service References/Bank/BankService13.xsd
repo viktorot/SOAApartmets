@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="www.soa.com/projekt/postavka/V3" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/postavka/V3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="www.soa.com/projekt/postavka/V4" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/postavka/V4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="ArrayOfPostavka">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Postavka" nillable="true" type="tns:Postavka" />

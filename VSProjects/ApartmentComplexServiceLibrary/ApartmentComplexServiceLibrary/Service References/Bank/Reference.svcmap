@@ -19,24 +19,25 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BankService.wsdl" MetadataType="Wsdl" ID="bcf14258-6dc3-41dd-958b-e7d28d3cbfa4" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="BankService.xsd" MetadataType="Schema" ID="d9eec0a0-98c9-4942-8e1e-3a7060e4ece3" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd11" />
-    <MetadataFile FileName="BankService1.xsd" MetadataType="Schema" ID="b5fd2330-c964-41aa-9fad-019c405a9270" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd0" />
-    <MetadataFile FileName="BankService2.xsd" MetadataType="Schema" ID="3ff0d980-e11f-4262-b342-02492f1f59e1" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd9" />
-    <MetadataFile FileName="BankService3.xsd" MetadataType="Schema" ID="0a3e09e0-4c12-48be-9682-6675c66ba49e" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd8" />
-    <MetadataFile FileName="BankService4.xsd" MetadataType="Schema" ID="dbd480e4-62cc-4bd5-9441-d5f39e9afecb" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd12" />
-    <MetadataFile FileName="BankService5.xsd" MetadataType="Schema" ID="36bad695-856a-49da-ac3f-6a51b641e9cf" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd3" />
-    <MetadataFile FileName="BankService6.xsd" MetadataType="Schema" ID="e27f1cab-e689-48f3-8d40-c95e9a82ad0a" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd2" />
-    <MetadataFile FileName="BankService7.xsd" MetadataType="Schema" ID="99ad0aa9-ffa9-4234-9bd0-534a503f0ae7" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd1" />
-    <MetadataFile FileName="BankaServiceV3.wsdl" MetadataType="Wsdl" ID="990d04f2-c39b-4a2e-a696-22f9f6016b69" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?wsdl" />
-    <MetadataFile FileName="BankService8.xsd" MetadataType="Schema" ID="33b22955-3a2c-4684-872e-253dc8aa176b" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd7" />
-    <MetadataFile FileName="BankService9.xsd" MetadataType="Schema" ID="f11ccacf-ba45-4fed-a913-277fa0744882" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd6" />
-    <MetadataFile FileName="BankService10.xsd" MetadataType="Schema" ID="3718f73d-376f-4510-9a4d-753edb92f63f" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd5" />
-    <MetadataFile FileName="BankService11.xsd" MetadataType="Schema" ID="70a48ae7-ff1a-4955-a253-3a616536cfb8" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd4" />
-    <MetadataFile FileName="BankService12.xsd" MetadataType="Schema" ID="0e247757-d323-4496-922a-c02ebdce8625" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc?xsd=xsd10" />
+    <MetadataFile FileName="BankService13.xsd" MetadataType="Schema" ID="d2370eeb-22b2-4bf3-aa4a-a3671bf1e499" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd11" />
+    <MetadataFile FileName="BankService1.wsdl" MetadataType="Wsdl" ID="76e306e5-fa60-4c77-915c-ae19cba096bf" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="BankService131.xsd" MetadataType="Schema" ID="7edb83ca-5406-41ea-a587-5624f12e64b9" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd9" />
+    <MetadataFile FileName="BankService132.xsd" MetadataType="Schema" ID="8e645481-b1ff-4e52-b4df-4755e8327a41" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd8" />
+    <MetadataFile FileName="BankService133.xsd" MetadataType="Schema" ID="0acd56f2-bf5e-4810-b060-ea3e90da99ba" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd12" />
+    <MetadataFile FileName="BankaServiceV4.wsdl" MetadataType="Wsdl" ID="a195a646-b4d5-4980-90d9-929342e03402" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?wsdl" />
+    <MetadataFile FileName="BankService134.xsd" MetadataType="Schema" ID="991a148c-4cb5-4b65-a548-03965ae935ca" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BankService135.xsd" MetadataType="Schema" ID="fc3f108c-5093-4a7d-a095-ebbe66c20215" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BankService136.xsd" MetadataType="Schema" ID="413682ec-327b-449d-806e-e045a7803013" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BankService137.xsd" MetadataType="Schema" ID="d6b4e142-3d53-49ea-be62-f147a8e54e36" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd7" />
+    <MetadataFile FileName="BankService138.xsd" MetadataType="Schema" ID="255a7f11-6b81-4b7c-88dc-f89a77aba0d6" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd13" />
+    <MetadataFile FileName="BankService139.xsd" MetadataType="Schema" ID="84a79128-5648-411b-b7b0-078275e09454" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd5" />
+    <MetadataFile FileName="BankService1310.xsd" MetadataType="Schema" ID="6b19714f-77b8-4738-b730-d802c469d90f" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd4" />
+    <MetadataFile FileName="BankService1311.xsd" MetadataType="Schema" ID="aa6af398-3415-421e-ae3d-e7c61ac7a43f" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd6" />
+    <MetadataFile FileName="BankService1312.xsd" MetadataType="Schema" ID="f0bd17d0-d37e-43f1-9bc0-f31b8803a8b5" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BankService1313.xsd" MetadataType="Schema" ID="e6d35a1a-ac04-409a-a9c3-5a37b4342ffa" SourceId="1" SourceUrl="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd10" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ssGCCqvHgmFnovHsRDr2Ex9ia1o=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="8Wv3mV7Hb3pOu09zw+Ozs8JJDDs=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_Banka">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_Banka" contract="Bank.Banka" bindingType="basicHttpBinding" address="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc" bindingConfiguration="BasicHttpBinding_Banka">
+    <endpoint name="BasicHttpBinding_Banka" contract="Bank.Banka" bindingType="basicHttpBinding" address="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc" bindingConfiguration="BasicHttpBinding_Banka">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v3/BankService.svc</serializedValue>
+          <serializedValue>http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

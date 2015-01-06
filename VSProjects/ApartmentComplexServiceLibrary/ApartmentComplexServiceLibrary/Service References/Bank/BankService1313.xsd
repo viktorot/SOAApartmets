@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.soa.com/projekt/eRacun/V4" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/eRacun/V4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd7" namespace="www.soa.com/projekt/racun/V4" />
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd11" namespace="www.soa.com/projekt/postavka/V4" />
+  <xs:complexType name="eRacun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliJePlacanRacun" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DatumIzdajeRacuna" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatumPlacilaRacuna" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifikatorRacuna" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NazivRacuna" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="www.soa.com/projekt/racun/V4" minOccurs="0" name="RacunIzdajatelj" nillable="true" type="q1:Racun" />
+      <xs:element xmlns:q2="www.soa.com/projekt/racun/V4" minOccurs="0" name="RacunPrejemnik" nillable="true" type="q2:Racun" />
+      <xs:element minOccurs="0" name="RokPlacilaRacuna" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValutaZneska" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="www.soa.com/projekt/postavka/V4" minOccurs="0" name="VsePostavkeNaRacunu" nillable="true" type="q3:ArrayOfPostavka" />
+      <xs:element minOccurs="0" name="ZnesekRacuna" type="xs:decimal" />
+      <xs:element minOccurs="0" name="id_racuna" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="eRacun" nillable="true" type="tns:eRacun" />
+  <xs:complexType name="ArrayOfeRacun">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="eRacun" nillable="true" type="tns:eRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfeRacun" nillable="true" type="tns:ArrayOfeRacun" />
+</xs:schema>

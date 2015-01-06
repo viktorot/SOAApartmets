@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="www.soa.com/projekt/V3" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="www.soa.com/projekt/V3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="www.soa.com/projekt/V3/Imports">
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd0" namespace="www.soa.com/projekt/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd2" namespace="www.soa.com/projekt/komitent/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd3" namespace="www.soa.com/projekt/poslovnaOseba/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd4" namespace="www.soa.com/projekt/fizicnaOseba/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd5" namespace="www.soa.com/projekt/ustvarjenRacunResponse/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd9" namespace="http://projekt/SOA/V3" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd6" namespace="www.soa.com/projekt/transakcija/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd7" namespace="www.soa.com/projekt/racun/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd8" namespace="www.soa.com/projekt/tipTransakcije/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd10" namespace="www.soa.com/projekt/eRacun/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd11" namespace="www.soa.com/projekt/postavka/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd12" namespace="www.soa.com/projekt/ustvarjenERacunResponse/V4" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd13" namespace="www.soa.com/projekt/TemplateERacun/V4" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Banka_UstvariRacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:UstvariRacun" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvariRacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UstvariRacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledTransakcij_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledTransakcij" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledTransakcij_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledTransakcijResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledTransakcij_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://projekt/SOA/V3" name="detail" element="q1:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledStanja_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledStanja" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledStanja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledStanjaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledStanja_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://projekt/SOA/V3" name="detail" element="q2:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PologSredstev_InputMessage">
+    <wsdl:part name="parameters" element="tns:PologSredstev" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PologSredstev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PologSredstevResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PologSredstev_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://projekt/SOA/V3" name="detail" element="q3:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PrenosSredstevMedRacuni_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrenosSredstevMedRacuni" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PrenosSredstevMedRacuni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrenosSredstevMedRacuniResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PrenosSredstevMedRacuni_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://projekt/SOA/V3" name="detail" element="q4:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvarjanjeERacuna_InputMessage">
+    <wsdl:part name="parameters" element="tns:UstvarjanjeERacuna" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvarjanjeERacuna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UstvarjanjeERacunaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvarjanjeERacuna_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://projekt/SOA/V3" name="detail" element="q5:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloERacuna_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlaciloERacuna" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloERacuna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlaciloERacunaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloERacuna_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://projekt/SOA/V3" name="detail" element="q6:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacunIdentifikator_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniSpecificniERacunIdentifikator" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacunIdentifikator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniSpecificniERacunIdentifikatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacunIdentifikator_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://projekt/SOA/V3" name="detail" element="q7:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacunIzdajatelj_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniSpecificniERacunIzdajatelj" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacunIzdajatelj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniSpecificniERacunIzdajateljResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_VrniSpecificniERacunIzdajatelj_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://projekt/SOA/V3" name="detail" element="q8:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledNeplacanihERacunov_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledNeplacanihERacunov" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledNeplacanihERacunov_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledNeplacanihERacunovResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledNeplacanihERacunov_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://projekt/SOA/V3" name="detail" element="q9:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledNeplacanihERacunovIzdajatelj_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledNeplacanihERacunovIzdajatelj" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledNeplacanihERacunovIzdajatelj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledNeplacanihERacunovIzdajateljResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledNeplacanihERacunovIzdajatelj_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://projekt/SOA/V3" name="detail" element="q10:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_pregledNeplacanihERacunovPrejemnik_InputMessage">
+    <wsdl:part name="parameters" element="tns:pregledNeplacanihERacunovPrejemnik" />
+  </wsdl:message>
+  <wsdl:message name="Banka_pregledNeplacanihERacunovPrejemnik_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pregledNeplacanihERacunovPrejemnikResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_pregledNeplacanihERacunovPrejemnik_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://projekt/SOA/V3" name="detail" element="q11:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunov_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledVsehERacunov" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunov_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledVsehERacunovResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunov_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://projekt/SOA/V3" name="detail" element="q12:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunovIzdajatelj_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledVsehERacunovIzdajatelj" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunovIzdajatelj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledVsehERacunovIzdajateljResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunovIzdajatelj_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://projekt/SOA/V3" name="detail" element="q13:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunovPrejemnik_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledVsehERacunovPrejemnik" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunovPrejemnik_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledVsehERacunovPrejemnikResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PregledVsehERacunovPrejemnik_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://projekt/SOA/V3" name="detail" element="q14:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloSPlacilnoKartico_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlaciloSPlacilnoKartico" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloSPlacilnoKartico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlaciloSPlacilnoKarticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PlaciloSPlacilnoKartico_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://projekt/SOA/V3" name="detail" element="q15:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvariTemplateERacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:UstvariTemplateERacun" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvariTemplateERacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UstvariTemplateERacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_UstvariTemplateERacun_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://projekt/SOA/V3" name="detail" element="q16:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiTemplatesERacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiTemplatesERacun" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiTemplatesERacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiTemplatesERacunResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiTemplatesERacun_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://projekt/SOA/V3" name="detail" element="q17:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiSpecificniTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiSpecificniTemplate" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiSpecificniTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiSpecificniTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Banka_PridobiSpecificniTemplate_LastnaNapakaFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://projekt/SOA/V3" name="detail" element="q18:LastnaNapaka" />
+  </wsdl:message>
+  <wsdl:portType name="Banka">
+    <wsdl:operation name="UstvariRacun">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariRacun" message="tns:Banka_UstvariRacun_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariRacunResponse" message="tns:Banka_UstvariRacun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledTransakcij">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledTransakcij" message="tns:Banka_PregledTransakcij_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledTransakcijResponse" message="tns:Banka_PregledTransakcij_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PregledTransakcijLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PregledTransakcij_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledStanja">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledStanja" message="tns:Banka_PregledStanja_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledStanjaResponse" message="tns:Banka_PregledStanja_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PregledStanjaLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PregledStanja_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PologSredstev">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PologSredstev" message="tns:Banka_PologSredstev_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PologSredstevResponse" message="tns:Banka_PologSredstev_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PologSredstevLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PologSredstev_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrenosSredstevMedRacuni">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuni" message="tns:Banka_PrenosSredstevMedRacuni_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuniResponse" message="tns:Banka_PrenosSredstevMedRacuni_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PrenosSredstevMedRacuniLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PrenosSredstevMedRacuni_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UstvarjanjeERacuna">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/UstvarjanjeERacuna" message="tns:Banka_UstvarjanjeERacuna_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/UstvarjanjeERacunaResponse" message="tns:Banka_UstvarjanjeERacuna_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/UstvarjanjeERacunaLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_UstvarjanjeERacuna_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaciloERacuna">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloERacuna" message="tns:Banka_PlaciloERacuna_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloERacunaResponse" message="tns:Banka_PlaciloERacuna_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloERacunaLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PlaciloERacuna_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniSpecificniERacunIdentifikator">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIdentifikator" message="tns:Banka_VrniSpecificniERacunIdentifikator_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIdentifikatorResponse" message="tns:Banka_VrniSpecificniERacunIdentifikator_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIdentifikatorLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_VrniSpecificniERacunIdentifikator_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniSpecificniERacunIzdajatelj">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIzdajatelj" message="tns:Banka_VrniSpecificniERacunIzdajatelj_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIzdajateljResponse" message="tns:Banka_VrniSpecificniERacunIzdajatelj_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/VrniSpecificniERacunIzdajateljLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_VrniSpecificniERacunIzdajatelj_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledNeplacanihERacunov">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunov" message="tns:Banka_PregledNeplacanihERacunov_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovResponse" message="tns:Banka_PregledNeplacanihERacunov_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PregledNeplacanihERacunov_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledNeplacanihERacunovIzdajatelj">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovIzdajatelj" message="tns:Banka_PregledNeplacanihERacunovIzdajatelj_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovIzdajateljResponse" message="tns:Banka_PregledNeplacanihERacunovIzdajatelj_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PregledNeplacanihERacunovIzdajateljLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PregledNeplacanihERacunovIzdajatelj_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pregledNeplacanihERacunovPrejemnik">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/pregledNeplacanihERacunovPrejemnik" message="tns:Banka_pregledNeplacanihERacunovPrejemnik_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/pregledNeplacanihERacunovPrejemnikResponse" message="tns:Banka_pregledNeplacanihERacunovPrejemnik_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/pregledNeplacanihERacunovPrejemnikLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_pregledNeplacanihERacunovPrejemnik_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledVsehERacunov">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunov" message="tns:Banka_PregledVsehERacunov_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovResponse" message="tns:Banka_PregledVsehERacunov_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PregledVsehERacunov_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledVsehERacunovIzdajatelj">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovIzdajatelj" message="tns:Banka_PregledVsehERacunovIzdajatelj_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovIzdajateljResponse" message="tns:Banka_PregledVsehERacunovIzdajatelj_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovIzdajateljLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PregledVsehERacunovIzdajatelj_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledVsehERacunovPrejemnik">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovPrejemnik" message="tns:Banka_PregledVsehERacunovPrejemnik_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovPrejemnikResponse" message="tns:Banka_PregledVsehERacunovPrejemnik_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PregledVsehERacunovPrejemnikLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PregledVsehERacunovPrejemnik_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaciloSPlacilnoKartico">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKartico" message="tns:Banka_PlaciloSPlacilnoKartico_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKarticoResponse" message="tns:Banka_PlaciloSPlacilnoKartico_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PlaciloSPlacilnoKarticoLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PlaciloSPlacilnoKartico_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UstvariTemplateERacun">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariTemplateERacun" message="tns:Banka_UstvariTemplateERacun_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariTemplateERacunResponse" message="tns:Banka_UstvariTemplateERacun_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/UstvariTemplateERacunLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_UstvariTemplateERacun_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiTemplatesERacun">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacun" message="tns:Banka_PridobiTemplatesERacun_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacunResponse" message="tns:Banka_PridobiTemplatesERacun_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiTemplatesERacunLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PridobiTemplatesERacun_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiSpecificniTemplate">
+      <wsdl:input wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplate" message="tns:Banka_PridobiSpecificniTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplateResponse" message="tns:Banka_PridobiSpecificniTemplate_OutputMessage" />
+      <wsdl:fault wsaw:Action="www.soa.com/projekt/V3/Banka/PridobiSpecificniTemplateLastnaNapakaFault" name="LastnaNapakaFault" message="tns:Banka_PridobiSpecificniTemplate_LastnaNapakaFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

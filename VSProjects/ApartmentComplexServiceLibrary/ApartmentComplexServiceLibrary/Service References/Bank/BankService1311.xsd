@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.soa.com/projekt/transakcija/V4" elementFormDefault="qualified" targetNamespace="www.soa.com/projekt/transakcija/V4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd7" namespace="www.soa.com/projekt/racun/V4" />
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/banka2/services/v4/BankService.svc?xsd=xsd8" namespace="www.soa.com/projekt/tipTransakcije/V4" />
+  <xs:complexType name="ArrayOfTransakcija">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transakcija" nillable="true" type="tns:Transakcija" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransakcija" nillable="true" type="tns:ArrayOfTransakcija" />
+  <xs:complexType name="Transakcija">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Datum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Namen" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="www.soa.com/projekt/racun/V4" minOccurs="0" name="RacunIzdajatelj" nillable="true" type="q1:Racun" />
+      <xs:element xmlns:q2="www.soa.com/projekt/racun/V4" minOccurs="0" name="RacunPrejemnik" nillable="true" type="q2:Racun" />
+      <xs:element xmlns:q3="www.soa.com/projekt/tipTransakcije/V4" minOccurs="0" name="Tip" type="q3:TipTransakcije" />
+      <xs:element minOccurs="0" name="Znesek" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Transakcija" nillable="true" type="tns:Transakcija" />
+</xs:schema>
