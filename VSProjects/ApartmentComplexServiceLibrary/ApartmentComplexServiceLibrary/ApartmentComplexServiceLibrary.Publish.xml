@@ -1,21 +1,22 @@
 <publishData>
-  <publishTarget publishUrl="C:\Users\viktor\Desktop\SOAPublish\">
-    <file relUrl="Web.config" publishTime="01/04/2015 19:50:45" />
+  <publishTarget publishUrl="C:\Users\viktor\Desktop\SOAPublish1\">
+    <file relUrl="Web.config" publishTime="01/18/2015 01:23:22" />
     <file relUrl="bin/EntityFramework.dll" publishTime="12/08/2014 18:55:12" />
     <file relUrl="bin/Newtonsoft.Json.xml" publishTime="12/15/2014 22:05:06" />
-    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.ApartmentAdministrationService.svc" publishTime="01/04/2015 20:34:54" />
-    <file relUrl="bin/ApartmentComplexServiceLibraryV1.dll.config" publishTime="01/04/2015 19:50:45" />
     <file relUrl="bin/EntityFramework.xml" publishTime="12/08/2014 18:55:12" />
     <file relUrl="bin/EntityFramework.SqlServer.dll" publishTime="12/08/2014 18:55:12" />
-    <file relUrl="bin/ApartmentComplexServiceLibraryV1.pdb" publishTime="01/04/2015 20:32:57" />
+    <file relUrl="bin/MySql.Data.Entity.EF6.dll" publishTime="12/08/2014 20:12:22" />
+    <file relUrl="bin/ApartmentComplexServiceLibraryV1.pdb" publishTime="01/18/2015 10:55:28" />
+    <file relUrl="bin/ApartmentComplexServiceLibraryV1.dll.config" publishTime="01/18/2015 01:23:22" />
+    <file relUrl="bin/EntityFramework.SqlServer.xml" publishTime="12/08/2014 18:55:12" />
     <file relUrl="bin/Newtonsoft.Json.dll" publishTime="12/15/2014 22:05:06" />
     <file relUrl="bin/MySql.Data.dll" publishTime="12/08/2014 20:12:22" />
-    <file relUrl="bin/EntityFramework.SqlServer.xml" publishTime="12/08/2014 18:55:12" />
-    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.RestService.svc" publishTime="01/04/2015 20:34:54" />
-    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.ApartmentPublicService.svc" publishTime="01/04/2015 20:34:54" />
-    <file relUrl="bin/ApartmentComplexServiceLibraryV1.dll" publishTime="01/04/2015 20:32:57" />
-    <file relUrl="bin/mysql.data.entity.EF6.dll" publishTime="12/08/2014 20:12:22" />
+    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.RestService.svc" publishTime="01/18/2015 10:56:05" />
+    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.ApartmentPublicService.svc" publishTime="01/18/2015 10:56:05" />
+    <file relUrl="bin/ApartmentComplexServiceLibraryV1.dll" publishTime="01/18/2015 10:55:28" />
+    <file relUrl="ApartmentComplexServiceLibraryV1.ServiceImplementation.ApartmentAdministrationService.svc" publishTime="01/18/2015 10:56:05" />
   </publishTarget>
+  <publishTarget publishUrl="C:\Users\viktor\Desktop\SOAPublish\" />
   <publishTarget publishUrl="ftp://svizec.informatika.uni-mb.si/services/v0_1">
     <file relUrl="bin/desktop.ini" publishTime="11/23/2014 18:15:23" />
     <file relUrl="bin/ApartmentComplexServiceLibrary.pdb" publishTime="11/24/2014 20:11:52" />

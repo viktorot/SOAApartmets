@@ -1,46 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ApartmentModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-  <EntityContainer Name="ApartmentEntities" p1:LazyLoadingEnabled="true">
-    <EntitySet Name="apartments" EntityType="ApartmentModel.apartment" />
-    <EntitySet Name="arrangement_package" EntityType="ApartmentModel.arrangement_package" />
-    <EntitySet Name="bookings" EntityType="ApartmentModel.booking" />
-    <EntitySet Name="customers" EntityType="ApartmentModel.customer" />
-    <EntitySet Name="discounts" EntityType="ApartmentModel.discount" />
-    <EntitySet Name="payment_method" EntityType="ApartmentModel.payment_method" />
-    <EntitySet Name="reviews" EntityType="ApartmentModel.review" />
-    <AssociationSet Name="fk_Booked_apartment1" Association="ApartmentModel.fk_Booked_apartment1">
+<Schema Namespace="apartma2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="apartma2Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="apartments" EntityType="apartma2Model.apartment" />
+    <EntitySet Name="arrangement_package" EntityType="apartma2Model.arrangement_package" />
+    <EntitySet Name="bookings" EntityType="apartma2Model.booking" />
+    <EntitySet Name="customers" EntityType="apartma2Model.customer" />
+    <EntitySet Name="discounts" EntityType="apartma2Model.discount" />
+    <EntitySet Name="payment_method" EntityType="apartma2Model.payment_method" />
+    <EntitySet Name="reviews" EntityType="apartma2Model.review" />
+    <AssociationSet Name="fk_Booked_apartment1" Association="apartma2Model.fk_Booked_apartment1">
       <End Role="apartment" EntitySet="apartments" />
       <End Role="booking" EntitySet="bookings" />
     </AssociationSet>
-    <AssociationSet Name="fk_comments_apartment" Association="ApartmentModel.fk_comments_apartment">
+    <AssociationSet Name="fk_comments_apartment" Association="apartma2Model.fk_comments_apartment">
       <End Role="apartment" EntitySet="apartments" />
       <End Role="review" EntitySet="reviews" />
     </AssociationSet>
-    <AssociationSet Name="fk_booked_arrangement_package1" Association="ApartmentModel.fk_booked_arrangement_package1">
+    <AssociationSet Name="fk_booked_arrangement_package1" Association="apartma2Model.fk_booked_arrangement_package1">
       <End Role="arrangement_package" EntitySet="arrangement_package" />
       <End Role="booking" EntitySet="bookings" />
     </AssociationSet>
-    <AssociationSet Name="fk_Booked_customer1" Association="ApartmentModel.fk_Booked_customer1">
-      <End Role="customer" EntitySet="customers" />
-      <End Role="booking" EntitySet="bookings" />
-    </AssociationSet>
-    <AssociationSet Name="fk_booked_discounts1" Association="ApartmentModel.fk_booked_discounts1">
+    <AssociationSet Name="fk_booked_discounts1" Association="apartma2Model.fk_booked_discounts1">
       <End Role="discounts" EntitySet="discounts" />
       <End Role="booking" EntitySet="bookings" />
     </AssociationSet>
-    <AssociationSet Name="fk_Booked_payment_method1" Association="ApartmentModel.fk_Booked_payment_method1">
+    <AssociationSet Name="fk_Booked_payment_method1" Association="apartma2Model.fk_Booked_payment_method1">
       <End Role="payment_method" EntitySet="payment_method" />
       <End Role="booking" EntitySet="bookings" />
     </AssociationSet>
-    <AssociationSet Name="fk_comments_customer1" Association="ApartmentModel.fk_comments_customer1">
+    <AssociationSet Name="fk_comments_customer1" Association="apartma2Model.fk_comments_customer1">
       <End Role="customer" EntitySet="customers" />
       <End Role="review" EntitySet="reviews" />
     </AssociationSet>
-    <AssociationSet Name="apartment_has_discounts" Association="ApartmentModel.apartment_has_discounts">
+    <AssociationSet Name="apartment_has_discounts" Association="apartma2Model.apartment_has_discounts">
       <End Role="apartment" EntitySet="apartments" />
       <End Role="discounts" EntitySet="discounts" />
     </AssociationSet>
-    <AssociationSet Name="arrangement_package_has_apartment" Association="ApartmentModel.arrangement_package_has_apartment">
+    <AssociationSet Name="arrangement_package_has_apartment" Association="apartma2Model.arrangement_package_has_apartment">
       <End Role="apartment" EntitySet="apartments" />
       <End Role="arrangement_package" EntitySet="arrangement_package" />
     </AssociationSet>
@@ -65,10 +61,10 @@
     <Property Name="class_stars" Type="Int32" />
     <Property Name="balcony" Type="Boolean" />
     <Property Name="accessible" Type="Boolean" />
-    <NavigationProperty Name="bookings" Relationship="ApartmentModel.fk_Booked_apartment1" FromRole="apartment" ToRole="booking" />
-    <NavigationProperty Name="reviews" Relationship="ApartmentModel.fk_comments_apartment" FromRole="apartment" ToRole="review" />
-    <NavigationProperty Name="discounts" Relationship="ApartmentModel.apartment_has_discounts" FromRole="apartment" ToRole="discounts" />
-    <NavigationProperty Name="arrangement_package" Relationship="ApartmentModel.arrangement_package_has_apartment" FromRole="apartment" ToRole="arrangement_package" />
+    <NavigationProperty Name="bookings" Relationship="apartma2Model.fk_Booked_apartment1" FromRole="apartment" ToRole="booking" />
+    <NavigationProperty Name="reviews" Relationship="apartma2Model.fk_comments_apartment" FromRole="apartment" ToRole="review" />
+    <NavigationProperty Name="discounts" Relationship="apartma2Model.apartment_has_discounts" FromRole="apartment" ToRole="discounts" />
+    <NavigationProperty Name="arrangement_package" Relationship="apartma2Model.arrangement_package_has_apartment" FromRole="apartment" ToRole="arrangement_package" />
   </EntityType>
   <EntityType Name="arrangement_package">
     <Key>
@@ -81,8 +77,8 @@
     <Property Name="valid_from" Type="Int32" />
     <Property Name="valid_to" Type="Int32" />
     <Property Name="price" Type="Single" />
-    <NavigationProperty Name="bookings" Relationship="ApartmentModel.fk_booked_arrangement_package1" FromRole="arrangement_package" ToRole="booking" />
-    <NavigationProperty Name="apartments" Relationship="ApartmentModel.arrangement_package_has_apartment" FromRole="arrangement_package" ToRole="apartment" />
+    <NavigationProperty Name="bookings" Relationship="apartma2Model.fk_booked_arrangement_package1" FromRole="arrangement_package" ToRole="booking" />
+    <NavigationProperty Name="apartments" Relationship="apartma2Model.arrangement_package_has_apartment" FromRole="arrangement_package" ToRole="apartment" />
   </EntityType>
   <EntityType Name="booking">
     <Key>
@@ -92,16 +88,15 @@
     <Property Name="date_from" Type="Int32" Nullable="false" />
     <Property Name="date_to" Type="Int32" Nullable="false" />
     <Property Name="apartment_idapartment" Type="Int32" Nullable="false" />
-    <Property Name="customer_idcustomer" Type="Int32" Nullable="false" />
+    <Property Name="customer_trr" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
     <Property Name="payment_method_id" Type="Int32" Nullable="false" />
     <Property Name="arrangement_package_id" Type="Int32" />
     <Property Name="discounts_id" Type="Int32" />
     <Property Name="status" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="apartment" Relationship="ApartmentModel.fk_Booked_apartment1" FromRole="booking" ToRole="apartment" />
-    <NavigationProperty Name="arrangement_package" Relationship="ApartmentModel.fk_booked_arrangement_package1" FromRole="booking" ToRole="arrangement_package" />
-    <NavigationProperty Name="customer" Relationship="ApartmentModel.fk_Booked_customer1" FromRole="booking" ToRole="customer" />
-    <NavigationProperty Name="discount" Relationship="ApartmentModel.fk_booked_discounts1" FromRole="booking" ToRole="discounts" />
-    <NavigationProperty Name="payment_method" Relationship="ApartmentModel.fk_Booked_payment_method1" FromRole="booking" ToRole="payment_method" />
+    <NavigationProperty Name="apartment" Relationship="apartma2Model.fk_Booked_apartment1" FromRole="booking" ToRole="apartment" />
+    <NavigationProperty Name="arrangement_package" Relationship="apartma2Model.fk_booked_arrangement_package1" FromRole="booking" ToRole="arrangement_package" />
+    <NavigationProperty Name="discount" Relationship="apartma2Model.fk_booked_discounts1" FromRole="booking" ToRole="discounts" />
+    <NavigationProperty Name="payment_method" Relationship="apartma2Model.fk_Booked_payment_method1" FromRole="booking" ToRole="payment_method" />
   </EntityType>
   <EntityType Name="customer">
     <Key>
@@ -113,8 +108,7 @@
     <Property Name="email" Type="String" MaxLength="90" Unicode="false" FixedLength="false" />
     <Property Name="address" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="password" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="bookings" Relationship="ApartmentModel.fk_Booked_customer1" FromRole="customer" ToRole="booking" />
-    <NavigationProperty Name="reviews" Relationship="ApartmentModel.fk_comments_customer1" FromRole="customer" ToRole="review" />
+    <NavigationProperty Name="reviews" Relationship="apartma2Model.fk_comments_customer1" FromRole="customer" ToRole="review" />
   </EntityType>
   <EntityType Name="discount">
     <Key>
@@ -127,8 +121,8 @@
     <Property Name="discount_percentage" Type="Single" Nullable="false" />
     <Property Name="title" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
     <Property Name="description" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="bookings" Relationship="ApartmentModel.fk_booked_discounts1" FromRole="discounts" ToRole="booking" />
-    <NavigationProperty Name="apartments" Relationship="ApartmentModel.apartment_has_discounts" FromRole="discounts" ToRole="apartment" />
+    <NavigationProperty Name="bookings" Relationship="apartma2Model.fk_booked_discounts1" FromRole="discounts" ToRole="booking" />
+    <NavigationProperty Name="apartments" Relationship="apartma2Model.apartment_has_discounts" FromRole="discounts" ToRole="apartment" />
   </EntityType>
   <EntityType Name="payment_method">
     <Key>
@@ -137,7 +131,7 @@
     <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="card_number" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
     <Property Name="bank_payment" Type="Boolean" />
-    <NavigationProperty Name="bookings" Relationship="ApartmentModel.fk_Booked_payment_method1" FromRole="payment_method" ToRole="booking" />
+    <NavigationProperty Name="bookings" Relationship="apartma2Model.fk_Booked_payment_method1" FromRole="payment_method" ToRole="booking" />
   </EntityType>
   <EntityType Name="review">
     <Key>
@@ -148,12 +142,12 @@
     <Property Name="grade" Type="Int32" Nullable="false" />
     <Property Name="apartment_id" Type="Int32" Nullable="false" />
     <Property Name="customer_id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="apartment" Relationship="ApartmentModel.fk_comments_apartment" FromRole="review" ToRole="apartment" />
-    <NavigationProperty Name="customer" Relationship="ApartmentModel.fk_comments_customer1" FromRole="review" ToRole="customer" />
+    <NavigationProperty Name="apartment" Relationship="apartma2Model.fk_comments_apartment" FromRole="review" ToRole="apartment" />
+    <NavigationProperty Name="customer" Relationship="apartma2Model.fk_comments_customer1" FromRole="review" ToRole="customer" />
   </EntityType>
   <Association Name="fk_Booked_apartment1">
-    <End Role="apartment" Type="ApartmentModel.apartment" Multiplicity="1" />
-    <End Role="booking" Type="ApartmentModel.booking" Multiplicity="*" />
+    <End Role="apartment" Type="apartma2Model.apartment" Multiplicity="1" />
+    <End Role="booking" Type="apartma2Model.booking" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="apartment">
         <PropertyRef Name="id" />
@@ -164,8 +158,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_comments_apartment">
-    <End Role="apartment" Type="ApartmentModel.apartment" Multiplicity="1" />
-    <End Role="review" Type="ApartmentModel.review" Multiplicity="*" />
+    <End Role="apartment" Type="apartma2Model.apartment" Multiplicity="1" />
+    <End Role="review" Type="apartma2Model.review" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="apartment">
         <PropertyRef Name="id" />
@@ -176,8 +170,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_booked_arrangement_package1">
-    <End Role="arrangement_package" Type="ApartmentModel.arrangement_package" Multiplicity="0..1" />
-    <End Role="booking" Type="ApartmentModel.booking" Multiplicity="*" />
+    <End Role="arrangement_package" Type="apartma2Model.arrangement_package" Multiplicity="0..1" />
+    <End Role="booking" Type="apartma2Model.booking" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="arrangement_package">
         <PropertyRef Name="id" />
@@ -187,21 +181,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_Booked_customer1">
-    <End Role="customer" Type="ApartmentModel.customer" Multiplicity="1" />
-    <End Role="booking" Type="ApartmentModel.booking" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="customer">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="booking">
-        <PropertyRef Name="customer_idcustomer" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fk_booked_discounts1">
-    <End Role="discounts" Type="ApartmentModel.discount" Multiplicity="0..1" />
-    <End Role="booking" Type="ApartmentModel.booking" Multiplicity="*" />
+    <End Role="discounts" Type="apartma2Model.discount" Multiplicity="0..1" />
+    <End Role="booking" Type="apartma2Model.booking" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="discounts">
         <PropertyRef Name="id" />
@@ -212,8 +194,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_Booked_payment_method1">
-    <End Role="payment_method" Type="ApartmentModel.payment_method" Multiplicity="1" />
-    <End Role="booking" Type="ApartmentModel.booking" Multiplicity="*" />
+    <End Role="payment_method" Type="apartma2Model.payment_method" Multiplicity="1" />
+    <End Role="booking" Type="apartma2Model.booking" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="payment_method">
         <PropertyRef Name="id" />
@@ -224,8 +206,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_comments_customer1">
-    <End Role="customer" Type="ApartmentModel.customer" Multiplicity="1" />
-    <End Role="review" Type="ApartmentModel.review" Multiplicity="*" />
+    <End Role="customer" Type="apartma2Model.customer" Multiplicity="1" />
+    <End Role="review" Type="apartma2Model.review" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="customer">
         <PropertyRef Name="id" />
@@ -236,11 +218,11 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="apartment_has_discounts">
-    <End Role="apartment" Type="ApartmentModel.apartment" Multiplicity="*" />
-    <End Role="discounts" Type="ApartmentModel.discount" Multiplicity="*" />
+    <End Role="apartment" Type="apartma2Model.apartment" Multiplicity="*" />
+    <End Role="discounts" Type="apartma2Model.discount" Multiplicity="*" />
   </Association>
   <Association Name="arrangement_package_has_apartment">
-    <End Role="apartment" Type="ApartmentModel.apartment" Multiplicity="*" />
-    <End Role="arrangement_package" Type="ApartmentModel.arrangement_package" Multiplicity="*" />
+    <End Role="apartment" Type="apartma2Model.apartment" Multiplicity="*" />
+    <End Role="arrangement_package" Type="apartma2Model.arrangement_package" Multiplicity="*" />
   </Association>
 </Schema>

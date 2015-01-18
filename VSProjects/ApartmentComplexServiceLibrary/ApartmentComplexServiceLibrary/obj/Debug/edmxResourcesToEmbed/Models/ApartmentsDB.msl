@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ApartmentModelStoreContainer" CdmEntityContainer="ApartmentEntities">
+  <EntityContainerMapping StorageEntityContainer="apartma2ModelStoreContainer" CdmEntityContainer="apartma2Entities">
     <EntitySetMapping Name="apartments">
-      <EntityTypeMapping TypeName="ApartmentModel.apartment">
+      <EntityTypeMapping TypeName="apartma2Model.apartment">
         <MappingFragment StoreEntitySet="apartment">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
@@ -24,7 +24,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="arrangement_package">
-      <EntityTypeMapping TypeName="ApartmentModel.arrangement_package">
+      <EntityTypeMapping TypeName="apartma2Model.arrangement_package">
         <MappingFragment StoreEntitySet="arrangement_package">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="title" ColumnName="title" />
@@ -37,13 +37,13 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="bookings">
-      <EntityTypeMapping TypeName="ApartmentModel.booking">
+      <EntityTypeMapping TypeName="apartma2Model.booking">
         <MappingFragment StoreEntitySet="booking">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="date_from" ColumnName="date_from" />
           <ScalarProperty Name="date_to" ColumnName="date_to" />
           <ScalarProperty Name="apartment_idapartment" ColumnName="apartment_idapartment" />
-          <ScalarProperty Name="customer_idcustomer" ColumnName="customer_idcustomer" />
+          <ScalarProperty Name="customer_trr" ColumnName="customer_trr" />
           <ScalarProperty Name="payment_method_id" ColumnName="payment_method_id" />
           <ScalarProperty Name="arrangement_package_id" ColumnName="arrangement_package_id" />
           <ScalarProperty Name="discounts_id" ColumnName="discounts_id" />
@@ -52,7 +52,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="customers">
-      <EntityTypeMapping TypeName="ApartmentModel.customer">
+      <EntityTypeMapping TypeName="apartma2Model.customer">
         <MappingFragment StoreEntitySet="customer">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="first_name" ColumnName="first_name" />
@@ -64,7 +64,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="discounts">
-      <EntityTypeMapping TypeName="ApartmentModel.discount">
+      <EntityTypeMapping TypeName="apartma2Model.discount">
         <MappingFragment StoreEntitySet="discounts">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="code" ColumnName="code" />
@@ -77,7 +77,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="payment_method">
-      <EntityTypeMapping TypeName="ApartmentModel.payment_method">
+      <EntityTypeMapping TypeName="apartma2Model.payment_method">
         <MappingFragment StoreEntitySet="payment_method">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="card_number" ColumnName="card_number" />
@@ -86,7 +86,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="reviews">
-      <EntityTypeMapping TypeName="ApartmentModel.review">
+      <EntityTypeMapping TypeName="apartma2Model.review">
         <MappingFragment StoreEntitySet="review">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="comment" ColumnName="comment" />
@@ -96,7 +96,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="apartment_has_discounts" TypeName="ApartmentModel.apartment_has_discounts" StoreEntitySet="apartment_has_discounts">
+    <AssociationSetMapping Name="apartment_has_discounts" TypeName="apartma2Model.apartment_has_discounts" StoreEntitySet="apartment_has_discounts">
       <EndProperty Name="apartment">
         <ScalarProperty Name="id" ColumnName="apartment_id" />
       </EndProperty>
@@ -104,7 +104,7 @@
         <ScalarProperty Name="id" ColumnName="discounts_id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="arrangement_package_has_apartment" TypeName="ApartmentModel.arrangement_package_has_apartment" StoreEntitySet="arrangement_package_has_apartment">
+    <AssociationSetMapping Name="arrangement_package_has_apartment" TypeName="apartma2Model.arrangement_package_has_apartment" StoreEntitySet="arrangement_package_has_apartment">
       <EndProperty Name="apartment">
         <ScalarProperty Name="id" ColumnName="apartment_id" />
       </EndProperty>

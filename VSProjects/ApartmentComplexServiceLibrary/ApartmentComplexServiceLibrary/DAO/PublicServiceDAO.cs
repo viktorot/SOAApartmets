@@ -13,7 +13,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public List<Types.apartment> Search(int dateFrom, int dateTo, int numOfBeds)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				List<Models.apartment> result = entities.apartments.ToList();
@@ -58,7 +58,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 														bool petFriendly, bool internet, bool airContitioning, bool tv, bool kitchen,
 														int stars, bool balcony, bool accessable)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				List<Models.apartment> result = entities.apartments.ToList();
@@ -155,9 +155,9 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 			}
 		}
 
-		public int MakeBooking(int user_trr, int apartmentId, int dateFrom, int dateTo, int package_arrangment_id, string discountCode, bool bank_payment)
+		public int MakeBooking(string user_trr, int apartmentId, int dateFrom, int dateTo, int package_arrangment_id, string discountCode, bool bank_payment)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.apartment apartmentModel = entities.apartments.FirstOrDefault(el => el.id.Equals(apartmentId));
@@ -169,7 +169,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 					method.card_number = user_trr.ToString();
 
 					Models.booking newBooking = new Models.booking();
-					newBooking.customer_idcustomer = user_trr;
+					newBooking.customer_trr = user_trr;
 					newBooking.apartment_idapartment = apartmentId;
 					newBooking.date_from = dateFrom;
 					newBooking.date_to = dateTo;
@@ -216,7 +216,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool CancleBooking(int bookingId)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.booking booking = entities.bookings.FirstOrDefault(el => el.id.Equals(bookingId));
@@ -240,7 +240,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public Types.booking_description_response GetBooking(int bookingId)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.booking bookingModel = entities.bookings.FirstOrDefault(el => el.id.Equals(bookingId));
@@ -261,7 +261,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public Types.booking_description_response[] GetBookingsForApppartment(int apartmentId)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				List<Models.booking> bookingModelList = entities.bookings.Where(el => el.apartment.id.Equals(apartmentId)).ToList();
@@ -282,10 +282,10 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public Types.booking_description_response[] GetBookingsForUser(string userTrr)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
-				List<Models.booking> bookingModelList = entities.bookings.Where(el => el.customer.id.Equals(userTrr)).ToList();
+				List<Models.booking> bookingModelList = entities.bookings.Where(el => el.customer_trr.Equals(userTrr)).ToList();
 				if (bookingModelList != null)
 				{
 					return bookingModelList.Select(el => PublicTypeConverter.BookingModelToBookingDescriptionResponse(el)).ToArray();
@@ -303,7 +303,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public Types.arrangement_package[] GetPackagesArrangements(int dateFrom, int dateTo)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				List<Models.arrangement_package> packagesList = entities.arrangement_package.Where(el => el.valid_from >= dateFrom && el.valid_to <= dateTo).ToList();
@@ -325,7 +325,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public Types.discount[] GetDiscounts(int dateFrom, int dateTo)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				List<Models.discount> discountsList = entities.discounts.Where(el => el.valid_from >= dateFrom && el.valid_to <= dateTo).ToList();

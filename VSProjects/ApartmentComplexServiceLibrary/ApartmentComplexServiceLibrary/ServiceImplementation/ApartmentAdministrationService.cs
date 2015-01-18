@@ -8,6 +8,7 @@ using ApartmentComplexServiceLibraryV1.ServiceInterfaces.AdministrationService;
 using ApartmentComplexServiceLibraryV1.Types;
 using ApartmentComplexServiceLibraryV1.DAO;
 using ApartmentComplexServiceLibraryV1.Faults;
+using ApartmentComplexServiceLibraryV1.External;
 
 using MySql.Data;
 using System.ServiceModel;
@@ -45,7 +46,7 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 			}
 			else
 			{
-				// TODO: throw DB exception
+				ThrowDatabaseAccessException();
 				return null;
 			}
 		}
@@ -255,6 +256,12 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 			AdministrationServiceDAO adminDAO = new AdministrationServiceDAO();
 			bool result = adminDAO.UpdateComplexInfo(request.complex);
 			return new UpdateComplexInfoResponse(result);
+		}
+
+		public GetHotelServicesResponse GetHotelServices()
+		{
+			hotel_service[] services = HotelAccess.GetHotelServices();
+			return new GetHotelServicesResponse(services);
 		}
 	}
 }

@@ -7,5 +7,8 @@ SOAApartmets
 - Customer added tax_number in DB
 - FindApartments returs array of apartments
 
-"SI56101010792777664"
-"4931"
+"SI56101011648615617"
+""2792""
+
+
+SI56101019830751420 2763

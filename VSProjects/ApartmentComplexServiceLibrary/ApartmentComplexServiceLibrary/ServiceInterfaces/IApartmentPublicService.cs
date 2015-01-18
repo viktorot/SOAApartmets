@@ -229,11 +229,11 @@ namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces.PublicService
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 0)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int user_trr;
+		public string user_trr;
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 1)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public int pin_number;
+		public string pin_number;
 
 		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/public_messages", Order = 2)]
 		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -267,7 +267,7 @@ namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces.PublicService
 		{
 		}
 
-		public MakeBookingRequest(int user_trr, int pin, int apartment_id, int date_from, int date_to, int package_arrangment_id, string discount_code, bool payment, int num_of_people)
+		public MakeBookingRequest(string user_trr, string pin, int apartment_id, int date_from, int date_to, int package_arrangment_id, string discount_code, bool payment, int num_of_people)
 		{
 			this.user_trr = user_trr;
 			this.pin_number = pin;

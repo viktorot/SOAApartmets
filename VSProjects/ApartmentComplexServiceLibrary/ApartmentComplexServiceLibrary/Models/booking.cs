@@ -18,7 +18,7 @@ namespace ApartmentComplexServiceLibraryV1.Models
         public int date_from { get; set; }
         public int date_to { get; set; }
         public int apartment_idapartment { get; set; }
-        public int customer_idcustomer { get; set; }
+        public string customer_trr { get; set; }
         public int payment_method_id { get; set; }
         public Nullable<int> arrangement_package_id { get; set; }
         public Nullable<int> discounts_id { get; set; }
@@ -26,7 +26,6 @@ namespace ApartmentComplexServiceLibraryV1.Models
     
         public virtual apartment apartment { get; set; }
         public virtual arrangement_package arrangement_package { get; set; }
-        public virtual customer customer { get; set; }
         public virtual discount discount { get; set; }
         public virtual payment_method payment_method { get; set; }
     }

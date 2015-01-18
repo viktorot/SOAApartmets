@@ -14,7 +14,7 @@ namespace ApartmentComplexServiceLibraryV1.StaticData
 		public static int Capacity { get; set; }
 		public static string Address { get; set; }
 
-		public static long TRR { get { return 56101010792777664;} }
-		public static int Pin { get { return 4931; } }
+		public static string TRR { get { return "SI56101011648615617"; } }
+		public static string Pin { get { return "2792"; } }
 	}
 }

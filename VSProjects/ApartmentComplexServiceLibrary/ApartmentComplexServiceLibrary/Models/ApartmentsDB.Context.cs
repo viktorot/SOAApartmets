@@ -13,10 +13,10 @@ namespace ApartmentComplexServiceLibraryV1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ApartmentEntities : DbContext
+    public partial class apartma2Entities : DbContext
     {
-        public ApartmentEntities()
-            : base("name=ApartmentEntities")
+        public apartma2Entities()
+            : base("name=apartma2Entities")
         {
         }
     

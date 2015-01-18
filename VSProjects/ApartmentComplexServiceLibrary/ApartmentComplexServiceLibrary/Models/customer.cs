@@ -16,7 +16,6 @@ namespace ApartmentComplexServiceLibraryV1.Models
     {
         public customer()
         {
-            this.bookings = new HashSet<booking>();
             this.reviews = new HashSet<review>();
         }
     
@@ -26,9 +25,7 @@ namespace ApartmentComplexServiceLibraryV1.Models
         public string email { get; set; }
         public string address { get; set; }
         public string password { get; set; }
-        public string tax_number { get; set; }
     
-        public virtual ICollection<booking> bookings { get; set; }
         public virtual ICollection<review> reviews { get; set; }
     }
 }

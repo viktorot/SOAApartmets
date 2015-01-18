@@ -1050,4 +1050,46 @@ namespace ApartmentComplexServiceLibraryV1.Types
 		/// <remarks/>
 		cancelled,
 	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/types")]
+	public partial class hotel_service
+	{
+
+		private string typeField;
+
+		private string infoField;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 0)]
+		public string type
+		{
+			get
+			{
+				return this.typeField;
+			}
+			set
+			{
+				this.typeField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 1)]
+		public string info
+		{
+			get
+			{
+				return this.infoField;
+			}
+			set
+			{
+				this.infoField = value;
+			}
+		}
+	}
 }

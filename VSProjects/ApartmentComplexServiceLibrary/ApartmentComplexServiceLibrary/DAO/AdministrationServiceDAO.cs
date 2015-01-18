@@ -14,9 +14,10 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 	{
 		public int AddApartment(apartment apartmentObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
 			try
 			{
+				Models.apartma2Entities entities = new Models.apartma2Entities();
+
 				Models.apartment apartmentModel = new Models.apartment
 				{
 					accessible = apartmentObj.accessible,
@@ -34,6 +35,8 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 					internet = apartmentObj.internet,
 					kitchen = apartmentObj.kitchen
 				};
+
+
 				entities.apartments.Add(apartmentModel);
 				entities.SaveChanges();
 
@@ -47,7 +50,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public apartment[] FindApartment(int id, int num_of_beds)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				List<Models.apartment> apartmentModels = new List<Models.apartment>();
@@ -83,7 +86,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool UpdateApartment(apartment apartmentObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.apartment apartmentModel = entities.apartments.FirstOrDefault(el => el.id.Equals(apartmentObj.id));
@@ -122,7 +125,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool DeleteApartment(int apartmentId)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.apartment apartmentModel = entities.apartments.FirstOrDefault(el => el.id.Equals(apartmentId));
@@ -146,14 +149,13 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public int AddBooking(int user_trr, int apartmentId, int dateFrom, int dateTo, int packagArrangementId, string discountCode)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.discount discountModel = entities.discounts.FirstOrDefault(el => el.code.Equals(discountCode));
 				
 				Models.booking bookingModel = new Models.booking
 				{
-					customer_idcustomer = user_trr,
 					date_from = dateFrom,
 					date_to = dateTo,
 					arrangement_package_id = packagArrangementId,
@@ -169,10 +171,10 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public booking GetBooking(int id, int userId, int apartmentId, int dateFrom, int dateTo)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
-				Models.booking bookingModel = entities.bookings.FirstOrDefault(el => el.id.Equals(id) || el.customer.id.Equals(userId) || el.apartment.id.Equals(apartmentId) || 
+				Models.booking bookingModel = entities.bookings.FirstOrDefault(el => el.id.Equals(id) || el.customer_trr.Equals(userId) || el.apartment.id.Equals(apartmentId) || 
 												(el.date_from >= dateFrom && el.date_to <= dateTo));
 				if (bookingModel != null)
 				{
@@ -202,7 +204,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool UpdateBooking(booking bookingObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.booking bookingModel = entities.bookings.FirstOrDefault(el => el.id.Equals(bookingObj.id));
@@ -234,7 +236,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public int AddPackageArrangments(arrangement_package arrangmentObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.arrangement_package arrangmentModel = ApartmentTypeConverter.ArrangmentObjToModel(arrangmentObj);
@@ -250,7 +252,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public arrangement_package[] GetPackageArrangments(int dateFrom, int dateTo)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				List<Models.arrangement_package> packageModels = new List<Models.arrangement_package>();
@@ -273,7 +275,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool UpdatePackageArrangements(arrangement_package arrangementObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.arrangement_package arrangementModel = entities.arrangement_package.FirstOrDefault(el => el.id.Equals(arrangementObj.id));
@@ -304,7 +306,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool DeletePackageArrangments(int arrangementId)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.arrangement_package arrangementModel = entities.arrangement_package.FirstOrDefault(el => el.id.Equals(arrangementId));
@@ -327,7 +329,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public int AddDiscount(discount discountObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.discount discountModel = ApartmentTypeConverter.DiscountObjToModel(discountObj);
@@ -343,7 +345,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool UpdateDiscoint(discount discountObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.discount discountModel = entities.discounts.FirstOrDefault(el => el.id.Equals(discountObj.id));
@@ -373,7 +375,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool DeleteDiscount(int discountId)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.discount discountModel = entities.discounts.FirstOrDefault(el => el.id.Equals(discountId));
@@ -406,7 +408,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 		/*
 		public int AddCustomer(customer customerObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.customer customerModel = ApartmentTypeConverter.CustomerObjToModel(customerObj);
@@ -422,7 +424,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public customer FindCustomer(int id, string firstName, string lastName, string taxNumber)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.customer customerModel = entities.customers.FirstOrDefault(el => el.id.Equals(id) || el.first_name.Equals(firstName) || 
@@ -444,7 +446,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool UpdateCustomer(customer customerObj)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.customer customerModel = entities.customers.FirstOrDefault(el => el.id.Equals(customerObj.id) &&
@@ -476,7 +478,7 @@ namespace ApartmentComplexServiceLibraryV1.DAO
 
 		public bool DeleteCustomer(int customerId)
 		{
-			Models.ApartmentEntities entities = new Models.ApartmentEntities();
+			Models.apartma2Entities entities = new Models.apartma2Entities();
 			try
 			{
 				Models.customer customerModel = entities.customers.FirstOrDefault(el => el.id.Equals(customerId));

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://um.si/feri/soa/hotel/v2" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://um.si/feri/soa/hotel/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://um.si/feri/soa/hotel/v2/Imports">
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/hotel2/services/v2/Hotel.svc?xsd=xsd0" namespace="http://um.si/feri/soa/hotel/v2" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/hotel2/services/v2/Hotel.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/hotel2/services/v2/Hotel.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProjektHotel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="HotelService_PridobiSeznamHotelov_InputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiSeznamHotelov" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PridobiSeznamHotelov_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiSeznamHotelovResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PreveriRazpolozljivostSob_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreveriRazpolozljivostSob" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PreveriRazpolozljivostSob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreveriRazpolozljivostSobResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RezervirajSobo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RezervirajSobo" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RezervirajSobo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RezervirajSoboResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PregledStoritev_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledStoritev" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PregledStoritev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledStoritevResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PregledStoritevByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledStoritevByType" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PregledStoritevByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledStoritevByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PreveriRazpolozljivostStoritve_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreveriRazpolozljivostStoritve" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_PreveriRazpolozljivostStoritve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreveriRazpolozljivostStoritveResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RezervirajStoritev_InputMessage">
+    <wsdl:part name="parameters" element="tns:RezervirajStoritev" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RezervirajStoritev_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RezervirajStoritevResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HotelService">
+    <wsdl:operation name="PridobiSeznamHotelov">
+      <wsdl:input wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PridobiSeznamHotelov" message="tns:HotelService_PridobiSeznamHotelov_InputMessage" />
+      <wsdl:output wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PridobiSeznamHotelovResponse" message="tns:HotelService_PridobiSeznamHotelov_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreveriRazpolozljivostSob">
+      <wsdl:input wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PreveriRazpolozljivostSob" message="tns:HotelService_PreveriRazpolozljivostSob_InputMessage" />
+      <wsdl:output wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PreveriRazpolozljivostSobResponse" message="tns:HotelService_PreveriRazpolozljivostSob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RezervirajSobo">
+      <wsdl:input wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/RezervirajSobo" message="tns:HotelService_RezervirajSobo_InputMessage" />
+      <wsdl:output wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/RezervirajSoboResponse" message="tns:HotelService_RezervirajSobo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledStoritev">
+      <wsdl:input wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PregledStoritev" message="tns:HotelService_PregledStoritev_InputMessage" />
+      <wsdl:output wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PregledStoritevResponse" message="tns:HotelService_PregledStoritev_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledStoritevByType">
+      <wsdl:input wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PregledStoritevByType" message="tns:HotelService_PregledStoritevByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PregledStoritevByTypeResponse" message="tns:HotelService_PregledStoritevByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreveriRazpolozljivostStoritve">
+      <wsdl:input wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PreveriRazpolozljivostStoritve" message="tns:HotelService_PreveriRazpolozljivostStoritve_InputMessage" />
+      <wsdl:output wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/PreveriRazpolozljivostStoritveResponse" message="tns:HotelService_PreveriRazpolozljivostStoritve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RezervirajStoritev">
+      <wsdl:input wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/RezervirajStoritev" message="tns:HotelService_RezervirajStoritev_InputMessage" />
+      <wsdl:output wsaw:Action="http://um.si/feri/soa/hotel/v2/HotelService/RezervirajStoritevResponse" message="tns:HotelService_RezervirajStoritev_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

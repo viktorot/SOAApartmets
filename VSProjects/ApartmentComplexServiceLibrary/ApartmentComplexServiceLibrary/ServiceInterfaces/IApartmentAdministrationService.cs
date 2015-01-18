@@ -90,6 +90,10 @@ namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces.AdministrationServi
 		[System.ServiceModel.OperationContractAttribute(Action = "http://soa.appartments/SOATravel/apartma2/services/v1/ApartmentAdministrationService/UpdateComplexInfo")]
 		[System.ServiceModel.XmlSerializerFormatAttribute()]
 		ApartmentComplexServiceLibraryV1.ServiceInterfaces.AdministrationService.UpdateComplexInfoResponse UpdateComplexInfo(ApartmentComplexServiceLibraryV1.ServiceInterfaces.AdministrationService.UpdateComplexInfoRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "http://soa.appartments/SOATravel/apartma2/services/v1/ApartmentAdministrationService/GetHotelServices")]
+		[System.ServiceModel.XmlSerializerFormatAttribute()]
+		ApartmentComplexServiceLibraryV1.ServiceInterfaces.AdministrationService.GetHotelServicesResponse GetHotelServices();
 	}
 
 
@@ -798,6 +802,27 @@ namespace ApartmentComplexServiceLibraryV1.ServiceInterfaces.AdministrationServi
 		public UpdateComplexInfoResponse(bool status)
 		{
 			this.status = status;
+		}
+	}
+
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+	[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+	[System.ServiceModel.MessageContractAttribute(WrapperName = "GetHotelServicesResponse", WrapperNamespace = "http://soa.appartments/SOATravel/apartma2/services/v1/administration_messages", IsWrapped = true)]
+	public partial class GetHotelServicesResponse
+	{
+
+		[System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://soa.appartments/SOATravel/apartma2/services/v1/administration_messages", Order = 0)]
+		[System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public Types.hotel_service[] services;
+
+		public GetHotelServicesResponse()
+		{
+		}
+
+		public GetHotelServicesResponse(hotel_service[] services)
+		{
+			this.services = services;
 		}
 	}
 

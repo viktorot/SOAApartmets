@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://um.si/feri/soa/hotel/v2" elementFormDefault="qualified" targetNamespace="http://um.si/feri/soa/hotel/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svizec.informatika.uni-mb.si/SOATravel/hotel2/services/v2/Hotel.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProjektHotel" />
+  <xs:element name="PridobiSeznamHotelov">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PridobiSeznamHotelovResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PridobiSeznamHotelovResult" nillable="true" type="tns:ArrayOfHotel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfHotel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hotel" nillable="true" type="tns:Hotel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHotel" nillable="true" type="tns:ArrayOfHotel" />
+  <xs:complexType name="Hotel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DavcnaStevilka" type="xs:long" />
+      <xs:element minOccurs="0" name="Naslov" nillable="true" type="tns:Naslov" />
+      <xs:element minOccurs="0" name="NazivHotela" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpisHotela" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeznamSob" nillable="true" type="tns:ArrayOfSoba" />
+      <xs:element minOccurs="0" name="SifraHotela" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRRHotela" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hotel" nillable="true" type="tns:Hotel" />
+  <xs:complexType name="Naslov">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HisnaStevilka" type="xs:int" />
+      <xs:element minOccurs="0" name="Naslov" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Posta" nillable="true" type="tns:Posta" />
+      <xs:element minOccurs="0" name="PripisHisneStevilke" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Naslov" nillable="true" type="tns:Naslov" />
+  <xs:complexType name="Posta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NazivPoste" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostnaStevilka" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Posta" nillable="true" type="tns:Posta" />
+  <xs:complexType name="ArrayOfSoba">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Soba" nillable="true" type="tns:Soba" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSoba" nillable="true" type="tns:ArrayOfSoba" />
+  <xs:complexType name="Soba">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CenaSobe" type="xs:double" />
+      <xs:element minOccurs="0" name="IsBalkon" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsKlima" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPogledNaMorje" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProjektHotel" minOccurs="0" name="Lezisca" nillable="true" type="q1:ArrayOfLezisce" />
+      <xs:element minOccurs="0" name="NadstropjeSobe" type="xs:int" />
+      <xs:element minOccurs="0" name="SifraSobe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StevilkaSobe" type="xs:int" />
+      <xs:element minOccurs="0" name="SteviloPostelj" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Soba" nillable="true" type="tns:Soba" />
+  <xs:element name="PreveriRazpolozljivostSob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stPostelj" type="xs:int" />
+        <xs:element minOccurs="0" name="DatumOd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DatumDo" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreveriRazpolozljivostSobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreveriRazpolozljivostSobResult" nillable="true" type="tns:ArrayOfSoba" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RezervirajSobo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sifraSobe" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="narocnik" nillable="true" type="tns:Narocnik" />
+        <xs:element minOccurs="0" name="datumOd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="datumDo" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Narocnik">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DavcnaStevilka" type="xs:long" />
+      <xs:element minOccurs="0" name="EPosta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KontaktnaStevilka" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NazivNarocnika" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Narocnik" nillable="true" type="tns:Narocnik" />
+  <xs:element name="RezervirajSoboResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RezervirajSoboResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledStoritev">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledStoritevResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PregledStoritevResult" nillable="true" type="tns:ArrayOfStoritev" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfStoritev">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Storitev" nillable="true" type="tns:Storitev" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoritev" nillable="true" type="tns:ArrayOfStoritev" />
+  <xs:complexType name="Storitev">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CenaStoritve" type="xs:double" />
+      <xs:element minOccurs="0" name="Kolicina" type="xs:int" />
+      <xs:element minOccurs="0" name="NazivStoritve" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpisStoritve" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SifraStoritve" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SteviloProstihMest" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ProjektHotel" minOccurs="0" name="TipStoritve" type="q2:TipStoritve" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Storitev" nillable="true" type="tns:Storitev" />
+  <xs:element name="PregledStoritevByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ProjektHotel" minOccurs="0" name="tipStoritve" type="q3:TipStoritve" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledStoritevByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PregledStoritevByTypeResult" nillable="true" type="tns:ArrayOfStoritev" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreveriRazpolozljivostStoritve">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sifraStoritve" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stLjudi" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreveriRazpolozljivostStoritveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreveriRazpolozljivostStoritveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RezervirajStoritev">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sifraStoritve" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stLjudi" type="xs:int" />
+        <xs:element minOccurs="0" name="datum" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RezervirajStoritevResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RezervirajStoritevResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

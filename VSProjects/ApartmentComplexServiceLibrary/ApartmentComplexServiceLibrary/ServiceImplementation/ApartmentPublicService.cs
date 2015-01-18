@@ -162,6 +162,7 @@ namespace ApartmentComplexServiceLibraryV1.ServiceImplementation
 
 		public GetApartmentInfoResponse GetApartmentInfo(GetApartmentInfoRequest request)
 		{
+
 			apartment ap = new apartment();
 			return new GetApartmentInfoResponse(ap, new string[] { "img1", "img2" });
 		}
